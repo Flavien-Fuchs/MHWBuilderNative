@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
+import { Text, View, TouchableOpacity, Image, ImageBackground } from "react-native";
 import { useState, useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
-import ItemsLoader from "../components/home/ItemsLoader";
-import { armorApi, weaponApi, charmsApi, skillsApi } from "../utils/api";
+import ItemsLoader from "../../components/home/ItemsLoader";
 import axios from "axios";
+import { styles } from "./HomeScreenStyle"
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -74,35 +74,25 @@ const HomeScreen = () => {
     navigation.push("Builder", { armors: armors, weapons: weapons, charms: charms, skills: skills })
   };
 
-
   return (
-    <SafeAreaView>
-      <View style={styles.login}>
-        <Image source={require('../assets/images/logo.png')} style={styles.imageLoading}></Image>
+    <SafeAreaView style={styles.container}>
+      <ImageBackground source={require('../../assets/images/homeBg.png')} resizeMode="cover" style={styles.login}>
+        <Image source={require('../../assets/images/logo.png')} style={styles.imageLogo}></Image>
         {!isLoading ?
-          (<TouchableOpacity onPress={() => play()}>
-            <Text>play</Text>
+          (<TouchableOpacity onPress={() => play()} style={styles.playButton}>
+            <Text style={styles.playText}>play</Text>
           </TouchableOpacity>) : (
             <View style={styles.loginContainer}>
+              <Image source={require('../../assets/images/loading.gif')} style={styles.imageLoading} />
               <ItemsLoader name="Armors" type={armors} />
               <ItemsLoader name="Weapons" type={weapons} />
               <ItemsLoader name="Charms" type={charms} />
               <ItemsLoader name="Skills" type={skills} />
             </View>
           )}
-      </View>
+      </ImageBackground>
     </SafeAreaView>
   );
 };
 
 export default HomeScreen;
-
-const styles = StyleSheet.create({
-  login: {
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  imageLoading: {
-    width: 200,
-  }
-});
