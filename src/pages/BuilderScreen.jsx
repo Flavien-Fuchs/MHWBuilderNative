@@ -2,7 +2,10 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const BuilderScreen = () => {
+const BuilderScreen = ({ route }) => {
+  // console.log(route)
+  const { armors, weapons, charms, skills } = route.params
+  console.log(charms)
   return (
     <SafeAreaView>
       <View>
