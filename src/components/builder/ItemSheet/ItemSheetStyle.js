@@ -1,15 +1,13 @@
 import { StyleSheet } from 'react-native'
-import { colors } from "../../../../utils/colors"
+import { colors } from "../../../utils/colors"
 
 export const styles = StyleSheet.create({
    itemShit: {
       position: "relative",
       width: 28,
       borderRadius: 2,
-      flexDirection: "column",
-      gap: 10 
    },
-   
+
    slot: {
       position: "relative",
       borderRadius: 1,

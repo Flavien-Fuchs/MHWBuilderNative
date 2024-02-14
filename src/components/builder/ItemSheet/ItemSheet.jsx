@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { styles } from "../ItemSheet/ItemSheetStyle";
+import { styles } from "./ItemSheetStyle";
 import PropTypes from "prop-types";
 
 const ItemSheet = ({
@@ -103,7 +103,7 @@ const ItemSheet = ({
   );
 };
 
-ItemSheet.propType = {
+ItemSheet.propTypes = {
   head: PropTypes.object,
   chest: PropTypes.object,
   gloves: PropTypes.object,
