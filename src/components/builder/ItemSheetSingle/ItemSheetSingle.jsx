@@ -123,13 +123,13 @@ const ItemSheetSingle = ({ route }) => {
                 <View>
                   <Text>Sharpness :</Text>
                   <View style={styles.sharpnessContainer}>
-                    <View style={durabilityStyles.durability.red}></View>
-                    <View style={durabilityStyles.durability.orange}></View>
-                    <View style={durabilityStyles.durability.yellow}></View>
-                    <View style={durabilityStyles.durability.green}></View>
-                    <View style={durabilityStyles.durability.blue}></View>
-                    <View style={durabilityStyles.durability.white}></View>
-                    <View style={durabilityStyles.durability.purple}></View>
+                    <View style={{ height: 10, backgroundColor: 'red', width: actualItem.durability[0].red / 3 }}></View>
+                    <View style={{ height: 10, backgroundColor: 'orange', width: actualItem.durability[0].orange / 3 }}></View>
+                    <View style={{ height: 10, backgroundColor: 'yellow', width: actualItem.durability[0].yellow / 3 }}></View>
+                    <View style={{ height: 10, backgroundColor: 'green', width: actualItem.durability[0].green / 3 }}></View>
+                    <View style={{ height: 10, backgroundColor: 'blue', width: actualItem.durability[0].blue / 3 }}></View>
+                    <View style={{ height: 10, backgroundColor: 'white', width: actualItem.durability[0].white / 3 }}></View>
+                    <View style={{ height: 10, backgroundColor: 'purple', width: actualItem.durability[0].purple / 3 }}></View>
                   </View>     
                 </View>
               )}
@@ -205,46 +205,5 @@ const ItemSheetSingle = ({ route }) => {
     </View>
   );
 };
-
-const durabilityStyles = StyleSheet.create({
-    durability: {
-        red: {
-            width:`${actualItem.durability[0].red / 3}`,
-            height: 10,
-            backgroundColor: 'red'    
-        },
-        orange: {
-            width:`${actualItem.durability[0].orange / 3}`,
-            height: 10,
-            backgroundColor: 'orange'
-        },
-        yellow: {
-            width:`${actualItem.durability[0].yellow / 3}`,
-            height: 10,
-            backgroundColor: 'yellow'
-        },
-        blue: {
-            width:`${actualItem.durability[0].blue / 3}`,
-            height: 10,
-            backgroundColor: 'blue'
-        },
-        green: {
-            width:`${actualItem.durability[0].green / 3}`,
-            height: 10,
-            backgroundColor: 'green'
-        },
-        purple: {
-            width:`${actualItem.durability[0].purple / 3}`,
-            height: 10,
-            backgroundColor: 'purple'
-        },
-        white: {
-            width:`${actualItem.durability[0].white / 3}`,
-            height: 10,
-            backgroundColor: 'white'
-        }
-
-    }
-})
 
 export default ItemSheetSingle;

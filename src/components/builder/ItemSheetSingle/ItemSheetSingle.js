@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
         top: 0,
         left: 0,
         zIndex: 1000,
-        backgroundColor: color.rankPopup,
+        backgroundColor: colors.rankPopup,
         color: colors.neutralWhiteColor,
         borderWidth: 1,
         borderColor: colors.neutralWhiteColor,
