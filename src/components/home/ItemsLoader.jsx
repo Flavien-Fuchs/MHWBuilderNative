@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Text, View } from 'react-native'
 import React from 'react'
-import { colors } from "../../utils/colors"
+import { styles } from './ItemsLoaderStyle'
 
 
 const ItemsLoader = ({ name, type }) => {
@@ -18,15 +18,3 @@ const ItemsLoader = ({ name, type }) => {
 }
 
 export default ItemsLoader
-
-const styles = StyleSheet.create({
-    container: {
-        flexDirection: "row"
-    }, name: {
-        color: colors.whiteColor
-    }, load: {
-        color: colors.redColor
-    }, done: {
-        color: colors.greenColor
-    }
-})
