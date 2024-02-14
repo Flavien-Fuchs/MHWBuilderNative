@@ -41,7 +41,7 @@ const ItemSheet = ({
             setWeaponPage={setWeaponPage}
             setCharmsPage={setCharmsPage}
             setBuilder={setBuilder}
-            toggleDisplayItem={toggleDisplayItem}
+            /* toggleDisplayItem={toggleDisplayItem} */
             deleteItem={deleteItem}
           />
         )}
