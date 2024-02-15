@@ -5,7 +5,7 @@ function ItemChest({ chest, toggleDisplayItem, setArmorPage }) {
   return chest ? (
     <TouchableOpacity onPress={() => toggleDisplayItem("chest")}>
       {!chest.assets ? (
-        <Image source={require("../../images/nullArmor.png")} />
+        <Image source={require("../../../images/nullArmor.png")} />
       ) : chest.assets.imageMale ? (
         <Image source={{ uri: chest.assets.imageMale }} />
       ) : (

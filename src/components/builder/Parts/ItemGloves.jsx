@@ -4,7 +4,7 @@ function ItemGloves({ gloves, toggleDisplayItem, setArmorPage }) {
   return gloves ? (
     <TouchableOpacity onPress={() => toggleDisplayItem("gloves")}>
       {!gloves.assets ? (
-        <Image source={require("../../images/charm-icon.png")} />
+        <Image source={require("../../../images/charm-icon.png")} />
       ) : gloves.assets.imageMale ? (
         <Image source={{ uri: gloves.assets.imageMale }} />
       ) : (

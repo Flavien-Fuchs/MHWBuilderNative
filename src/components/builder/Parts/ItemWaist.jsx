@@ -5,7 +5,7 @@ function ItemWaist({ waist, toggleDisplayItem, setArmorPage }) {
   return waist ? (
     <TouchableOpacity onPress={() => toggleDisplayItem("waist")}>
       {!waist.assets ? (
-        <Image source={require("../../images/nullArmor.png")} />
+        <Image source={require("../../../images/nullArmor.png")} />
       ) : waist.assets.imageMale ? (
         <Image source={{ uri: waist.assets.imageMale }} />
       ) : (
