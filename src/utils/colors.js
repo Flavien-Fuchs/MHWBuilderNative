@@ -1,7 +1,9 @@
 export const colors = {
-    whiteColor: "white",
-    BlackColor: "black",
-    redColor: "red",
-    greenColor: "green",
-    bgBrownOpacity: "#250f03aa"
-}
+  white: "white",
+  black: "black",
+  yellow: "yellow",
+  red: "red",
+  green: "green",
+  bgBrownOpacity: "#250f03aa",
+  bgBlackOpacity: "#000000aa",
+};
