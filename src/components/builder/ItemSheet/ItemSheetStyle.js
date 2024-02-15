@@ -1,19 +1,17 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from "react-native";
 import { colors } from "../../../utils/colors"
 
-export const styles = StyleSheet.create({
-   itemShit: {
-      position: "relative",
-      width: 28,
-      borderRadius: 2,
-   },
 
-   slot: {
-      position: "relative",
-      borderRadius: 1,
-      width: 6,
-      height: 6,
-      color: colors.whiteColor,
-      transitionDuration: 0.2,  
-   }
-    });
+export const styles = StyleSheet.create({
+    globalContainer: {
+        flex: 2 / 3,
+        alignItems: "center",
+        justifyContent: "center",
+        borderColor: "red",
+        borderWidth: 1,
+        borderStyle: "solid"
+    },
+    text: {
+        color: colors.whiteColor
+    }
+});

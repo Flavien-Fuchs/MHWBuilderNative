@@ -1,8 +1,9 @@
-import { Text, View } from "react-native";
-import React,{ useState } from "react";
+import { StyleSheet, Text, View, ImageBackground } from "react-native";
+import { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { style } from "./BuilderScreenStyle";
+import { styles } from './BuilderScreenStyle'
 import ItemSheet from "../../components/builder/ItemSheet/ItemSheet";
+import Stats from "../../components/builder/Stats/Stats";
 
 const BuilderScreen = ({ route }) => {
   const { armors, weapons, charms, skills } = route.params;
@@ -100,7 +101,7 @@ const BuilderScreen = ({ route }) => {
     maxDef,
     augDef
   ) {
-    if (action === "add") {
+    if (action === "add") { 
       setBaseDefense(baseDefense + baseDef);
       setMaxDefense(maxDefense + maxDef);
       setAugDefense(augDefense + augDef);
@@ -334,9 +335,13 @@ const BuilderScreen = ({ route }) => {
 
 
   return (
-    <SafeAreaView>
-      <View>
-        <ItemSheet
+    <SafeAreaView style={styles.globalContainer}>
+      <ImageBackground
+        source={require('../../assets/images/background.jpg')}
+        resizeMode="cover"
+        style={styles.container}
+      >
+        <ItemSheet 
           head={head}
           chest={chest}
           gloves={gloves}
@@ -350,11 +355,27 @@ const BuilderScreen = ({ route }) => {
           setBuilder={setBuilder}
           deleteItem={deleteItem}
           displayItem={displayItem}
-          setDisplayItem={setDisplayItem} 
-        />
-        <Text>BuilderScreen</Text>
-      </View>
-      {/* <View>
+          setDisplayItem={setDisplayItem}
+          />
+        <Stats
+          health={health}
+          stamina={stamina}
+          baseDefense={baseDefense}
+          maxDefense={maxDefense}
+          augDefense={augDefense}
+          resFire={resFire}
+          resWater={resWater}
+          resIce={resIce}
+          resThunder={resThunder}
+          resDragon={resDragon}
+          attack={attack}
+          elementalAttack={elementalAttack}
+          affinity={affinity}
+          criticalBoost={criticalBoost}
+          sharpness={sharpness}
+          playerSkills={playerSkills}
+          skills={skills}
+        />{/* <View>
       <Attack
         attack={attack}
         elementalAttack={elementalAttack}
@@ -400,8 +421,13 @@ const BuilderScreen = ({ route }) => {
           closePage={closePage}
         />
       )} */}
-    </SafeAreaView>
-  );
-};
+    
+
+      </ImageBackground>
+    <SafeAreaView>
+      
+      
+      
+      
 
 export default BuilderScreen;
