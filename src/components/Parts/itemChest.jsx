@@ -3,29 +3,17 @@ import { TouchableOpacity, Image } from "react-native";
 
 function ItemChest({ chest, toggleDisplayItem, setArmorPage }) {
   return chest ? (
-    <TouchableOpacity
-      style={styles.slotChest}
-      onPress={() => toggleDisplayItem("chest")}
-    >
+    <TouchableOpacity onPress={() => toggleDisplayItem("chest")}>
       {!chest.assets ? (
-        <Image
-          source={require("../../images/nullArmor.png")}
-          style={styles.image}
-        />
+        <Image source={require("../../images/nullArmor.png")} />
       ) : chest.assets.imageMale ? (
-        <Image source={{ uri: chest.assets.imageMale }} style={styles.image} />
+        <Image source={{ uri: chest.assets.imageMale }} />
       ) : (
-        <Image
-          source={{ uri: chest.assets.imageFemale }}
-          style={styles.image}
-        />
+        <Image source={{ uri: chest.assets.imageFemale }} />
       )}
     </TouchableOpacity>
   ) : (
-    <TouchableOpacity
-      style={styles.slotChestEmpty}
-      onPress={() => setArmorPage("chest")}
-    ></TouchableOpacity>
+    <TouchableOpacity onPress={() => setArmorPage("chest")}></TouchableOpacity>
   );
 }
 

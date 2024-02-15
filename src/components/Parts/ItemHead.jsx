@@ -3,10 +3,7 @@ import { TouchableOpacity, Image } from "react-native";
 
 function ItemHead({ head, toggleDisplayItem, setArmorPage }) {
   return head ? (
-    <TouchableOpacity
-      style={styles.slotHead}
-      onPress={() => toggleDisplayItem("head")}
-    >
+    <TouchableOpacity onPress={() => toggleDisplayItem("head")}>
       {!head.assets ? (
         <Image source={require("../../images/nullArmor.png")} />
       ) : head.assets.imageMale ? (
@@ -16,10 +13,7 @@ function ItemHead({ head, toggleDisplayItem, setArmorPage }) {
       )}
     </TouchableOpacity>
   ) : (
-    <TouchableOpacity
-      style={styles.slotHeadEmpty}
-      onPress={() => setArmorPage("head")}
-    ></TouchableOpacity>
+    <TouchableOpacity onPress={() => setArmorPage("head")}></TouchableOpacity>
   );
 }
 
