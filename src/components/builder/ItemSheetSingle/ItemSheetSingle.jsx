@@ -2,23 +2,20 @@ import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet, FlatList } from 'react-native';
 import { styles} from '../../../components/builder/ItemSheetSingle/ItemSheetSingle'
 
-const ItemSheetSingle = ({ route }) => {
-  const {
-    type,
-    head,
-    chest,
-    gloves,
-    waist,
-    legs,
-    weapon,
-    charm,
-    setArmorPage,
-    setWeaponPage,
-    setCharmsPage,
-    toggleDisplayItem,
-    deleteItem
-  } = route.params;
-
+function ItemSheetSingle ({ 
+  type,
+  head,
+  chest,
+  gloves,
+  waist,
+  legs,
+  weapon,
+  charm,
+  setArmorPage,
+  setWeaponPage,
+  setCharmsPage,
+  toggleDisplayItem,
+  deleteItem }){
   
 
   let actualItem = null;
