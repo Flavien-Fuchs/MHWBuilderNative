@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
         textDecorationLine: "underline"
     },
     text: {
-        color: colors.whiteColor,
+        color: colors.neutralWhiteColor,
     },
     buttonContainer: {
         flexDirection: "row",

@@ -23,6 +23,8 @@ const BuilderScreen = ({ route }) => {
   const [weapon, setWeapon] = useState(null);
   const [charm, setCharm] = useState(null);
   // States for User stats
+  const [health, setHealth] = useState(100);
+  const [stamina, setStamina] = useState(100);
   const [baseDefense, setBaseDefense] = useState(0);
   const [maxDefense, setMaxDefense] = useState(0);
   const [augDefense, setAugDefense] = useState(0);
@@ -375,7 +377,13 @@ const BuilderScreen = ({ route }) => {
           sharpness={sharpness}
           playerSkills={playerSkills}
           skills={skills}
-        />{/* <View>
+        />
+      </ImageBackground>
+    </SafeAreaView>
+  );
+}
+        
+        {/* <View>
       <Attack
         attack={attack}
         elementalAttack={elementalAttack}
@@ -422,10 +430,6 @@ const BuilderScreen = ({ route }) => {
         />
       )} */}
     
-
-      </ImageBackground>
-    <SafeAreaView>
-      
       
       
       

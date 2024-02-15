@@ -7,8 +7,8 @@ export const styles = StyleSheet.create({
     }, name: {
         color: colors.neutralWhiteColor
     }, load: {
-        color: colors.sharpnessRed
+        color: "red"
     }, done: {
-        color: colors.sharpnessGreen
+        color: "green"
     }
 })
