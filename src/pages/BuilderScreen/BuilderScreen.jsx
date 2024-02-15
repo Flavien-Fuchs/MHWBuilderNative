@@ -6,6 +6,7 @@ import ItemSheet from "../../components/builder/ItemSheet/ItemSheet";
 
 const BuilderScreen = ({ route }) => {
   const { armors, weapons, charms, skills } = route.params;
+
   return (
     <SafeAreaView>
       <View>

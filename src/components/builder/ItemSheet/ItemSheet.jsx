@@ -3,6 +3,13 @@ import { View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./ItemSheetStyle";
 import PropTypes from "prop-types";
+import ItemHead from "../../Parts/ItemHead";
+import ItemCharm from "../../Parts/ItemCharm";
+import ItemWeapon from "../../Parts/ItemWeapon";
+import ItemChest from "../../Parts/itemChest";
+import ItemWaist from "../../Parts/ItemWaist";
+import ItemLegs from "../../Parts/ItemLegs";
+import ItemGloves from "../../Parts/ItemGloves";
 
 const ItemSheet = ({
   head,
