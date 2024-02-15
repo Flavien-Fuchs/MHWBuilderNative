@@ -1,41 +1,28 @@
 import { View, Text, FlatList } from "react-native"
 import { styles } from "./StatsStyle"
 
-function Skills({ skills }) {
-
-    const playerSkill = [
-        {
-            id: 159,
-            level: 3,
-            modifiers: {},
-            description: "Makes it easier to mount monsters and down mounted monsters.",
-            skill: 49,
-            skillName: "Master Mounter"
-        },
-        {
-            id: 252,
-            level: 1,
-            modifiers: {},
-            description: "While active, reduces damage taken by 15%.",
-            skill: 84,
-            skillName: "Divine Blessing"
-        }
-    ]
-
-    /////////////////////////////////
+function Skills({ skills, playerSkills }) {
 
     return (
         <FlatList
-            showsHorizontalScrollIndicator={false}
-            showsVerticalScrollIndicator={false}
-            data={playerSkill}
+            data={playerSkills}
             keyExtractor={(item) => item.id}
-            renderItem={({ item }, index) => {
-                console.log(item)
+            renderItem={({ item, index }) => {
+                let matchSkill = skills.filter(skill => skill.name === item.skillName)
                 return (
                     <View style={index % 2 === 0 ? styles.statsOn : styles.statsOff}>
-                        <Text style={styles.text}>{item.skillName} coucou </Text>
-                        <Text style={styles.text}>{item.level} coucou </Text>
+                        <Text style={styles.text}>{item.skillName}</Text>
+                        <FlatList
+                            style={styles.skillsCOntainer}
+                            key={matchSkill[0].id}
+                            data={matchSkill[0].ranks}
+                            keyExtractor={(rank) => rank.id}
+                            renderItem={(rank) => {
+                                return (
+                                    <View style={rank.index < item.level ? styles.skillOn : styles.skillOff}></View>
+                                )
+                            }}
+                        />
                     </View>
                 )
             }}
@@ -45,16 +32,3 @@ function Skills({ skills }) {
 }
 
 export default Skills
-
-{/* {skills.map(skill => {
-                    if (skill.name === skillName) {
-                        return (
-                            <FlatList
-                                key={skill.id}
-                                data={skill.ranks}
-                                renderItem={renderSkill}
-                                keyExtractor={(skill) => skill.id}
-                            />
-                        )
-                    }
-                })} */}

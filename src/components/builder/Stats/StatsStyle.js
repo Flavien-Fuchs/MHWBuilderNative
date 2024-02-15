@@ -56,4 +56,21 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
     },
+    skillsCOntainer: {
+        flexDirection: "row",
+        alignItems: "center",
+    },
+    skillOn: {
+        marginLeft: 5,
+        height: 14,
+        width: 14,
+        backgroundColor: colors.rankOn
+    },
+    skillOff: {
+        marginLeft: 5,
+        height: 14,
+        width: 14,
+        backgroundColor: colors.rankOff
+    },
+
 });

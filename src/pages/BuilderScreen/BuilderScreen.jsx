@@ -70,4 +70,3 @@ const BuilderScreen = ({ route }) => {
 };
 
 export default BuilderScreen;
-
