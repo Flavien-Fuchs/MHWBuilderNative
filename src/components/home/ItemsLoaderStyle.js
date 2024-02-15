@@ -5,10 +5,10 @@ export const styles = StyleSheet.create({
     container: {
         flexDirection: "row"
     }, name: {
-        color: colors.whiteColor
+        color: colors.sharpnessWhite
     }, load: {
-        color: colors.redColor
+        color: colors.sharpnessRed
     }, done: {
-        color: colors.greenColor
+        color: colors.sharpnessGreen
     }
 })
