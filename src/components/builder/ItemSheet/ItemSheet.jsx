@@ -123,10 +123,6 @@ ItemSheet.propTypes = {
     }).isRequired,
     name: PropTypes.string.isRequired,
     skills: PropTypes.array,
-    assets: PropTypes.shape({
-      imageMale: PropTypes.string.isRequired,
-      imageFemale: PropTypes.string.isRequired,
-    }).isRequired,
   }).isRequired,
 
   chest: PropTypes.shape({
@@ -148,10 +144,6 @@ ItemSheet.propTypes = {
     }).isRequired,
     name: PropTypes.string.isRequired,
     skills: PropTypes.array,
-    assets: PropTypes.shape({
-      imageMale: PropTypes.string.isRequired,
-      imageFemale: PropTypes.string.isRequired,
-    }).isRequired,
   }).isRequired,
 
   gloves: PropTypes.shape({
@@ -173,16 +165,78 @@ ItemSheet.propTypes = {
     }).isRequired,
     name: PropTypes.string.isRequired,
     skills: PropTypes.array,
-    assets: PropTypes.shape({
-      imageMale: PropTypes.string.isRequired,
-      imageFemale: PropTypes.string.isRequired,
-    }).isRequired,
   }).isRequired,
 
-  waist: PropTypes.object,
-  legs: PropTypes.object,
-  weapon: PropTypes.object,
-  charm: PropTypes.object,
+  waist: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    type: PropTypes.string.isRequired,
+    rank: PropTypes.string,
+    rarity: PropTypes.number.isRequired,
+    defense: PropTypes.shape({
+      base: PropTypes.number.isRequired,
+      max: PropTypes.number.isRequired,
+      augmented: PropTypes.number.isRequired,
+    }).isRequired,
+    resistances: PropTypes.shape({
+      fire: PropTypes.number.isRequired,
+      water: PropTypes.number.isRequired,
+      ice: PropTypes.number.isRequired,
+      thunder: PropTypes.number.isRequired,
+      dragon: PropTypes.number.isRequired,
+    }).isRequired,
+    name: PropTypes.string.isRequired,
+    skills: PropTypes.array,
+  }).isRequired,
+
+  legs: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    type: PropTypes.string.isRequired,
+    rank: PropTypes.string,
+    rarity: PropTypes.number.isRequired,
+    defense: PropTypes.shape({
+      base: PropTypes.number.isRequired,
+      max: PropTypes.number.isRequired,
+      augmented: PropTypes.number.isRequired,
+    }).isRequired,
+    resistances: PropTypes.shape({
+      fire: PropTypes.number.isRequired,
+      water: PropTypes.number.isRequired,
+      ice: PropTypes.number.isRequired,
+      thunder: PropTypes.number.isRequired,
+      dragon: PropTypes.number.isRequired,
+    }).isRequired,
+    name: PropTypes.string.isRequired,
+    skills: PropTypes.array,
+  }).isRequired,
+
+  weapon: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    type: PropTypes.string.isRequired,
+    rank: PropTypes.string,
+    rarity: PropTypes.number.isRequired,
+    attack: PropTypes.array,
+    name: PropTypes.string.isRequired,
+    durability: PropTypes.arrayOf(
+      PropTypes.shape({
+        red: PropTypes.number.isRequired,
+        orange: PropTypes.number.isRequired,
+        yellow: PropTypes.number.isRequired,
+        green: PropTypes.number.isRequired,
+        blue: PropTypes.number.isRequired,
+        white: PropTypes.number.isRequired,
+        purple: PropTypes.number.isRequired,
+      })
+    ).isRequired,
+  }).isRequired,
+
+  charm: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    rank: PropTypes.shape({
+      level: PropTypes.number.isRequired,
+      rarity: PropTypes.number.isRequired,
+    }).isRequired,
+  }).isRequired,
 
   setArmorPage: PropTypes.func.isRequired,
   setWeaponPage: PropTypes.func.isRequired,
@@ -194,15 +248,3 @@ ItemSheet.propTypes = {
 };
 
 export default ItemSheet;
-
-/* propTypes: {
-  head: PropTypes.shape({
-    id: PropTypes.number,
-    type: PropTypes.string,
-    rank: PropTypes.string,
-    rarity: PropTypes.number,
-    defense: PropTypes.array,
-    title: PropTypes.string,
-    resistances: PropTypes.array,
-  }).isRequired;
-} */
