@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     container: {
         flexDirection: "row"
     }, name: {
-        color: colors.sharpnessWhite
+        color: colors.neutralWhiteColor
     }, load: {
         color: colors.sharpnessRed
     }, done: {

@@ -26,10 +26,10 @@ export const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: colors.bgBrownOpacity,
-        color: colors.whiteColor,
+        color: colors.sharpnessWhite,
     },
     playButton: {
-        backgroundColor: colors.whiteColor,
+        backgroundColor: colors.neutralWhiteColor,
         padding: 10,
         borderRadius: 10,
     },
