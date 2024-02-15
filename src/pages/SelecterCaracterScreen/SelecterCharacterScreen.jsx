@@ -11,7 +11,6 @@ import React, { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { characters } from "../../assets/data/Characteres";
 import { styles } from "./SelecterCharacterScreenStyle";
-import { colors } from "../../utils/colors";
 import ItemCardSelectCharacter from "../../components/SelecterCaracter/ItemCardSelectCharacter";
 
 import { getImage } from "../../utils/ImportCharacter";
@@ -27,6 +26,11 @@ const SelecterCharacterScreen = ({ navigation }) => {
   const changeCharacter = (value) => {
     setSelectedCharacter(characters[value]);
   };
+
+  const handlePlay = () => {
+    navigation.push("Game");
+  };
+
   return (
     <ImageBackground
       source={require("../../assets/images/background.jpg")}
@@ -90,7 +94,7 @@ const SelecterCharacterScreen = ({ navigation }) => {
           </View>
           <View style={styles.containerBtnPlay}>
             <TouchableOpacity
-              onPress={() => navigation.goBack()}
+              onPress={() => handlePlay()}
               style={{ ...styles.shadow, ...styles.btnPlay }}
             >
               <Text style={styles.textBtn}>PLAY</Text>
