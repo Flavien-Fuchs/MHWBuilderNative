@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from './BuilderScreenStyle'
 import ItemSheet from "../../components/builder/ItemSheet/ItemSheet";
 import Stats from "../../components/builder/Stats/Stats";
+import BuilderHeader from "../../components/builder/BuilderHeader/BuilderHeader";
 
 const BuilderScreen = ({ route }) => {
   const { armors, weapons, charms, skills } = route.params
@@ -41,6 +42,7 @@ const BuilderScreen = ({ route }) => {
         resizeMode="cover"
         style={styles.container}
       >
+        <BuilderHeader />
         <ItemSheet />
         <Stats
           health={health}

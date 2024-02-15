@@ -4,7 +4,7 @@ import { colors } from "../../../utils/colors"
 
 export const styles = StyleSheet.create({
     globalContainer: {
-        flex: 1 / 3,
+        flex: 3 / 10,
         alignItems: "center",
         justifyContent: "start",
     },
@@ -50,5 +50,10 @@ export const styles = StyleSheet.create({
         justifyContent: "space-between",
         paddingVertical: 4,
         paddingHorizontal: 20,
+    },
+    sharpnessContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
     },
 });
