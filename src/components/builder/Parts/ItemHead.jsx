@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity, Image } from "react-native";
+import { TouchableOpacity, Image, ImageBackground } from "react-native";
 import { styles } from "../ItemSheet/ItemSheetStyle";
 
 function ItemHead({ head, toggleDisplayItem, setArmorPage }) {
@@ -14,7 +14,11 @@ function ItemHead({ head, toggleDisplayItem, setArmorPage }) {
       )}
     </TouchableOpacity>
   ) : (
+    <ImageBackground
+    source={require("../../../images/backgroundItems/teteArmor.png")}
+    >
     <TouchableOpacity style={styles.slot} onPress={() => setArmorPage("head")}></TouchableOpacity>
+    </ImageBackground>
   );
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity, Image, View } from "react-native";
+import { TouchableOpacity, Image, ImageBackground } from "react-native";
 import { styles } from "../ItemSheet/ItemSheetStyle";
 
 function ItemWeapon({ weapon, toggleDisplayItem, setWeaponPage }) {
@@ -14,7 +14,11 @@ function ItemWeapon({ weapon, toggleDisplayItem, setWeaponPage }) {
       )}
     </TouchableOpacity>
   ) : (
+    <ImageBackground
+    source={require("../../../images/backgroundItems/epee.png")}
+    >
     <TouchableOpacity style={styles.slot} onPress={setWeaponPage}></TouchableOpacity>
+    </ImageBackground>
   );
 }
 
