@@ -385,52 +385,7 @@ const BuilderScreen = ({ route }) => {
   );
 }
         
-        {/* <View>
-      <Attack
-        attack={attack}
-        elementalAttack={elementalAttack}
-        affinity={affinity}
-        criticalBoost={criticalBoost}
-        sharpness={sharpness}
-      />
-      </View>
-      <View>
-      <Defense
-        health={health}
-        stamina={stamina}
-        baseDefense={baseDefense}
-        maxDefense={maxDefense}
-        augDefense={augDefense}
-        resFire={resFire}
-        resWater={resWater}
-        resIce={resIce}
-        resThunder={resThunder}
-        resDragon={resDragon}
-      />
-      <Skills playerSkills={playerSkills} skills={skills} />
-      </View>
-      {armorPage && (
-        <Armors
-          armors={armors}
-          handleArmor={handleArmor}
-          type={armorPage}
-          closePage={closePage}
-        />
-      )}
-      {weaponPage && (
-        <Weapons
-          weapons={weapons}
-          handleWeapon={handleWeapon}
-          closePage={closePage}
-        />
-      )}
-      {charmsPage && (
-        <Charms
-          charms={charms}
-          handleCharms={handleCharms}
-          closePage={closePage}
-        />
-      )} */}
+        
     
       
       
