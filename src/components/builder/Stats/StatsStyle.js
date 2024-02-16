@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
         fontWeight: "bold",
     },
     buttonActive: {
-        color: colors.whiteColor,
+        color: colors.neutralWhiteColor,
         textTransform: "uppercase",
         fontWeight: "bold",
         textDecorationLine: "underline"

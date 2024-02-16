@@ -1,13 +1,10 @@
 import React from "react";
-import { TouchableOpacity, ImageBackground, Image } from "react-native";
-import { styles } from "../ItemSheet/ItemSheetStyle";
+import { TouchableOpacity, Image, ImageBackground } from "react-native";
+import { styles } from "../ItemSheet/ItemSheetStyle"
 
 function ItemChest({ chest, toggleDisplayItem, setArmorPage }) {
   return chest ? (
-    <TouchableOpacity
-      style={styles.slot}
-      onPress={() => toggleDisplayItem("chest")}
-    >
+    <TouchableOpacity style={styles.slot} onPress={() => toggleDisplayItem("chest")}>
       {!chest.assets ? (
         <Image source={require("../../../images/nullArmor.png")} />
       ) : chest.assets.imageMale ? (
@@ -18,10 +15,9 @@ function ItemChest({ chest, toggleDisplayItem, setArmorPage }) {
     </TouchableOpacity>
   ) : (
     <ImageBackground
-      source={require("../../../images/backgroundItems/torseArmor.png")}
-      
+    source={require("../../../images/backgroundItems/torseArmor.png")}
     >
-      <TouchableOpacity style={styles.slot} onPress={() => setArmorPage("chest")}></TouchableOpacity>
+    <TouchableOpacity style={styles.slot} onPress={() => setArmorPage("chest")}></TouchableOpacity>
     </ImageBackground>
   );
 }
