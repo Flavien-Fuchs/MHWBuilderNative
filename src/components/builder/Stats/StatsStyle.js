@@ -9,18 +9,18 @@ export const styles = StyleSheet.create({
         justifyContent: "start",
     },
     button: {
-        color: "grey",
+        color: colors.neutralGreyColor,
         textTransform: "uppercase",
         fontWeight: "bold",
     },
     buttonActive: {
-        color: colors.whiteColor,
+        color: colors.neutralWhiteColor,
         textTransform: "uppercase",
         fontWeight: "bold",
         textDecorationLine: "underline"
     },
     text: {
-        color: colors.whiteColor,
+        color: colors.neutralWhiteColor,
     },
     buttonContainer: {
         flexDirection: "row",

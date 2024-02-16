@@ -4,6 +4,7 @@ import { useState } from "react";
 import Defense from "./Defense";
 import Attack from "./Attack";
 import Skills from "./Skills";
+import ButtonStats from "./ButtonStats";
 
 function Stats({
     health,
@@ -30,27 +31,9 @@ function Stats({
     return (
         <View style={styles.globalContainer}>
             <View style={styles.buttonContainer}>
-                <TouchableOpacity onPress={() => setStatsPages("Defense")}>
-                    {statsPages === "Defense" ? (
-                        <Text style={styles.buttonActive}>Defense</Text>
-                    ) : (
-                        <Text style={styles.button}>Defense</Text>
-                    )}
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => setStatsPages("Attack")}>
-                    {statsPages === "Attack" ? (
-                        <Text style={styles.buttonActive}>Attack</Text>
-                    ) : (
-                        <Text style={styles.button}>Attack</Text>
-                    )}
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => setStatsPages("Skills")}>
-                    {statsPages === "Skills" ? (
-                        <Text style={styles.buttonActive}>Skills</Text>
-                    ) : (
-                        <Text style={styles.button}>Skills</Text>
-                    )}
-                </TouchableOpacity>
+                <ButtonStats name="Defense" setStatsPages={setStatsPages} statsPages={statsPages} />
+                <ButtonStats name="Attack" setStatsPages={setStatsPages} statsPages={statsPages} />
+                <ButtonStats name="Skills" setStatsPages={setStatsPages} statsPages={statsPages} />
             </View>
             {statsPages === "Defense" && <Defense
                 health={health}

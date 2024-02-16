@@ -1,15 +1,14 @@
 import { View, Text, Image, ScrollView } from "react-native"
 import { styles } from "./StatsStyle"
+import { colors } from "../../../utils/colors"
+import BarStat from "./BarStat"
 
 function Attack({ attack, elementalAttack, affinity, criticalBoost, sharpness }) {
 
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
 
-            <View style={styles.statsOn}>
-                <Text style={styles.text}>Attack : </Text>
-                <Text style={styles.text}>{attack}</Text>
-            </View>
+            <BarStat StateOn="On" text="Attack : " value={attack} image={false} />
 
             <View style={styles.statsOff}>
                 <Text style={styles.text}>Element : </Text>
@@ -20,27 +19,20 @@ function Attack({ attack, elementalAttack, affinity, criticalBoost, sharpness })
                 )}
             </View>
 
-            <View style={styles.statsOn}>
-                <Text style={styles.text}>Affinity : </Text>
-                <Text style={styles.text}>{affinity}</Text>
-            </View>
-
-            <View style={styles.statsOff}>
-                <Text style={styles.text}>Critical Boost : </Text>
-                <Text style={styles.text}>{criticalBoost}</Text>
-            </View>
+            <BarStat StateOn="On" text="Affinity : " value={affinity} image={false} />
+            <BarStat StateOn="Off" text="Critical Boost : " value={criticalBoost} image={false} />
 
             {sharpness.red &&
                 <View style={styles.statsOn}>
                     <Text style={styles.text}>Sharpness :</Text>
                     <View style={styles.sharpnessContainer}>
-                        <View style={{ width: sharpness.red / 3, height: 10, backgroundColor: "red" }}></View>
-                        <View style={{ width: sharpness.orange / 3, height: 10, backgroundColor: "orange" }}></View>
-                        <View style={{ width: sharpness.yellow / 3, height: 10, backgroundColor: "yellow" }}></View>
-                        <View style={{ width: sharpness.green / 3, height: 10, backgroundColor: "green" }}></View>
-                        <View style={{ width: sharpness.blue / 3, height: 10, backgroundColor: "blue" }}></View>
-                        <View style={{ width: sharpness.white / 3, height: 10, backgroundColor: "white" }}></View>
-                        <View style={{ width: sharpness.purple / 3, height: 10, backgroundColor: "purple" }}></View>
+                        <View style={{ width: sharpness.red / 3, height: 10, backgroundColor: colors.sharpnessRed }}></View>
+                        <View style={{ width: sharpness.orange / 3, height: 10, backgroundColor: colors.sharpnessOrange }}></View>
+                        <View style={{ width: sharpness.yellow / 3, height: 10, backgroundColor: colors.sharpnessYellow }}></View>
+                        <View style={{ width: sharpness.green / 3, height: 10, backgroundColor: colors.sharpnessGreen }}></View>
+                        <View style={{ width: sharpness.blue / 3, height: 10, backgroundColor: colors.sharpnessBlue }}></View>
+                        <View style={{ width: sharpness.white / 3, height: 10, backgroundColor: colors.sharpnessWhite }}></View>
+                        <View style={{ width: sharpness.purple / 3, height: 10, backgroundColor: colors.sharpnessPurple }}></View>
                     </View>
                 </View>
             }

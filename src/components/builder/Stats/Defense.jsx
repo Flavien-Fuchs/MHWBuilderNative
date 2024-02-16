@@ -1,5 +1,6 @@
 import { View, Text, Image, ScrollView } from "react-native"
 import { styles } from "./StatsStyle"
+import BarStat from "./BarStat"
 
 function Defense({ health, stamina, baseDefense, maxDefense, augDefense, resFire, resWater, resIce, resThunder, resDragon }) {
     return (
@@ -7,69 +8,14 @@ function Defense({ health, stamina, baseDefense, maxDefense, augDefense, resFire
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}
         >
-            <View style={styles.statsOn}>
-                <View style={styles.leftView}>
-                    <Image source={require("../../../assets/images/icons/health-icon.png")} style={styles.leftViewImage} />
-                    <Text style={styles.text}>Health : </Text>
-                </View>
-                <Text style={styles.text}>{health}</Text>
-            </View>
-
-            <View style={styles.statsOff}>
-                <View style={styles.leftView}>
-                    <Image source={require("../../../assets/images/icons/stamina-icon.png")} style={styles.leftViewImage} />
-                    <Text style={styles.text}>Stamina : </Text>
-                </View>
-                <Text style={styles.text}>{stamina}</Text>
-            </View>
-
-            <View style={styles.statsOn}>
-                <View style={styles.leftView}>
-                    <Image source={require("../../../assets/images/icons/defense-icon.png")} style={styles.leftViewImage} />
-                    <Text style={styles.text}>Defense : </Text>
-                </View>
-                <Text style={styles.text}>{baseDefense} | {maxDefense} | {augDefense}</Text>
-            </View>
-
-            <View style={styles.statsOff}>
-                <View style={styles.leftView}>
-                    <Image source={require("../../../assets/images/icons/fire-icon.png")} style={styles.leftViewImage} />
-                    <Text style={styles.text}>Fire Resistance : </Text>
-                </View>
-                <Text style={styles.text}>{resFire}</Text>
-            </View>
-
-            <View style={styles.statsOn}>
-                <View style={styles.leftView}>
-                    <Image source={require("../../../assets/images/icons/water-icon.png")} style={styles.leftViewImage} />
-                    <Text style={styles.text}>Water Resistance : </Text>
-                </View>
-                <Text style={styles.text}>{resWater}</Text>
-            </View>
-
-            <View style={styles.statsOff}>
-                <View style={styles.leftView}>
-                    <Image source={require("../../../assets/images/icons/ice-icon.png")} style={styles.leftViewImage} />
-                    <Text style={styles.text}>Ice Resistance : </Text>
-                </View>
-                <Text style={styles.text}>{resIce}</Text>
-            </View>
-
-            <View style={styles.statsOn}>
-                <View style={styles.leftView}>
-                    <Image source={require("../../../assets/images/icons/thunder-icon.png")} style={styles.leftViewImage} />
-                    <Text style={styles.text}>Thunder Resistance : </Text>
-                </View>
-                <Text style={styles.text}>{resThunder}</Text>
-            </View>
-
-            <View style={styles.statsOff}>
-                <View style={styles.leftView}>
-                    <Image source={require("../../../assets/images/icons/dragon-icon.png")} style={styles.leftViewImage} />
-                    <Text style={styles.text}>Dragon Resistance : </Text>
-                </View>
-                <Text style={styles.text}>{resDragon}</Text>
-            </View>
+            <BarStat StateOn="On" text="Health : " value={health} image={require("../../../assets/images/icons/health-icon.png")} />
+            <BarStat StateOn="Off" text="Stamina : " value={stamina} image={require("../../../assets/images/icons/stamina-icon.png")} />
+            <BarStat StateOn="On" text="Defense : " value={`${baseDefense} | ${maxDefense} | ${augDefense}`} image={require("../../../assets/images/icons/defense-icon.png")} />
+            <BarStat StateOn="Off" text="Fire Resistance : " value={resFire} image={require("../../../assets/images/icons/fire-icon.png")} />
+            <BarStat StateOn="On" text="Water Resistance : " value={resWater} image={require("../../../assets/images/icons/water-icon.png")} />
+            <BarStat StateOn="Off" text="Ice Resistance : " value={resIce} image={require("../../../assets/images/icons/ice-icon.png")} />
+            <BarStat StateOn="On" text="Thunder Resistance : " value={resThunder} image={require("../../../assets/images/icons/thunder-icon.png")} />
+            <BarStat StateOn="Off" text="Dragon Resistance : " value={resDragon} image={require("../../../assets/images/icons/dragon-icon.png")} />
 
         </ScrollView>
     )

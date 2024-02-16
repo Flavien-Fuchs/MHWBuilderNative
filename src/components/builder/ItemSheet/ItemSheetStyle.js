@@ -9,14 +9,14 @@ export const styles = StyleSheet.create({
         justifyContent: "center",
     },
     text: {
-        color: colors.whiteColor
+        color: colors.neutralWhiteColor
     },
     slot: {
         position: "relative",
         borderRadius: 1,
         width: 6,
         height: 6,
-        color: colors.whiteColor,
+        color: colors.neutralWhiteColor,
         transitionDuration: 0.2,
     }
 });

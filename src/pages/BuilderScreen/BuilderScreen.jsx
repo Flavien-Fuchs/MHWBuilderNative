@@ -9,6 +9,15 @@ import BuilderHeader from "../../components/builder/BuilderHeader/BuilderHeader"
 const BuilderScreen = ({ route }) => {
   const { armors, weapons, charms, skills } = route.params
 
+  //states for pages
+  const [index, setIndex] = useState(true);
+  const [builder, setBuilder] = useState(false);
+  const [playing, setPlaying] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [armorPage, setArmorPage] = useState(null);
+  const [charmsPage, setCharmsPage] = useState(null);
+  const [weaponPage, setWeaponPage] = useState(null);
+  const [displayItem, setDisplayItem] = useState(null);
   //states for Equipments
   const [head, setHead] = useState(null);
   const [chest, setChest] = useState(null);
@@ -43,7 +52,21 @@ const BuilderScreen = ({ route }) => {
         style={styles.container}
       >
         <BuilderHeader />
-        <ItemSheet />
+        <ItemSheet
+          head={head}
+          chest={chest}
+          gloves={gloves}
+          waist={waist}
+          legs={legs}
+          weapon={weapon}
+          charm={charm}
+          setArmorPage={setArmorPage}
+          setWeaponPage={setWeaponPage}
+          setCharmsPage={setCharmsPage}
+          setBuilder={setBuilder}
+          displayItem={displayItem}
+          setDisplayItem={setDisplayItem}
+        />
         <Stats
           health={health}
           stamina={stamina}
