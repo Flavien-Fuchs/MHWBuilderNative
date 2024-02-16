@@ -1,4 +1,5 @@
 import { TouchableOpacity } from "react-native";
+import { styles } from "../ItemSheet/ItemSheetStyle";
 
 function ItemGloves({ gloves, toggleDisplayItem, setArmorPage }) {
   return gloves ? (
@@ -12,7 +13,7 @@ function ItemGloves({ gloves, toggleDisplayItem, setArmorPage }) {
       )}
     </TouchableOpacity>
   ) : (
-    <TouchableOpacity onPress={() => setArmorPage("gloves")}></TouchableOpacity>
+    <TouchableOpacity style={styles.slot} onPress={() => setArmorPage("gloves")}></TouchableOpacity>
   );
 }
 

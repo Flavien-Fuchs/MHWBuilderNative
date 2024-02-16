@@ -1,5 +1,6 @@
 import React from "react";
 import { TouchableOpacity, Image, View } from "react-native";
+import { styles } from "../ItemSheet/ItemSheetStyle";
 
 function ItemWaist({ waist, toggleDisplayItem, setArmorPage }) {
   return waist ? (
@@ -13,7 +14,7 @@ function ItemWaist({ waist, toggleDisplayItem, setArmorPage }) {
       )}
     </TouchableOpacity>
   ) : (
-    <TouchableOpacity onPress={() => setArmorPage("waist")}></TouchableOpacity>
+    <TouchableOpacity style={styles.slot} onPress={() => setArmorPage("waist")}></TouchableOpacity>
   );
 }
 

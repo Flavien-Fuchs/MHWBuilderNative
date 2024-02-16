@@ -1,5 +1,6 @@
 import React from "react";
 import { TouchableOpacity, Image, View } from "react-native";
+import { styles } from "../ItemSheet/ItemSheetStyle";
 
 function ItemWeapon({ weapon, toggleDisplayItem, setWeaponPage }) {
   return weapon ? (
@@ -13,7 +14,7 @@ function ItemWeapon({ weapon, toggleDisplayItem, setWeaponPage }) {
       )}
     </TouchableOpacity>
   ) : (
-    <TouchableOpacity onPress={setWeaponPage}></TouchableOpacity>
+    <TouchableOpacity style={styles.slot} onPress={setWeaponPage}></TouchableOpacity>
   );
 }
 
