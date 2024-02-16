@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View, ImageBackground } from "react-native";
+import { Text, View, ImageBackground } from "react-native";
 import { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from './BuilderScreenStyle'
 import ItemSheet from "../../components/builder/ItemSheet/ItemSheet";
 import Stats from "../../components/builder/Stats/Stats";
-import BuilderHeader from "../../components/builder/BuilderHeader/BuilderHeader";
+import GameButton from "../../components/builder/GameButton/GameButton";
 
 const BuilderScreen = ({ route }) => {
   const { armors, weapons, charms, skills } = route.params
@@ -44,6 +44,11 @@ const BuilderScreen = ({ route }) => {
   const [sharpness, setSharpness] = useState([]);
   const [playerSkills, setPlayerSkills] = useState([]);
 
+  const play = () => {
+    setBuilder(false);
+    setPlaying(true);
+  };
+
   return (
     <SafeAreaView style={styles.globalContainer}>
       <ImageBackground
@@ -51,7 +56,6 @@ const BuilderScreen = ({ route }) => {
         resizeMode="cover"
         style={styles.container}
       >
-        <BuilderHeader />
         <ItemSheet
           head={head}
           chest={chest}
@@ -67,6 +71,7 @@ const BuilderScreen = ({ route }) => {
           displayItem={displayItem}
           setDisplayItem={setDisplayItem}
         />
+        <GameButton play={play} weapon={weapon} />
         <Stats
           health={health}
           stamina={stamina}
