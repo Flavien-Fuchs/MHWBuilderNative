@@ -4,7 +4,7 @@ import { colors } from "../../../utils/colors"
 
 export const styles = StyleSheet.create({
     globalContainer: {
-        flex: 1 / 3,
+        flex: 3 / 10,
         alignItems: "center",
         justifyContent: "start",
     },
@@ -51,4 +51,26 @@ export const styles = StyleSheet.create({
         paddingVertical: 4,
         paddingHorizontal: 20,
     },
+    sharpnessContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    skillsCOntainer: {
+        flexDirection: "row",
+        alignItems: "center",
+    },
+    skillOn: {
+        marginLeft: 5,
+        height: 14,
+        width: 14,
+        backgroundColor: colors.rankOn
+    },
+    skillOff: {
+        marginLeft: 5,
+        height: 14,
+        width: 14,
+        backgroundColor: colors.rankOff
+    },
+
 });
