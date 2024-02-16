@@ -1,3 +1,12 @@
 import { StyleSheet } from "react-native";
+import { colors } from "../../utils/colors"
 
-const styles = StyleSheet.create({});
+
+export const styles = StyleSheet.create({
+    globalContainer: {
+        flex: 1,
+    },
+    container: {
+        flex: 1,
+    },
+});
