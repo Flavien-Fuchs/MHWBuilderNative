@@ -1,5 +1,6 @@
 import React from "react";
 import { TouchableOpacity, Image } from "react-native";
+import { styles } from "../ItemSheet/ItemSheetStyle";
 
 function ItemHead({ head, toggleDisplayItem, setArmorPage }) {
   return head ? (
@@ -13,7 +14,7 @@ function ItemHead({ head, toggleDisplayItem, setArmorPage }) {
       )}
     </TouchableOpacity>
   ) : (
-    <TouchableOpacity onPress={() => setArmorPage("head")}></TouchableOpacity>
+    <TouchableOpacity style={styles.slot} onPress={() => setArmorPage("head")}></TouchableOpacity>
   );
 }
 

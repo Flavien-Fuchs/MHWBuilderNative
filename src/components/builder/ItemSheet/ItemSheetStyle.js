@@ -4,19 +4,28 @@ import { colors } from "../../../utils/colors"
 
 export const styles = StyleSheet.create({
     globalContainer: {
+        position: "relative", 
         flex: 6 / 10,
         alignItems: "center",
         justifyContent: "center",
+        gap: 10,
     },
     text: {
-        color: colors.whiteColor
+        color: colors.neutralWhiteColor
     },
     slot: {
         position: "relative",
-        borderRadius: 1,
-        width: 6,
-        height: 6,
-        color: colors.whiteColor,
+        borderRadius: 16,
+        width: 100,
+        height: 100,
+        color: colors.neutralWhiteColor,
+        backgroundColor: colors.backgroundSlot,
         transitionDuration: 0.2,
+    },
+    part: {
+        flexDirection: "row",
+        justifyContent: "center",
+        gap: 10
     }
+
 });
