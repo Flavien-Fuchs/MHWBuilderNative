@@ -1,4 +1,4 @@
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, ImageBackground } from "react-native";
 import { styles } from "../ItemSheet/ItemSheetStyle";
 
 function ItemGloves({ gloves, toggleDisplayItem, setArmorPage }) {
@@ -13,7 +13,11 @@ function ItemGloves({ gloves, toggleDisplayItem, setArmorPage }) {
       )}
     </TouchableOpacity>
   ) : (
+    <ImageBackground
+    source={require("../../../images/backgroundItems/mainArmor.png")}
+    >
     <TouchableOpacity style={styles.slot} onPress={() => setArmorPage("gloves")}></TouchableOpacity>
+    </ImageBackground>
   );
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity, Image, View } from "react-native";
+import { TouchableOpacity, Image, ImageBackground } from "react-native";
 import { styles } from "../ItemSheet/ItemSheetStyle";
 
 function ItemLegs({ legs, toggleDisplayItem, setArmorPage }) {
@@ -14,8 +14,14 @@ function ItemLegs({ legs, toggleDisplayItem, setArmorPage }) {
       )}
     </TouchableOpacity>
   ) : (
+    <ImageBackground
+    source={require("../../../images/backgroundItems/jambeArmor.png")}
+    >
     <TouchableOpacity style={styles.slot} onPress={() => setArmorPage("legs")}></TouchableOpacity>
+    </ImageBackground>
   );
+  
+
 }
 
 export default ItemLegs;
