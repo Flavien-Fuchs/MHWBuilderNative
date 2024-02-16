@@ -8,7 +8,7 @@ function Attack({ attack, elementalAttack, affinity, criticalBoost, sharpness })
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
 
-            <BarStat StateOn="On" text="Attack : " value={attack} image={false} />
+            <BarStat StateOn="On" text="Attack : " value={attack} />
 
             <View style={styles.statsOff}>
                 <Text style={styles.text}>Element : </Text>
@@ -19,8 +19,8 @@ function Attack({ attack, elementalAttack, affinity, criticalBoost, sharpness })
                 )}
             </View>
 
-            <BarStat StateOn="On" text="Affinity : " value={affinity} image={false} />
-            <BarStat StateOn="Off" text="Critical Boost : " value={criticalBoost} image={false} />
+            <BarStat StateOn="On" text="Affinity : " value={affinity} />
+            <BarStat StateOn="Off" text="Critical Boost : " value={criticalBoost} />
 
             {sharpness.red &&
                 <View style={styles.statsOn}>
