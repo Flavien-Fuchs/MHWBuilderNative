@@ -26,6 +26,10 @@ export const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "center",
         gap: 10
-    }
+    },
+    part1: {
+        paddingLeft: 10,
+        alignItems: 'flex-end',
+    },
 
 });

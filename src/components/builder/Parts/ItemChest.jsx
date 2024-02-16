@@ -1,6 +1,7 @@
 import React from "react";
 import { TouchableOpacity, Image } from "react-native";
 import { styles } from "../ItemSheet/ItemSheetStyle"
+import { ImageBackground } from "react-native-web";
 
 function ItemChest({ chest, toggleDisplayItem, setArmorPage }) {
   return chest ? (

@@ -52,7 +52,7 @@ const ItemSheet = ({
           deleteItem={deleteItem}
         />
       )}
-      <View style={styles.part}>
+      <View style={[styles.part , styles.part1]}>
         <ItemHead
           head={head}
           toggleDisplayItem={toggleDisplayItem}
