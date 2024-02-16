@@ -248,6 +248,6 @@ ItemSheet.propTypes = {
   setBuilder: PropTypes.func.isRequired,
   displayItem: PropTypes.string,
   setDisplayItem: PropTypes.func.isRequired,
-};
+}; 
 
 export default ItemSheet;
