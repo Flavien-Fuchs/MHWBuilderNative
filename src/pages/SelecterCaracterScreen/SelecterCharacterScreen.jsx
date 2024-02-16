@@ -1,11 +1,10 @@
 import {
   View,
   Text,
-  StyleSheet,
   Image,
   TouchableOpacity,
   ImageBackground,
-  FlatList,
+  StatusBar,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -13,11 +12,12 @@ import { characters } from "../../assets/data/Characteres";
 import { styles } from "./SelecterCharacterScreenStyle";
 import ItemCardSelectCharacter from "../../components/SelecterCaracter/ItemCardSelectCharacter";
 
-import { getImage } from "../../utils/ImportCharacter";
+import { getImageCharacter } from "../../utils/ImportCharacter";
 
 import ModalInfoCharacter from "../../components/SelecterCaracter/ModalInfoCharacter";
 
 const SelecterCharacterScreen = ({ navigation }) => {
+  StatusBar.setBarStyle("light-content");
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [isShowInfo, setIsShowInfo] = useState(false);
   const handleCard = (value) => {
@@ -28,7 +28,7 @@ const SelecterCharacterScreen = ({ navigation }) => {
   };
 
   const handlePlay = () => {
-    navigation.push("Game");
+    navigation.push("Game", { myCharacter: selectedCharacter });
   };
 
   return (
@@ -52,7 +52,7 @@ const SelecterCharacterScreen = ({ navigation }) => {
               <>
                 <View style={[styles.containerSelectCharacter]}>
                   <Image
-                    source={getImage("body", selectedCharacter.id)}
+                    source={getImageCharacter("body", selectedCharacter.id)}
                     style={styles.selectCharacterImage}
                   />
                   <View style={styles.containerNameAndInfo}>
@@ -71,7 +71,7 @@ const SelecterCharacterScreen = ({ navigation }) => {
                   modalVisible={isShowInfo}
                   setModalVisible={setIsShowInfo}
                   character={selectedCharacter}
-                  getImage={getImage}
+                  getImageCharacter={getImageCharacter}
                   changeCharacter={changeCharacter}
                 />
               </>
@@ -86,7 +86,7 @@ const SelecterCharacterScreen = ({ navigation }) => {
               <ItemCardSelectCharacter
                 key={character.id}
                 character={character}
-                pathImg={getImage("cover", character.id)}
+                pathImg={getImageCharacter("cover", character.id)}
                 setCharacter={handleCard}
                 selectedCharacter={selectedCharacter}
               />

@@ -15,7 +15,7 @@ const ModalInfoCharacter = ({
   modalVisible,
   setModalVisible,
   character,
-  getImage,
+  getImageCharacter,
   changeCharacter,
 }) => {
   const handleChange = (value) => {
@@ -50,7 +50,7 @@ const ModalInfoCharacter = ({
               }}
             >
               <Image
-                source={getImage("body", character.id)}
+                source={getImageCharacter("body", character.id)}
                 style={styles.imageCharacSelect}
               />
             </View>

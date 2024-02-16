@@ -22,7 +22,7 @@ import charaCover9 from "./../../src/assets/images/characteres/chara_img_09.jpg"
 import charaCover10 from "./../../src/assets/images/characteres/chara_img_10.jpg";
 import charaCover11 from "./../../src/assets/images/characteres/chara_img_11.jpg";
 
-export const getImage = (type = "body", id) => {
+export const getImageCharacter = (type = "body", id) => {
   if (id === 1) {
     if (type === "body") {
       return charaBody1;

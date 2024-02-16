@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 import { Video, ResizeMode } from "expo-av";
 import { colors } from "../../utils/colors";
 
-const GameIntro = ({ handleVideoEnd }) => {
+const GameIntro = ({ handleVideoEnd, pathVideo }) => {
   const videoRef = useRef(null);
 
   const handleVideoPress = () => {
@@ -16,7 +16,7 @@ const GameIntro = ({ handleVideoEnd }) => {
     <View style={styles.container}>
       <Video
         ref={videoRef}
-        source={require("./../../assets/videos/Diablos.mp4")}
+        source={pathVideo}
         style={styles.video}
         resizeMode="cover"
         shouldPlay
@@ -44,13 +44,13 @@ const styles = StyleSheet.create({
   },
   video: {
     flex: 1,
-    alignSelf: "stretch",
+    // alignSelf: "stretch",
     width: "100%",
     height: "100%",
   },
   skipButton: {
     position: "absolute",
-    top: 20,
+    top: 40,
     right: 20,
     padding: 10,
     backgroundColor: colors.bgBrownOpacity,
