@@ -24,5 +24,6 @@ export const styles = StyleSheet.create({
     },
     text: {
         color: colors.neutralWhiteColor
-    }
+    },
+
 });

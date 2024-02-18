@@ -1,8 +1,7 @@
-import { View, Text, FlatList } from "react-native"
+import { View, Text, FlatList, Image, TouchableOpacity } from "react-native"
 import { styles } from "./StatsStyle"
 
-function Skills({ skills, playerSkills }) {
-
+function Skills({ skills, playerSkills, setSkillModalVisible, setActualSkill }) {
     return (
         <FlatList
             data={playerSkills}
@@ -10,8 +9,19 @@ function Skills({ skills, playerSkills }) {
             renderItem={({ item, index }) => {
                 let matchSkill = skills.filter(skill => skill.name === item.skillName)
                 return (
-                    <View style={index % 2 === 0 ? styles.statsOn : styles.statsOff}>
-                        <Text style={styles.text}>{item.skillName}</Text>
+                    <TouchableOpacity
+                        style={index % 2 === 0 ? styles.statsOn : styles.statsOff}
+                        onPress={() => {
+                            setActualSkill(item)
+                            setSkillModalVisible(true)
+                        }}>
+                        <View style={styles.leftView}>
+                            <Image
+                                source={require("../../../assets/images/info.png")}
+                                style={styles.imageInfo}
+                            />
+                            <Text style={styles.text}>{item.skillName}</Text>
+                        </View>
                         <FlatList
                             style={styles.skillsCOntainer}
                             key={matchSkill[0].id}
@@ -23,11 +33,10 @@ function Skills({ skills, playerSkills }) {
                                 )
                             }}
                         />
-                    </View>
+                    </TouchableOpacity>
                 )
             }}
         />
-
     )
 }
 
