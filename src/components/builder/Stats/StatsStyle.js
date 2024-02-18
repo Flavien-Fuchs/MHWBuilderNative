@@ -72,5 +72,11 @@ export const styles = StyleSheet.create({
         width: 14,
         backgroundColor: colors.rankOff
     },
+    imageInfo: {
+        tintColor: colors.neutralWhiteColor,
+        height: 20,
+        width: 20,
+        marginRight: 5
+    }
 
 });
