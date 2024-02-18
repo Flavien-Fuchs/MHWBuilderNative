@@ -41,14 +41,14 @@ export const styles = StyleSheet.create({
         flexDirection: "row",
         width: "100%",
         justifyContent: "space-between",
-        paddingVertical: 4,
+        paddingVertical: 8,
         paddingHorizontal: 20,
     },
     statsOff: {
         flexDirection: "row",
         width: "100%",
         justifyContent: "space-between",
-        paddingVertical: 4,
+        paddingVertical: 8,
         paddingHorizontal: 20,
     },
     sharpnessContainer: {

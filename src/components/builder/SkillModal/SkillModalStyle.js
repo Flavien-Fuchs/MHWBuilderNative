@@ -8,15 +8,15 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 22,
-        backgroundColor: colors.bgStat
+        backgroundColor: colors.bgStatPopup
     },
     modalView: {
         margin: 20,
-        backgroundColor: 'white',
+        backgroundColor: colors.rankPopup,
         borderRadius: 20,
         padding: 35,
         alignItems: 'center',
-        shadowColor: '#000',
+        shadowColor: colors.neutralBlackColor,
         shadowOffset: {
             width: 0,
             height: 2,
@@ -25,36 +25,26 @@ export const styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 5,
     },
-    button: {
-        borderRadius: 20,
-        padding: 10,
-        elevation: 2,
-    },
-    buttonOpen: {
-        backgroundColor: '#F194FF',
-    },
-    buttonClose: {
-        backgroundColor: '#2196F3',
-    },
     titleText: {
-        color: 'black',
+        color: colors.neutralWhiteColor,
         fontWeight: 'bold',
         textAlign: 'center',
         marginBottom: 15,
 
     },
     descriptionText: {
-        color: 'black',
+        color: colors.neutralWhiteColor,
         fontStyle: "italic",
         textAlign: 'center',
-        marginBottom: 15,
+        marginBottom: 30,
     },
     listText: {
+        color: colors.neutralWhiteColor,
         marginBottom: 15,
         textAlign: 'left',
     },
     listTextActive: {
-        color: colors.bgStat,
+        color: colors.rankOn,
         marginBottom: 15,
         textAlign: 'left',
     },

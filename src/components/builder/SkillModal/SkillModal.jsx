@@ -27,7 +27,7 @@ function SkillModal({ skillModalVisible, setSkillModalVisible, actualSkill, skil
                         renderItem={({ item }) => {
                             return (
                                 <Text style={item.level === actualSkill.level ? styles.listTextActive : styles.listText}>
-                                    Lvl : {item.level} {item.description}
+                                    Level {item.level} : {item.description}
                                 </Text>
                             )
                         }}
