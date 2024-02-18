@@ -23,7 +23,10 @@ function Stats({
     criticalBoost,
     sharpness,
     playerSkills,
-    skills
+    skills,
+    setDisplayItem,
+    setSkillModalVisible,
+    setActualSkill
 }) {
 
     const [statsPages, setStatsPages] = useState("Defense")
@@ -54,7 +57,12 @@ function Stats({
                 criticalBoost={criticalBoost}
                 sharpness={sharpness}
             />}
-            {statsPages === "Skills" && <Skills playerSkills={playerSkills} skills={skills} />}
+            {statsPages === "Skills" && <Skills
+                playerSkills={playerSkills}
+                skills={skills}
+                setSkillModalVisible={setSkillModalVisible}
+                setActualSkill={setActualSkill}
+            />}
         </View>
     )
 

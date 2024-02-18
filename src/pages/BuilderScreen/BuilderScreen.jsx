@@ -5,6 +5,7 @@ import { styles } from './BuilderScreenStyle'
 import ItemSheet from "../../components/builder/ItemSheet/ItemSheet";
 import Stats from "../../components/builder/Stats/Stats";
 import GameButton from "../../components/builder/GameButton/GameButton";
+import SkillModal from "../../components/builder/SkillModal/SkillModal";
 
 const BuilderScreen = ({ route }) => {
   const { armors, weapons, charms, skills } = route.params
@@ -18,6 +19,8 @@ const BuilderScreen = ({ route }) => {
   const [charmsPage, setCharmsPage] = useState(null);
   const [weaponPage, setWeaponPage] = useState(null);
   const [displayItem, setDisplayItem] = useState(null);
+  const [skillModalVisible, setSkillModalVisible] = useState(false);
+  const [actualSkill, setActualSkill] = useState(false);
   //states for Equipments
   const [head, setHead] = useState(null);
   const [chest, setChest] = useState(null);
@@ -48,6 +51,8 @@ const BuilderScreen = ({ route }) => {
     setBuilder(false);
     setPlaying(true);
   };
+
+
 
   return (
     <SafeAreaView style={styles.globalContainer}>
@@ -89,6 +94,14 @@ const BuilderScreen = ({ route }) => {
           criticalBoost={criticalBoost}
           sharpness={sharpness}
           playerSkills={playerSkills}
+          skills={skills}
+          setSkillModalVisible={setSkillModalVisible}
+          setActualSkill={setActualSkill}
+        />
+        <SkillModal
+          skillModalVisible={skillModalVisible}
+          setSkillModalVisible={setSkillModalVisible}
+          actualSkill={actualSkill}
           skills={skills}
         />
 

@@ -1,7 +1,26 @@
-import { View, Text, FlatList } from "react-native"
+import { View, Text, FlatList, Modal, TouchableOpacity } from "react-native"
 import { styles } from "./StatsStyle"
 
-function Skills({ skills, playerSkills }) {
+function Skills({ skills, setSkillModalVisible, setActualSkill }) {
+
+    const playerSkills = [
+        {
+            id: 211,
+            level: 2,
+            modifiers: {},
+            description: "Slightly increases invulnerability window.",
+            skill: 68,
+            skillName: "Evade Window"
+        },
+        {
+            id: 260,
+            level: 1,
+            modifiers: {},
+            description: "One extra consumable herb item per gather.",
+            skill: 86,
+            skillName: "Botanist"
+        }
+    ]
 
     return (
         <FlatList
@@ -10,7 +29,12 @@ function Skills({ skills, playerSkills }) {
             renderItem={({ item, index }) => {
                 let matchSkill = skills.filter(skill => skill.name === item.skillName)
                 return (
-                    <View style={index % 2 === 0 ? styles.statsOn : styles.statsOff}>
+                    <TouchableOpacity
+                        style={index % 2 === 0 ? styles.statsOn : styles.statsOff}
+                        onPress={() => {
+                            setActualSkill(item)
+                            setSkillModalVisible(true)
+                        }}>
                         <Text style={styles.text}>{item.skillName}</Text>
                         <FlatList
                             style={styles.skillsCOntainer}
@@ -23,7 +47,7 @@ function Skills({ skills, playerSkills }) {
                                 )
                             }}
                         />
-                    </View>
+                    </TouchableOpacity>
                 )
             }}
         />

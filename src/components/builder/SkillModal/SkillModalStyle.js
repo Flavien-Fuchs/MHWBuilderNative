@@ -3,33 +3,12 @@ import { colors } from "../../../utils/colors"
 
 
 export const styles = StyleSheet.create({
-    globalContainer: {
-        flex: 1 / 10,
-        alignItems: "center",
-        justifyContent: "center",
-    },
-    playButton: {
-        backgroundColor: colors.neutralWhiteColor,
-        padding: 10,
-        borderRadius: 10,
-        width: 100,
-        alignItems: "center",
-        justifyContent: "center",
-
-    },
-    playText: {
-        textTransform: "uppercase",
-        fontWeight: "bold",
-        margin: "auto"
-    },
-    text: {
-        color: colors.neutralWhiteColor
-    },
     centeredView: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 22,
+        backgroundColor: colors.bgStat
     },
     modalView: {
         margin: 20,
@@ -57,13 +36,29 @@ export const styles = StyleSheet.create({
     buttonClose: {
         backgroundColor: '#2196F3',
     },
-    textStyle: {
-        color: 'white',
+    titleText: {
+        color: 'black',
         fontWeight: 'bold',
         textAlign: 'center',
-    },
-    modalText: {
         marginBottom: 15,
-        textAlign: 'center',
+
     },
+    descriptionText: {
+        color: 'black',
+        fontStyle: "italic",
+        textAlign: 'center',
+        marginBottom: 15,
+    },
+    listText: {
+        marginBottom: 15,
+        textAlign: 'left',
+    },
+    listTextActive: {
+        color: colors.bgStat,
+        marginBottom: 15,
+        textAlign: 'left',
+    },
+    flat: {
+        flexGrow: 0,
+    }
 });
