@@ -30,7 +30,6 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         marginBottom: 15,
-
     },
     descriptionText: {
         color: colors.neutralWhiteColor,

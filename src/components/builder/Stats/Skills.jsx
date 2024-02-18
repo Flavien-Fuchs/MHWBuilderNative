@@ -2,7 +2,6 @@ import { View, Text, FlatList, Image, TouchableOpacity } from "react-native"
 import { styles } from "./StatsStyle"
 
 function Skills({ skills, playerSkills, setSkillModalVisible, setActualSkill }) {
-
     return (
         <FlatList
             data={playerSkills}
@@ -38,7 +37,6 @@ function Skills({ skills, playerSkills, setSkillModalVisible, setActualSkill }) 
                 )
             }}
         />
-
     )
 }
 

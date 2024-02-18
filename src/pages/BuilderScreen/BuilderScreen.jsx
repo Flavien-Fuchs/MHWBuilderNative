@@ -52,8 +52,6 @@ const BuilderScreen = ({ route }) => {
     setPlaying(true);
   };
 
-
-
   return (
     <SafeAreaView style={styles.globalContainer}>
       <ImageBackground
@@ -104,7 +102,6 @@ const BuilderScreen = ({ route }) => {
           actualSkill={actualSkill}
           skills={skills}
         />
-
       </ImageBackground>
     </SafeAreaView>
   );
