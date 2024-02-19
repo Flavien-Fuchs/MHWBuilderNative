@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet, FlatList } from 'react-native';
-import { styles} from '../../../components/builder/ItemSheetSingle/ItemSheetSingle'
+import { styles} from '../../../components/builder/ItemSheetSingle/ItemSheetSingleStyle'
 
 function ItemSheetSingle ({ 
   type,
@@ -96,7 +96,7 @@ function ItemSheetSingle ({
         {type === 'weapon' ? (
           <View style={styles.ISSDescription}>
             {!actualItem.assets ? (
-              <Image source={require('./src/images/nullArmor.png')} />
+              <Image source={require('../../../images/nullArmor.png')} />
             ) : actualItem.assets.image ? (
               <Image source={{ uri: weapon.assets.image }} />
             ) : (
@@ -135,7 +135,7 @@ function ItemSheetSingle ({
         ) : type === 'charm' ? (
           <View style={styles.ISSDescription}>
             <View style={styles.ISSSkillsList}>
-              <Image source={require('./src/images/charm-icon.png')} />
+              <Image source={require('../../../images/charm-icon.png')} />
               <Text>Skills list</Text>
               <View>
                 <FlatList
@@ -149,7 +149,7 @@ function ItemSheetSingle ({
         ) : (
           <View style={styles.ISSDescription}>
             {!actualItem.assets ? (
-              <Image source={require('./src/images/nullArmor.png')} />
+              <Image source={require('../../../images/nullArmor.png')} />
             ) : actualItem.assets.imageMale ? (
               <Image source={{ uri: actualItem.assets.imageMale }} />
             ) : (
@@ -158,27 +158,27 @@ function ItemSheetSingle ({
             <View style={styles.ISSStats}>
             <View style={styles.resistance}>
                 <Text>
-                <Image source={require('./src/images/icons/defense-icon.png')} style={styles.icon} /> 
+                <Image source={require('../../../assets/images/icons/defense-icon.png')} style={styles.icon} /> 
                 Defense : ({actualItem.defense.base}) ({actualItem.defense.max}) ({actualItem.defense.augmented})
                 </Text>
                 <Text>
-                <Image source={require('./src/images/icons/fire-icon.png')} style={styles.icon} /> 
+                <Image source={require('../../../assets/images/icons/fire-icon.png')} style={styles.icon} /> 
                 Fire Resist : {actualItem.resistances.fire}
                 </Text>
                 <Text>
-                <Image source={require('./src/images/icons/water-icon.png')} style={styles.icon} /> 
+                <Image source={require('../../../assets/images/icons/water-icon.png')} style={styles.icon} /> 
                 Water Resist : {actualItem.resistances.water}
                 </Text>
                 <Text>
-                <Image source={require('./src/images/icons/ice-icon.png')} style={styles.icon} /> 
+                <Image source={require('../../../assets/images/icons/ice-icon.png')} style={styles.icon} /> 
                 Ice Resist : {actualItem.resistances.ice}
                 </Text>
                 <Text>
-                <Image source={require('./src/images/icons/thunder-icon.png')} style={styles.icon} /> 
+                <Image source={require('../../../assets/images/icons/thunder-icon.png')} style={styles.icon} /> 
                 Thunder Resist : {actualItem.resistances.thunder}
                 </Text>
                 <Text>
-                <Image source={require('./src/images/icons/dragon-icon.png')} style={styles.icon} /> 
+                <Image source={require('../../../assets/images/icons/dragon-icon.png')} style={styles.icon} /> 
                 Dragon Resist : {actualItem.resistances.dragon}
                 </Text>
             </View>

@@ -1,6 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import { styles } from "./ItemSheetStyle";
+import ItemSheetSingle from '../ItemSheetSingle/ItemSheetSingle'
 import PropTypes from "prop-types";
 import ItemCharm from "../Parts/ItemCharm";
 import ItemChest from "../Parts/ItemChest";
@@ -24,6 +25,7 @@ const ItemSheet = ({
   setBuilder,
   displayItem,
   setDisplayItem,
+  deleteItem
 }) => {
   const toggleDisplayItem = (type) => {
     setDisplayItem(type);

@@ -4,8 +4,8 @@ import { colors } from '../../../utils/colors'
 export const styles = StyleSheet.create({
     ItemSheetSingleContainer: {
         position: 'absolute',
-        width: '100%',
-        height: '100%',
+        width: '50%',
+        height: '50%',
         top: 0,
         left: 0,
         zIndex: 1000,

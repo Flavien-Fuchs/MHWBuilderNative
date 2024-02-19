@@ -1,4 +1,4 @@
-import { TouchableOpacity } from "react-native";
+import { Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { styles } from "../ItemSheet/ItemSheetStyle"
 

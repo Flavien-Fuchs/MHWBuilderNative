@@ -1,4 +1,4 @@
-import { TouchableOpacity, ImageBackground } from "react-native";
+import { TouchableOpacity, ImageBackground, Image } from "react-native";
 import { styles } from "../ItemSheet/ItemSheetStyle";
 
 function ItemGloves({ gloves, toggleDisplayItem, setArmorPage }) {
