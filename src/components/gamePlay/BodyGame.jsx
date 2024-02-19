@@ -9,6 +9,24 @@ import {
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { colors } from "../../utils/colors";
+import ProgressBar from "react-native-progress/Bar";
+
+// FUNVTIONS
+
+const getProgressBarColor = (value) => {
+  if (value < 0.4) {
+    return "red";
+  } else if (value < 0.6) {
+    return "yellow";
+  } else {
+    return "green";
+  }
+};
+
+// VARIABLES RAPIDE
+
+const SECONDS = 10;
+const choices = ["defense", "attack", "superAttack"];
 
 const BodyGame = ({
   setImDead,
@@ -19,11 +37,17 @@ const BodyGame = ({
   pathImg,
   pathImgAd,
 }) => {
-  const [viewHeight, setViewHeight] = useState(0);
-  const onLayout = (event) => {
-    const { height } = event.nativeEvent.layout;
-    setViewHeight(height);
-  };
+  const [tour, setTour] = useState(1);
+  const [timeRemaining, setTimeRemaining] = useState(SECONDS);
+
+  //MES STAT
+
+  const [progress, setProgress] = useState(1);
+
+  //STAT DE l'ADVERSAIRE
+
+  const [maxLifePointAd, setMaxLifePointAd] = useState(adversaire.state.health);
+  const [currentLifePointAd, setCurrentLifePointAd] = useState(maxLifePointAd);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -44,7 +68,13 @@ const BodyGame = ({
           <Image source={pathImgAd} style={[styles.profileImage]} />
           <View style={{ alignItems: "center" }}>
             <View style={{}}>
-              <Text style={styles.textWhite}>life</Text>
+              <ProgressBar
+                progress={(currentLifePointAd / maxLifePointAd) * 100}
+                width={200}
+                color={getProgressBarColor(
+                  (currentLifePointAd / maxLifePointAd) * 100
+                )}
+              />
             </View>
             <Text style={styles.textWhite}>{adversaire.name}</Text>
           </View>
@@ -107,14 +137,20 @@ const BodyGame = ({
                         resizeMode: "contain",
                         overflow: "visible",
                         // alignItems: "",
-                        // backgroundColor: "red",
+                        backgroundColor: "red",
                       },
                     ]}
                   />
                 </View>
               </View>
               <View style={{}}>
-                <Text style={styles.textWhite}>life</Text>
+                <ProgressBar
+                  progress={(currentLifePointAd / maxLifePointAd) * 100}
+                  width={100}
+                  color={getProgressBarColor(
+                    (currentLifePointAd / maxLifePointAd) * 100
+                  )}
+                />
               </View>
               <Text style={styles.textWhite}>{myCharacter.name}</Text>
             </View>
