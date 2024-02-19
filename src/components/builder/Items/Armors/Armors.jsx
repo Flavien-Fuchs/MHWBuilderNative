@@ -9,7 +9,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
-import ResistanceItem from '../../ResistanceItem';
+import ResistanceItem from './ResistanceItem';
 import { styles } from './ArmorsStyle';
 
 const Armors = ({ armors, handleArmor, type, closePage }) => {
