@@ -20,6 +20,6 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
   },
   textWhite: {
-    color: colors.white,
+    color: colors.neutralWhiteColor,
   },
 });

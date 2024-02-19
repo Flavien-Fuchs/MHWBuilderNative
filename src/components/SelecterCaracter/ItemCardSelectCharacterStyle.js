@@ -28,6 +28,6 @@ export const styles = StyleSheet.create({
     position: "absolute",
     top: -10,
     left: -10,
-    tintColor: colors.green,
+    tintColor: colors.neutralGreenColor,
   },
 });

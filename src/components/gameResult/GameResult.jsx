@@ -27,7 +27,7 @@ const GameResult = ({ pathImg, imDead, navigation }) => {
             style={{
               width: windowDimensions.height,
               height: windowDimensions.width,
-              color: imDead ? colors.white : colors.yellow,
+              color: imDead ? colors.neutralWhiteColor : colors.neutralYellowColor,
               opacity: 0.5,
               ...styles.textBack,
             }}

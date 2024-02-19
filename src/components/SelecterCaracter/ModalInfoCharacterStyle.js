@@ -24,8 +24,8 @@ export const styles = StyleSheet.create({
     padding: 20,
     gap: 20,
   },
-  textName: { color: colors.white, fontWeight: "800" },
-  textDecrip: { color: colors.white, textAlign: "center" },
+  textName: { color: colors.neutralWhiteColor, fontWeight: "800" },
+  textDecrip: { color: colors.neutralWhiteColor, textAlign: "center" },
   footer: {
     justifyContent: "space-between",
     flexDirection: "row",
@@ -34,9 +34,9 @@ export const styles = StyleSheet.create({
   image: {
     width: 25,
     height: 25,
-    tintColor: colors.white,
+    tintColor: colors.neutralWhiteColor,
   },
   textWhite: {
-    color: colors.white,
+    color: colors.neutralWhiteColor,
   },
 });

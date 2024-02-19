@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
   image: {
     width: 25,
     height: 25,
-    tintColor: colors.white,
+    tintColor: colors.neutralWhiteColor,
   },
   body: {
     flex: 1,
@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   textWhite: {
-    color: colors.white,
+    color: colors.neutralWhiteColor,
     textTransform: "uppercase",
   },
   myPart: {

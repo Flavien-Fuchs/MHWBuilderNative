@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React, { useRef, useState } from "react";
 import { Video, ResizeMode } from "expo-av";
-import { colors } from "../../utils/colors";
+import { styles } from "./GameIntroStyle";
 
 const GameIntro = ({ handleVideoEnd, pathVideo }) => {
   const videoRef = useRef(null);

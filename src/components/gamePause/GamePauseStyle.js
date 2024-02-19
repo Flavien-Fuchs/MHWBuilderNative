@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({  container: {
     fontWeight: "800",
   },
   texteWhite: {
-    color: colors.white,
+    color: colors.neutralWhiteColor,
   },
   containerBtn: {
     padding: 20,

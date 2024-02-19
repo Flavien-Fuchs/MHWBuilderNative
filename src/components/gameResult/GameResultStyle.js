@@ -39,7 +39,7 @@ export const styles = StyleSheet.create({
     textAlignVertical: "bottom",
     padding: 0,
   },
-  textWhite: { color: colors.white, textTransform: "uppercase" },
+  textWhite: { color: colors.neutralWhiteColor, textTransform: "uppercase" },
   containerBut: {
     position: "absolute",
     left: 0,

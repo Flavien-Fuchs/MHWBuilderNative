@@ -8,9 +8,9 @@ export const styles = StyleSheet.create({
   image: {
     width: 25,
     height: 25,
-    tintColor: colors.white,
+    tintColor: colors.neutralWhiteColor,
   },
-  noSelectedText: { color: colors.white, fontWeight: "500" },
+  noSelectedText: { color: colors.neutralWhiteColor, fontWeight: "500" },
   containerSelectCharacter: {
     flex: 1,
     padding: 20,
@@ -29,7 +29,9 @@ export const styles = StyleSheet.create({
     alignContent: "center",
     alignItems: "center",
   },
-  textName: { color: colors.yellow, fontWeight: "800" },
+
+  textName: { color: colors.neutralYellowColor, fontWeight: "800" },
+
   containerShowSelectCharacter: {
     flex: 1,
     justifyContent: "center",
@@ -65,5 +67,5 @@ export const styles = StyleSheet.create({
     shadowRadius: 3.5,
     elevation: 5,
   },
-  textBtn: { color: colors.white },
+  textBtn: { color: colors.neutralWhiteColor },
 });
