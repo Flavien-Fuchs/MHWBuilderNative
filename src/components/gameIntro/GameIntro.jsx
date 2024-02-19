@@ -37,26 +37,3 @@ const GameIntro = ({ handleVideoEnd, pathVideo }) => {
 };
 
 export default GameIntro;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  video: {
-    flex: 1,
-    // alignSelf: "stretch",
-    width: "100%",
-    height: "100%",
-  },
-  skipButton: {
-    position: "absolute",
-    top: 40,
-    right: 20,
-    padding: 10,
-    backgroundColor: colors.bgBrownOpacity,
-    borderRadius: 10,
-  },
-  textWhite: {
-    color: colors.white,
-  },
-});

@@ -5,6 +5,8 @@ import GamePause from "../gamePause/GamePause";
 import { useNavigation } from "@react-navigation/native";
 import GameResult from "../gameResult/GameResult";
 
+import { styles } from "./BodyGameStyle";
+
 import { getImageCharacter } from "../../utils/ImportCharacter";
 import BodyGame from "./BodyGame";
 import { getImageOrVideoMonster } from "../../utils/ImportMonster";
@@ -53,9 +55,3 @@ const GamePlay = ({ myCharacter, adversaire }) => {
 };
 
 export default GamePlay;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});

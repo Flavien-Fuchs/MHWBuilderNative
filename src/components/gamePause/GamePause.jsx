@@ -1,6 +1,7 @@
 import { Modal, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { colors } from "../../utils/colors";
+import { styles } from "./GamePauseStyle";
 
 const GamePause = ({ isPlaying, setIsPlaying, gameIsEnd, navigation }) => {
   return (
@@ -47,29 +48,3 @@ const GamePause = ({ isPlaying, setIsPlaying, gameIsEnd, navigation }) => {
 };
 
 export default GamePause;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.bgBrownOpacity,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  containerModal: {
-    padding: 20,
-  },
-  title: {
-    textTransform: "uppercase",
-    fontWeight: "800",
-  },
-  texteWhite: {
-    color: colors.white,
-  },
-  containerBtn: {
-    padding: 20,
-  },
-  btn: {
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-  },
-});

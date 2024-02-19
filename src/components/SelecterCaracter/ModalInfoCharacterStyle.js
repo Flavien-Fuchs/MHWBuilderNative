@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     gap: 20,
   },
+  containerImg: { width: "100%", aspectRatio: 1 },
   imageCharacSelect: { width: "auto", height: "100%", resizeMode: "contain" },
   containerDescrip: {
     backgroundColor: colors.bgBrownOpacity,

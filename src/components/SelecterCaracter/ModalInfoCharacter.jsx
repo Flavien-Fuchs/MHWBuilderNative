@@ -43,12 +43,7 @@ const ModalInfoCharacter = ({
       <View style={styles.container}>
         <SafeAreaView style={styles.containerModal}>
           <View style={styles.containerBody}>
-            <View
-              style={{
-                width: "100%",
-                aspectRatio: 1,
-              }}
-            >
+            <View style={styles.containerImg}>
               <Image
                 source={getImageCharacter("body", character.id)}
                 style={styles.imageCharacSelect}
