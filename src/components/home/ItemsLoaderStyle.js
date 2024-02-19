@@ -6,7 +6,6 @@ export const styles = StyleSheet.create({
         flexDirection: "row"
     }, name: {
         color: colors.neutralWhiteColor
-        color: colors.neutralWhiteColor
     }, load: {
         color: colors.neutralRedColor
     }, done: {

@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
         width: '50%',
         height: '50%',
         top: 0,
+        
         left: 0,
         zIndex: 1000,
         backgroundColor: colors.rankPopup,

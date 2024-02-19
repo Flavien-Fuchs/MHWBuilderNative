@@ -18,11 +18,6 @@ function ItemGloves({ gloves, toggleDisplayItem, setArmorPage }) {
     >
     <TouchableOpacity style={styles.slot} onPress={() => setArmorPage("gloves")}></TouchableOpacity>
     </ImageBackground>
-    <ImageBackground
-    source={require("../../../images/backgroundItems/mainArmor.png")}
-    >
-    <TouchableOpacity style={styles.slot} onPress={() => setArmorPage("gloves")}></TouchableOpacity>
-    </ImageBackground>
   );
 }
 
