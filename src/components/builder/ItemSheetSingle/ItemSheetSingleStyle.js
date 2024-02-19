@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
         width: '50%',
         height: '50%',
         top: 0,
-        
+
         left: 0,
         zIndex: 1000,
         backgroundColor: colors.rankPopup,
@@ -15,7 +15,12 @@ export const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: colors.neutralWhiteColor,
         borderRadius: 10,
+        
 
+    },
+
+    resistance: {
+        color: colors.neutralWhiteColor,
     }
 });
 
