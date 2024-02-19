@@ -408,6 +408,12 @@ const BuilderScreen = ({ route }) => {
       </ImageBackground>
     </SafeAreaView>
   );
-};
+}
+        
+        
+    
+      
+      
+      
 
 export default BuilderScreen;
