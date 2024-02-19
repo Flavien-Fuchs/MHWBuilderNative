@@ -4,13 +4,13 @@ import { styles } from "../ItemSheet/ItemSheetStyle";
 
 function ItemLegs({ legs, toggleDisplayItem, setArmorPage }) {
   return legs ? (
-    <TouchableOpacity onPress={() => toggleDisplayItem("legs")}>
+    <TouchableOpacity style={styles.slot} onPress={() => toggleDisplayItem("legs")}>
       {!legs.assets ? (
-        <Image source={require("../../../images/nullArmor.png")} />
+        <Image source={require("../../../images/nullArmor.png")} style={styles.armorImage} />
       ) : legs.assets.imageMale ? (
-        <Image source={{ uri: legs.assets.imageMale }} />
+        <Image source={{ uri: legs.assets.imageMale }} style={styles.armorImage}/>
       ) : (
-        <Image source={{ uri: legs.assets.imageFemale }} />
+        <Image source={{ uri: legs.assets.imageFemale }} style={styles.armorImage} />
       )}
     </TouchableOpacity>
   ) : (

@@ -3,13 +3,13 @@ import { styles } from "../ItemSheet/ItemSheetStyle";
 
 function ItemGloves({ gloves, toggleDisplayItem, setArmorPage }) {
   return gloves ? (
-    <TouchableOpacity onPress={() => toggleDisplayItem("gloves")}>
+    <TouchableOpacity style={styles.slot} onPress={() => toggleDisplayItem("gloves")}>
       {!gloves.assets ? (
-        <Image source={require("../../../images/charm-icon.png")} />
+        <Image source={require("../../../images/charm-icon.png") } style={styles.armorImage} />
       ) : gloves.assets.imageMale ? (
-        <Image source={{ uri: gloves.assets.imageMale }} />
+        <Image source={{ uri: gloves.assets.imageMale }} style={styles.armorImage} />
       ) : (
-        <Image source={{ uri: gloves.assets.imageFemale }} />
+        <Image source={{ uri: gloves.assets.imageFemale }} style={styles.armorImage} />
       )}
     </TouchableOpacity>
   ) : (

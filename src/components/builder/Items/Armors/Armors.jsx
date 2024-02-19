@@ -77,7 +77,7 @@ const Armors = ({ armors, handleArmor, type, closePage }) => {
       <View style={styles.detailsInfos}>
         {!item.assets ? (
           <Image
-            source={require('../../../images/nullArmor.png')}
+            source={require('../../../../assets/images/nullArmor.png')}
             style={styles.armorImage}
           />
         ) : item.assets.imageMale ? (
@@ -89,7 +89,7 @@ const Armors = ({ armors, handleArmor, type, closePage }) => {
         <View style={styles.stats}>
           <Text style={styles.defense}>
             <Image
-              source={require('../../../assets/images/icons/defense-icon.png')}
+              source={require('../../../../assets/images/icons/defense-icon.png')}
               style={styles.defenseIcon}
             />
             Defense : {item.defense.base} | {item.defense.max} |{' '}

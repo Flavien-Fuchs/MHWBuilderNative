@@ -6,7 +6,7 @@ import ItemSheet from "../../components/builder/ItemSheet/ItemSheet";
 import Stats from "../../components/builder/Stats/Stats";
 import GameButton from "../../components/builder/GameButton/GameButton";
 import SkillModal from "../../components/builder/SkillModal/SkillModal";
-import Armors from "../../components/builder/Armors/Armors";
+import Armors from "../../components/builder/Items/Armors/Armors";
 
 const BuilderScreen = ({ route }) => {
   const { armors, weapons, charms, skills } = route.params

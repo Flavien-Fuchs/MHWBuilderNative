@@ -5,7 +5,7 @@ import { styles } from "../ItemSheet/ItemSheetStyle"
 function ItemCharm({ charm, toggleDisplayItem, setCharmsPage }) {
   return charm ? (
     <TouchableOpacity  onPress={() => toggleDisplayItem("charm")}>
-      <Image source={require("../../../images/nullArmor.png")}  />
+      <Image source={require("../../../images/nullArmor.png")} style={styles.armorImage} />
     </TouchableOpacity>
   ) : (
     <TouchableOpacity onPress={() => setCharmsPage("charm")}></TouchableOpacity>

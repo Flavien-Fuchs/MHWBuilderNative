@@ -4,13 +4,13 @@ import { styles } from "../ItemSheet/ItemSheetStyle";
 
 function ItemHead({ head, toggleDisplayItem, setArmorPage }) {
   return head ? (
-    <TouchableOpacity onPress={() => toggleDisplayItem("head")}>
+    <TouchableOpacity style={styles.slot} onPress={() => toggleDisplayItem("head")}>
       {!head.assets ? (
-        <Image source={require("../../../images/nullArmor.png")} />
+        <Image source={require("../../../images/nullArmor.png")} style={styles.armorImage} />
       ) : head.assets.imageMale ? (
-        <Image source={{ uri: head.assets.imageMale }} />
+        <Image source={{ uri: head.assets.imageMale }} style={styles.armorImage} />
       ) : (
-        <Image source={{ uri: head.assets.imageFemale }} />
+        <Image source={{ uri: head.assets.imageFemale }} style={styles.armorImage} />
       )}
     </TouchableOpacity>
   ) : (

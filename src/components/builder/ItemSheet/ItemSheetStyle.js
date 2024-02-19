@@ -31,5 +31,9 @@ export const styles = StyleSheet.create({
         paddingLeft: 10,
         alignItems: 'flex-end',
     },
+    armorImage: {
+        height: 100,
+        width: 100
+    }
 
 });
