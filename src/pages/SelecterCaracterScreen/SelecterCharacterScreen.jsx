@@ -28,7 +28,7 @@ const SelecterCharacterScreen = ({ navigation }) => {
   };
 
   const handlePlay = () => {
-    navigation.push("Game", { myCharacter: selectedCharacter });
+    navigation.navigate("Game", { myCharacter: selectedCharacter });
   };
 
   return (
@@ -46,11 +46,11 @@ const SelecterCharacterScreen = ({ navigation }) => {
             />
           </TouchableOpacity>
         </View>
-        <View style={{ flex: 1 }}>
+        <View style={styles.flex}>
           <View style={styles.containerShowSelectCharacter}>
             {selectedCharacter ? (
               <>
-                <View style={[styles.containerSelectCharacter]}>
+                <View style={styles.containerSelectCharacter}>
                   <Image
                     source={getImageCharacter("body", selectedCharacter.id)}
                     style={styles.selectCharacterImage}

@@ -31,6 +31,7 @@ export const styles = StyleSheet.create({
     color: colors.neutralWhiteColor,
     textTransform: "uppercase",
   },
+  alignCenter: { alignItems: "center" },
   myPart: {
     width: "100%",
     flexDirection: "row",
@@ -41,10 +42,10 @@ export const styles = StyleSheet.create({
     flex: 1,
     gap: 10,
   },
-  containerMonImage: {
+  containerMyImg: {
     flex: 1,
   },
-  monImage: {
+  myImg: {
     height: "100%",
     width: "auto",
     flex: 1,

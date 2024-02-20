@@ -5,6 +5,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  flex: { flex: 1 },
   image: {
     width: 25,
     height: 25,

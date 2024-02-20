@@ -13,6 +13,9 @@ import GamePlay from "../../components/gamePlay/GamePlay";
 
 import { monsters } from "../../assets/data/Monsters";
 import { getImageOrVideoMonster } from "./../../utils/ImportMonster";
+
+import { styles } from "./GameScreenStyle";
+
 // import { armas } from "../assets/data/Armas";
 
 const GameScreen = ({ route }) => {
@@ -33,14 +36,12 @@ const GameScreen = ({ route }) => {
     setIsReady(true);
   }, []);
 
-  console.log("monster ", monster);
-
   const refreshComponent = () => {
     setKey((prevKey) => prevKey + 1);
   };
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.container}>
       {isReady ? (
         !videoEnded ? (
           <GameIntro
@@ -48,10 +49,7 @@ const GameScreen = ({ route }) => {
             pathVideo={getImageOrVideoMonster("video", monster.id)}
           />
         ) : (
-          <GamePlay
-            myCharacter={myCharacter}
-            adversaire={monster}
-          />
+          <GamePlay myCharacter={myCharacter} adversaire={monster} />
         )
       ) : null}
     </View>

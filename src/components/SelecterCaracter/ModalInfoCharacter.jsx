@@ -33,7 +33,6 @@ const ModalInfoCharacter = ({
       presentationStyle="overFullScreen"
       statusBarTranslucent={true}
       onBackdropPress={() => {
-        console.log("modalVisible", modalVisible);
         setModalVisible(false);
       }}
       onRequestClose={() => {

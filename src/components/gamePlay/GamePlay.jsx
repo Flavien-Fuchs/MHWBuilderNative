@@ -16,8 +16,7 @@ const GamePlay = ({ myCharacter, adversaire }) => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [gameIsEnd, setGameIsEnd] = useState(false);
   const [imDead, setImDead] = useState(false);
-  const handlePause = () => {};
-  console.log("isPlaying", isPlaying);
+
   return (
     <ImageBackground
       source={require("../../assets/images/background.jpg")}

@@ -12,7 +12,6 @@ const GamePause = ({ isPlaying, setIsPlaying, gameIsEnd, navigation }) => {
       presentationStyle="overFullScreen"
       statusBarTranslucent={true}
       onBackdropPress={() => {
-        console.log("modalVisible", modalVisible);
         setIsPlaying(false);
       }}
       onRequestClose={() => {
@@ -26,7 +25,7 @@ const GamePause = ({ isPlaying, setIsPlaying, gameIsEnd, navigation }) => {
             <View style={styles.containerBtn}>
               <TouchableOpacity onPress={() => setIsPlaying(!isPlaying)}>
                 <Text style={[styles.btn, styles.title, styles.texteWhite]}>
-                  reprendre
+                  to resume
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity>

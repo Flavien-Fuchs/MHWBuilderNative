@@ -13,7 +13,7 @@ import ProgressBar from "react-native-progress/Bar";
 
 import { styles } from "./BodyGameStyle";
 
-// FUNVTIONS
+// FUNCTIONS
 
 const getProgressBarColor = (value) => {
   if (value < 0.4) {
@@ -55,7 +55,7 @@ const BodyGame = ({
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <View>
-          <Text style={styles.textWhite}>temps</Text>
+          <Text style={styles.textWhite}>time</Text>
         </View>
         <TouchableOpacity onPress={() => setIsPlaying(false)}>
           <Image
@@ -68,8 +68,8 @@ const BodyGame = ({
       <View style={styles.body}>
         <View style={styles.part}>
           <Image source={pathImgAd} style={[styles.profileImage]} />
-          <View style={{ alignItems: "center" }}>
-            <View style={{}}>
+          <View style={styles.alignCenter}>
+            <View>
               <ProgressBar
                 progress={(currentLifePointAd / maxLifePointAd) * 100}
                 width={200}
@@ -83,10 +83,10 @@ const BodyGame = ({
         </View>
         <View style={[styles.part, styles.myPart]}>
           <View style={styles.containerMyPartLeft}>
-            <View style={styles.containerMonImage}>
-              <Image source={pathImg} style={[styles.monImage]} />
+            <View style={styles.containerMyImg}>
+              <Image source={pathImg} style={[styles.myImg]} />
             </View>
-            <View style={{}}>
+            <View>
               <ProgressBar
                 progress={(currentLifePointAd / maxLifePointAd) * 100}
                 width={100}
@@ -97,7 +97,7 @@ const BodyGame = ({
             </View>
             <Text style={styles.textWhite}>{myCharacter.name}</Text>
           </View>
-          <View style={[styles.containerBtnAction]}>
+          <View style={styles.containerBtnAction}>
             <TouchableOpacity>
               <Text style={styles.textWhite}>Defense</Text>
             </TouchableOpacity>

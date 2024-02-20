@@ -19,7 +19,7 @@ const GameResult = ({ pathImg, imDead, navigation }) => {
     <ImageBackground
       source={require("../../assets/images/background.jpg")}
       resizeMode="cover"
-      style={[styles.containerFull]}
+      style={styles.containerFull}
     >
       <SafeAreaView style={styles.container}>
         <View style={styles.containerTextResult}>
@@ -46,16 +46,16 @@ const GameResult = ({ pathImg, imDead, navigation }) => {
           }}
         />
         <View style={styles.containerBut}>
-          <TouchableOpacity style={[styles.btn]} onPress={() => {}}>
-            <Text style={styles.textWhite}>Continuer</Text>
+          <TouchableOpacity style={styles.btn} onPress={() => {}}>
+            <Text style={styles.textWhite}>Continue</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={[styles.btn]}
+            style={styles.btn}
             onPress={() => {
               navigation.goBack();
             }}
           >
-            <Text style={[styles.textWhite]}>Quitter</Text>
+            <Text style={styles.textWhite}>Quit</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>

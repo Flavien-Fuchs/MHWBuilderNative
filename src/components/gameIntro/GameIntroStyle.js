@@ -7,7 +7,6 @@ export const styles = StyleSheet.create({
   },
   video: {
     flex: 1,
-    // alignSelf: "stretch",
     width: "100%",
     height: "100%",
   },
