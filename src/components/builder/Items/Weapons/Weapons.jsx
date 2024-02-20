@@ -13,6 +13,7 @@ import { Picker } from "@react-native-picker/picker";
 import { useState } from "react";
 import WeaponsCategory from "./WeaponsCategory";
 import { FlashList } from "@shopify/flash-list";
+import { colors } from "../../../../utils/colors";
 
 const Weapons = ({ weapons, handleWeapon, closePage, weaponPage }) => {
   const [typeChosen, setTypeChosen] = useState(false);
@@ -71,7 +72,7 @@ const Weapons = ({ weapons, handleWeapon, closePage, weaponPage }) => {
         ) : item?.assets?.image ? (
           <Image
             source={{
-              uri: "https://assets.mhw-db.com/weapons/great-sword/83f7ab6e7e5669ec416d772049b8b054e2624c2e.c7bad811e203c9bb55626e414659a4f7.png",
+              uri: item.assets.image,
             }}
             style={styles.weaponImage}
             resizeMethod="resize"
@@ -85,60 +86,67 @@ const Weapons = ({ weapons, handleWeapon, closePage, weaponPage }) => {
         )}
 
         <View style={styles.stats}>
-          <Text>Attack : {item.attack.display}</Text>
+          <Text style={styles.text}>Attack : {item.attack.display}</Text>
           {item.elements.length > 0 && (
-            <Text>
+            <Text style={styles.text}>
               Element : {item?.elements[0]?.damage} ({item?.elements[0]?.type})
             </Text>
           )}
-          <Text>
+          <Text style={styles.text}>
             Affinity :{" "}
             {item.attributes.affinity ? `${item.attributes.affinity}%` : "0%"}
           </Text>
           {item.durability && (
             <View style={styles.sharpnessContainer}>
-              <Text>Sharpness : </Text>
+              <Text style={styles.text}>Sharpness : </Text>
               <View
-                style={
-                  (styles.sharpnessRed,
-                  { width: `${item.durability[0].red / 3}px` })
-                }
+                style={{
+                  width: item.durability[0].red / 3,
+                  backgroundColor: colors.sharpnessRed,
+                  height: 14,
+                }}
               ></View>
               <View
-                style={
-                  (styles.sharpnessOrange,
-                  { width: `${item.durability[0].orange / 3}px` })
-                }
+                style={{
+                  width: item.durability[0].orange / 3,
+                  backgroundColor: colors.sharpnessOrange,
+                  height: 14,
+                }}
               ></View>
               <View
-                style={
-                  (styles.sharpnessYellow,
-                  { width: `${item.durability[0].yellow / 3}px` })
-                }
+                style={{
+                  width: item.durability[0].yellow / 3,
+                  backgroundColor: colors.sharpnessYellow,
+                  height: 14,
+                }}
               ></View>
               <View
-                style={
-                  (styles.sharpnessGreen,
-                  { width: `${item.durability[0].green / 3}px` })
-                }
+                style={{
+                  width: item.durability[0].green / 3,
+                  backgroundColor: colors.sharpnessGreen,
+                  height: 14,
+                }}
               ></View>
               <View
-                style={
-                  (styles.sharpnessBlue,
-                  { width: `${item.durability[0].blue / 3}px` })
-                }
+                style={{
+                  width: item.durability[0].blue / 3,
+                  backgroundColor: colors.sharpnessBlue,
+                  height: 14,
+                }}
               ></View>
               <View
-                style={
-                  (styles.sharpnessWhite,
-                  { width: `${item.durability[0].white / 3}px` })
-                }
+                style={{
+                  width: item.durability[0].white / 3,
+                  backgroundColor: colors.sharpnessWhite,
+                  height: 14,
+                }}
               ></View>
               <View
-                style={
-                  (styles.sharpnessPurple,
-                  { width: `${item.durability[0].purple / 3}px` })
-                }
+                style={{
+                  width: item.durability[0].purple / 3,
+                  backgroundColor: colors.sharpnessPurple,
+                  height: 14,
+                }}
               ></View>
             </View>
           )}
@@ -148,11 +156,18 @@ const Weapons = ({ weapons, handleWeapon, closePage, weaponPage }) => {
   );
 
   return (
-    <View>
+    <Modal
+      animationType="slide"
+      transparent={true}
+      style={styles.globalItemContainer}
+    >
       {!typeChosen ? (
-        <View>
+        <ImageBackground
+          source={require("../../../../assets/images/background.jpg")}
+          resizeMode="cover"
+          style={styles.globalItemContainerType}>
           <TouchableOpacity onPress={closePage} style={styles.closeButton}>
-            <Text>Clos</Text>
+            <Text style={styles.button}>Close</Text>
           </TouchableOpacity>
 
           <View style={styles.typeContainer}>
@@ -227,19 +242,25 @@ const Weapons = ({ weapons, handleWeapon, closePage, weaponPage }) => {
               name={"Lance"}
             />
           </View>
-        </View>
+        </ImageBackground>
       ) : (
-        <View>
+        <ImageBackground
+          source={require("../../../../assets/images/background.jpg")}
+          resizeMode="cover"
+          style={styles.globalItemContainer}
+        >
           <View style={styles.itemNavBar}>
-            <TouchableOpacity onPress={closePage} style={styles.closeButton}>
-              {/* Button à mettre */}
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={backWeapon}
-              style={styles.buttonWeaponsType}
-            >
-              <Text></Text>
-            </TouchableOpacity>
+
+            <View style={styles.buttonContainer}>
+              <TouchableOpacity onPress={backWeapon}>
+                <Text style={styles.button}>Back to Weapon's Type</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={closePage} >
+                <Text style={styles.button}>close</Text>
+              </TouchableOpacity>
+            </View>
+
             <TextInput
               style={styles.input}
               value={searchTerm}
@@ -247,9 +268,10 @@ const Weapons = ({ weapons, handleWeapon, closePage, weaponPage }) => {
               placeholder={"Search item by name"}
             />
             <View style={styles.filters}>
-              <Text>Filter by :</Text>
+              <Text style={styles.text}>Filter by :</Text>
               <View style={styles.filterDropdowns}>
                 <Picker
+                  style={styles.picker}
                   selectedValue={selectedOption}
                   onValueChange={handleSelectOption}
                 >
@@ -266,7 +288,7 @@ const Weapons = ({ weapons, handleWeapon, closePage, weaponPage }) => {
                 </Picker>
 
                 <Picker
-                  style={styles.filterDropdown}
+                  style={styles.picker}
                   selectedValue={filterByType}
                   onValueChange={handleFilterByType}
                 >
@@ -277,14 +299,14 @@ const Weapons = ({ weapons, handleWeapon, closePage, weaponPage }) => {
               </View>
             </View>
           </View>
-          <FlashList
+          <FlatList
             data={newWeapons}
             renderItem={renderItem}
-            estimatedItemSize={200}
+            style={styles.flashList}
           />
-        </View>
+        </ImageBackground>
       )}
-    </View>
+    </Modal>
   );
 };
 
