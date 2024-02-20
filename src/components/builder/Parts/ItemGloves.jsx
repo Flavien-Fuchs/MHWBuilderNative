@@ -5,7 +5,7 @@ function ItemGloves({ gloves, toggleDisplayItem, setArmorPage }) {
   return gloves ? (
     <TouchableOpacity style={styles.slot} onPress={() => toggleDisplayItem("gloves")}>
       {!gloves.assets ? (
-        <Image source={require("../../../images/charm-icon.png") } style={styles.armorImage} />
+        <Image source={require("../../../assets/images/charm-icon.png") } style={styles.armorImage} />
       ) : gloves.assets.imageMale ? (
         <Image source={{ uri: gloves.assets.imageMale }} style={styles.armorImage} />
       ) : (
@@ -13,11 +13,13 @@ function ItemGloves({ gloves, toggleDisplayItem, setArmorPage }) {
       )}
     </TouchableOpacity>
   ) : (
-    <ImageBackground
-    source={require("../../../images/backgroundItems/mainArmor.png")}
-    >
-    <TouchableOpacity style={styles.slot} onPress={() => setArmorPage("gloves")}></TouchableOpacity>
-    </ImageBackground>
+    <TouchableOpacity style={styles.slot} onPress={() => setArmorPage("gloves")}>
+      <ImageBackground
+      source={require("../../../assets/images/backgroundItems/mainArmor.png")}
+      style={styles.ImageBackground}
+      >
+      </ImageBackground>
+    </TouchableOpacity>
   );
 }
 

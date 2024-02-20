@@ -6,7 +6,7 @@ function ItemWeapon({ weapon, toggleDisplayItem, setWeaponPage }) {
   return weapon ? (
     <TouchableOpacity style={styles.slot} onPress={() => toggleDisplayItem("weapon")}>
       {!weapon.assets ? (
-        <Image source={require("../../../images/nullArmor.png")} style={styles.armorImage}/>
+        <Image source={require("../../../assets/images/nullArmor.png")} style={styles.armorImage}/>
       ) : weapon.assets.image ? (
         <Image source={{ uri: weapon.assets.image }} style={styles.armorImage} />
       ) : (
@@ -14,12 +14,13 @@ function ItemWeapon({ weapon, toggleDisplayItem, setWeaponPage }) {
       )}
     </TouchableOpacity>
   ) : (
-    
-    <ImageBackground
-    source={require("../../../images/backgroundItems/epee.png")}
-    >
-    <TouchableOpacity style={styles.slot} onPress={setWeaponPage}></TouchableOpacity>
-    </ImageBackground>
+    <TouchableOpacity style={styles.slot} onPress={setWeaponPage}>
+      <ImageBackground
+      source={require("../../../assets/images/backgroundItems/epee.png")}
+      style={styles.ImageBackground}
+      > 
+      </ImageBackground>
+    </TouchableOpacity>
     
   );
 }

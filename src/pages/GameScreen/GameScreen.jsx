@@ -58,4 +58,3 @@ const GameScreen = ({ route }) => {
 
 export default GameScreen;
 
-const styles = StyleSheet.create({});

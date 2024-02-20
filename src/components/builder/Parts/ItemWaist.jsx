@@ -6,7 +6,7 @@ function ItemWaist({ waist, toggleDisplayItem, setArmorPage }) {
   return waist ? (
     <TouchableOpacity style={styles.slot} onPress={() => toggleDisplayItem("waist")}>
       {!waist.assets ? (
-        <Image source={require("../../../images/nullArmor.png")} style={styles.armorImage}/>
+        <Image source={require("../../../assets/images/nullArmor.png")} style={styles.armorImage}/>
       ) : waist.assets.imageMale ? (
         <Image source={{ uri: waist.assets.imageMale }} style={styles.armorImage} />
       ) : (
@@ -14,11 +14,13 @@ function ItemWaist({ waist, toggleDisplayItem, setArmorPage }) {
       )}
     </TouchableOpacity>
   ) : (
-    <ImageBackground
-    source={require("../../../images/backgroundItems/tailleArmor.png")}
-    >
-    <TouchableOpacity style={styles.slot} onPress={() => setArmorPage("waist")}></TouchableOpacity>
-    </ImageBackground>
+    <TouchableOpacity style={styles.slot} onPress={() => setArmorPage("waist")}>
+      <ImageBackground
+      source={require("../../../assets/images/backgroundItems/tailleArmor.png")}
+      style={styles.ImageBackground}
+      >
+      </ImageBackground>
+    </TouchableOpacity>
   );
 }
 
