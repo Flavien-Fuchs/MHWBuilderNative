@@ -1,15 +1,16 @@
 import { Text, View, ImageBackground } from "react-native";
 import { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { styles } from './BuilderScreenStyle'
+import { styles } from "./BuilderScreenStyle";
 import ItemSheet from "../../components/builder/ItemSheet/ItemSheet";
 import Stats from "../../components/builder/Stats/Stats";
 import GameButton from "../../components/builder/GameButton/GameButton";
 import SkillModal from "../../components/builder/SkillModal/SkillModal";
 import Armors from "../../components/builder/Armors/Armors";
+import Weapons from "../../components/builder/Items/Weapons/Weapons";
 
 const BuilderScreen = ({ route }) => {
-  const { armors, weapons, charms, skills } = route.params
+  const { armors, weapons, charms, skills } = route.params;
 
   //states for pages
   const [index, setIndex] = useState(true);
@@ -349,7 +350,7 @@ const BuilderScreen = ({ route }) => {
   return (
     <SafeAreaView style={styles.globalContainer}>
       <ImageBackground
-        source={require('../../assets/images/background.jpg')}
+        source={require("../../assets/images/background.jpg")}
         resizeMode="cover"
         style={styles.container}
       >
@@ -398,22 +399,23 @@ const BuilderScreen = ({ route }) => {
           skills={skills}
         />
         {armorPage && (
-              <Armors
-                armors={armors}
-                handleArmor={handleArmor}
-                type={armorPage}
-                closePage={closePage}
-              />
-            )}
+          <Armors
+            armors={armors}
+            handleArmor={handleArmor}
+            type={armorPage}
+            closePage={closePage}
+          />
+        )}
+        {weaponPage && (
+          <Weapons
+            weapons={weapons}
+            handleWeapon={handleWeapon}
+            closePage={closePage}
+          />
+        )}
       </ImageBackground>
     </SafeAreaView>
   );
-}
-        
-        
-    
-      
-      
-      
+};
 
 export default BuilderScreen;

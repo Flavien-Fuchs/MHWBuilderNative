@@ -1,14 +1,14 @@
-import { StyleSheet, Text, Touchable, View } from "react-native";
-import React from "react";
-import { TouchableOpacity } from "react-native-web";
+import { Text, View, TouchableOpacity, TextInput } from "react-native";
 import { styles } from "../Armors/ArmorsStyle";
+import { Picker } from "@react-native-picker/picker";
+import { FlashList } from "@shopify/flash-list";
 
 const Weapons = ({ weapons, handleWeapon, closePage }) => {
   const [typeChosen, setTypeChosen] = useState(false);
   const [weaponType, setWeaponType] = useState("");
-  const [searchTerm, setSearchterm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
-  const [filterByType, setfilterByType] = useState("");
+  const [filterByType, setFilterByType] = useState("");
 
   const handleFilterByType = (value) => setFilterByType(value);
   const handleSelectOption = (value) => setSelectedOption(value);
@@ -70,6 +70,64 @@ const Weapons = ({ weapons, handleWeapon, closePage }) => {
 
         <View style={styles.stats}>
           <Text>Attack : {weapon.attack.display}</Text>
+          {weapon.element[0] && (
+            <Text>
+              Element : {weapon.element[0].damage} ({weapon.elements[0].type})
+            </Text>
+          )}
+          <Text>
+            Affinity :{" "}
+            {weapon.attributes.affinity
+              ? `${weapon.attributes.affinity}%`
+              : "0%"}
+          </Text>
+          {weapon.durability && (
+            <View style={styles.sharpnessContainer}>
+              <Text>Sharpness : </Text>
+              <View
+                style={
+                  (styles.sharpnessRed,
+                  { width: `${weapon.durability[0].red / 3}px` })
+                }
+              ></View>
+              <View
+                style={
+                  (styles.sharpnessOrange,
+                  { width: `${weapon.durability[0].orange / 3}px` })
+                }
+              ></View>
+              <View
+                style={
+                  (styles.sharpnessYellow,
+                  { width: `${weapon.durability[0].yellow / 3}px` })
+                }
+              ></View>
+              <View
+                style={
+                  (styles.sharpnessGreen,
+                  { width: `${weapon.durability[0].green / 3}px` })
+                }
+              ></View>
+              <View
+                style={
+                  (styles.sharpnessBlue,
+                  { width: `${weapon.durability[0].blue / 3}px` })
+                }
+              ></View>
+              <View
+                style={
+                  (styles.sharpnessWhite,
+                  { width: `${weapon.durability[0].white / 3}px` })
+                }
+              ></View>
+              <View
+                style={
+                  (styles.sharpnessPurple,
+                  { width: `${weapon.durability[0].purple / 3}px` })
+                }
+              ></View>
+            </View>
+          )}
         </View>
       </View>
     </TouchableOpacity>
@@ -77,7 +135,138 @@ const Weapons = ({ weapons, handleWeapon, closePage }) => {
 
   return (
     <View>
-      <Text>Weapons</Text>
+      {!typeChosen ? (
+        <View style={styles.globalItemContainer}>
+          <TouchableOpacity onPress={closePage} style={styles.closeButton}>
+            {/* Button à mettre */}
+          </TouchableOpacity>
+
+          <View style={styles.typeContainer}>
+            <WeaponsCategory
+              handleChoiseType={() => handleChoiseType("great-sword")}
+              image={require("../../../../images/ArmorsIcons/great-sword.png")}
+              name={"Great Sword"}
+            />
+            <WeaponsCategory
+              handleChoiseType={() => handleChoiseType("sword-and-shield")}
+              image={require("../../../../images/ArmorsIcons/sword-and-shield.png")}
+              name={"Sword & Shield"}
+            />
+            <WeaponsCategory
+              handleChoiseType={() => handleChoiseType("long-sword")}
+              image={require("../../../../images/ArmorsIcons/long-sword.png")}
+              name={"Long Sword"}
+            />
+            <WeaponsCategory
+              handleChoiseType={() => handleChoiseType("hammer")}
+              image={require("../../../../images/ArmorsIcons/hammer.png")}
+              name={"Hammer"}
+            />
+            <WeaponsCategory
+              handleChoiseType={() => handleChoiseType("hunting-horn")}
+              image={require("../../../../images/ArmorsIcons/hunting-horn.png")}
+              name={"Hunting Horn"}
+            />
+            <WeaponsCategory
+              handleChoiseType={() => handleChoiseType("gunlance")}
+              image={require("../../../../images/ArmorsIcons/gunlance.png")}
+              name={"Gunlance"}
+            />
+            <WeaponsCategory
+              handleChoiseType={() => handleChoiseType("switch-axe")}
+              image={require("../../../../images/ArmorsIcons/switch-axe.png")}
+              name={"Switch Axe"}
+            />
+            <WeaponsCategory
+              handleChoiseType={() => handleChoiseType("charge-blade")}
+              image={require("../../../../images/ArmorsIcons/charge-blade.png")}
+              name={"Charge Blade"}
+            />
+            <WeaponsCategory
+              handleChoiseType={() => handleChoiseType("insect-glaive")}
+              image={require("../../../../images/ArmorsIcons/insect-glaive.png")}
+              name={"Insect Glaive"}
+            />
+            <WeaponsCategory
+              handleChoiseType={() => handleChoiseType("bow")}
+              image={require("../../../../images/ArmorsIcons/bow.png")}
+              name={"Bow"}
+            />
+            <WeaponsCategory
+              handleChoiseType={() => handleChoiseType("light-bowgun")}
+              image={require("../../../../images/ArmorsIcons/light-bowgun.png")}
+              name={"Light Bowgun"}
+            />
+            <WeaponsCategory
+              handleChoiseType={() => handleChoiseType("heavy-bowgun")}
+              image={require("../../../../images/ArmorsIcons/heavy-bowgun.png")}
+              name={"Heavy Bowgun"}
+            />
+            <WeaponsCategory
+              handleChoiseType={() => handleChoiseType("dual-blades")}
+              image={require("../../../../images/ArmorsIcons/dual-blade.png")}
+              name={"Dual Blades"}
+            />
+            <WeaponsCategory
+              handleChoiseType={() => handleChoiseType("lance")}
+              image={require("../../../../images/ArmorsIcons/lance.png")}
+              name={"Lance"}
+            />
+          </View>
+        </View>
+      ) : (
+        <View style={styles.globalItemContainer}>
+          <View style={styles.itemNavBar}>
+            <TouchableOpacity onPress={closePage} style={styles.closeButton}>
+              {/* Button à mettre */}
+            </TouchableOpacity>
+            <TouchableOpacity onPress={backWeapon} style={buttonWeaponsType}>
+              Choise weapon&apos;s type
+            </TouchableOpacity>
+            <TextInput
+              style={styles.input}
+              value={searchTerm}
+              onChangeText={handleSearchTerm}
+              placeholder={"Search item by name"}
+            />
+            <View style={styles.filters}>
+              <Text>Filter by :</Text>
+              <View style={styles.filterDropdowns}>
+                <Picker
+                  selectedValue={selectedOption}
+                  onValueChange={handleSelectOption}
+                >
+                  <Picker.Item label="Elements" value="" />
+                  <Picker.Item label="Fire" value="fire" />
+                  <Picker.Item label="Poison" value="poison" />
+                  <Picker.Item label="Dragon" value="dragon" />
+                  <Picker.Item label="Ice" value="ice" />
+                  <Picker.Item label="Thunder" value="thunder" />
+                  <Picker.Item label="Sleep" value="sleep" />
+                  <Picker.Item label="Paralysis" value="paralysis" />
+                  <Picker.Item label="Blast" value="max" />
+                  <Picker.Item label="None" value="0" />
+                </Picker>
+
+                <Picker
+                  style={styles.filterDropdown}
+                  selectedValue={filterByType}
+                  onValueChange={handleFilterByType}
+                >
+                  <Picker.Item label="Damages" value="" />
+                  <Picker.Item label="Attack" value="Attack" />
+                  <Picker.Item label="Element" value="Element" />
+                </Picker>
+              </View>
+            </View>
+          </View>
+          <FlashList
+            data={newWeapons}
+            renderItem={renderItem}
+            estimatedItemSize={200}
+          />
+        </View>
+      )}
     </View>
   );
 };
