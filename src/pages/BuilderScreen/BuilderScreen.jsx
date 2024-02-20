@@ -404,6 +404,7 @@ const BuilderScreen = ({ route }) => {
             handleArmor={handleArmor}
             type={armorPage}
             closePage={closePage}
+            armorPage={armorPage}
           />
         )}
         {weaponPage && (

@@ -1,11 +1,20 @@
-import { Text, View, TouchableOpacity, TextInput } from "react-native";
-import { styles } from "../Armors/ArmorsStyle";
+import {
+  Text,
+  View,
+  TouchableOpacity,
+  TextInput,
+  Modal,
+  ImageBackground,
+  Image,
+  FlatList,
+} from "react-native";
+import { styles } from "./WeaponsStyle";
 import { Picker } from "@react-native-picker/picker";
-import { FlashList } from "@shopify/flash-list";
 import { useState } from "react";
 import WeaponsCategory from "./WeaponsCategory";
+import { FlashList } from "@shopify/flash-list";
 
-const Weapons = ({ weapons, handleWeapon, closePage }) => {
+const Weapons = ({ weapons, handleWeapon, closePage, weaponPage }) => {
   const [typeChosen, setTypeChosen] = useState(false);
   const [weaponType, setWeaponType] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
@@ -46,86 +55,89 @@ const Weapons = ({ weapons, handleWeapon, closePage }) => {
     });
   }
 
-  const renderItem = ({ weapon }) => (
-    <TouchableOpacity style={styles.item} onPress={() => handleWeapon(weapon)}>
+  const renderItem = ({ item }) => (
+    <TouchableOpacity style={styles.item} onPress={() => handleWeapon(item)}>
       <View style={styles.globalInfos}>
-        <Text style={styles.paragraphList}>{weapon.name}</Text>
-        <Text style={styles.rarity}>Rarity {weapon.rarity}</Text>
+        <Text style={styles.paragraphList}>{item.name}</Text>
+        <Text style={styles.rarity}>Rarity {item.rarity}</Text>
       </View>
       <View style={styles.detailsInfos}>
-        {!weapon.assets ? (
+        {!item.assets ? (
           <Image
-            source={require("../../../../assets/images/nullArmor.png")}
+            source={{ uri: "../../../../src/images/nullArmor.png" }}
             style={styles.weaponImage}
+            resizeMethod="resize"
           />
-        ) : weapon.assets.image ? (
+        ) : item?.assets?.image ? (
           <Image
-            source={{ uri: weapon.assets.image }}
+            source={{
+              uri: "https://assets.mhw-db.com/weapons/great-sword/83f7ab6e7e5669ec416d772049b8b054e2624c2e.c7bad811e203c9bb55626e414659a4f7.png",
+            }}
             style={styles.weaponImage}
+            resizeMethod="resize"
           />
         ) : (
           <Image
-            source={{ uri: weapon.assets.icon }}
+            source={{ uri: item.assets.icon }}
             style={styles.weaponImage}
+            resizeMethod="resize"
           />
         )}
 
         <View style={styles.stats}>
-          <Text>Attack : {weapon.attack.display}</Text>
-          {weapon.element[0] && (
+          <Text>Attack : {item.attack.display}</Text>
+          {item.elements.length > 0 && (
             <Text>
-              Element : {weapon.element[0].damage} ({weapon.elements[0].type})
+              Element : {item?.elements[0]?.damage} ({item?.elements[0]?.type})
             </Text>
           )}
           <Text>
             Affinity :{" "}
-            {weapon.attributes.affinity
-              ? `${weapon.attributes.affinity}%`
-              : "0%"}
+            {item.attributes.affinity ? `${item.attributes.affinity}%` : "0%"}
           </Text>
-          {weapon.durability && (
+          {item.durability && (
             <View style={styles.sharpnessContainer}>
               <Text>Sharpness : </Text>
               <View
                 style={
                   (styles.sharpnessRed,
-                  { width: `${weapon.durability[0].red / 3}px` })
+                  { width: `${item.durability[0].red / 3}px` })
                 }
               ></View>
               <View
                 style={
                   (styles.sharpnessOrange,
-                  { width: `${weapon.durability[0].orange / 3}px` })
+                  { width: `${item.durability[0].orange / 3}px` })
                 }
               ></View>
               <View
                 style={
                   (styles.sharpnessYellow,
-                  { width: `${weapon.durability[0].yellow / 3}px` })
+                  { width: `${item.durability[0].yellow / 3}px` })
                 }
               ></View>
               <View
                 style={
                   (styles.sharpnessGreen,
-                  { width: `${weapon.durability[0].green / 3}px` })
+                  { width: `${item.durability[0].green / 3}px` })
                 }
               ></View>
               <View
                 style={
                   (styles.sharpnessBlue,
-                  { width: `${weapon.durability[0].blue / 3}px` })
+                  { width: `${item.durability[0].blue / 3}px` })
                 }
               ></View>
               <View
                 style={
                   (styles.sharpnessWhite,
-                  { width: `${weapon.durability[0].white / 3}px` })
+                  { width: `${item.durability[0].white / 3}px` })
                 }
               ></View>
               <View
                 style={
                   (styles.sharpnessPurple,
-                  { width: `${weapon.durability[0].purple / 3}px` })
+                  { width: `${item.durability[0].purple / 3}px` })
                 }
               ></View>
             </View>
@@ -138,9 +150,9 @@ const Weapons = ({ weapons, handleWeapon, closePage }) => {
   return (
     <View>
       {!typeChosen ? (
-        <View style={styles.globalItemContainer}>
+        <View>
           <TouchableOpacity onPress={closePage} style={styles.closeButton}>
-            {/* Button à mettre */}
+            <Text>Clos</Text>
           </TouchableOpacity>
 
           <View style={styles.typeContainer}>
@@ -217,13 +229,16 @@ const Weapons = ({ weapons, handleWeapon, closePage }) => {
           </View>
         </View>
       ) : (
-        <View style={styles.globalItemContainer}>
+        <View>
           <View style={styles.itemNavBar}>
             <TouchableOpacity onPress={closePage} style={styles.closeButton}>
               {/* Button à mettre */}
             </TouchableOpacity>
-            <TouchableOpacity onPress={backWeapon} style={buttonWeaponsType}>
-              Choise weapon&apos;s type
+            <TouchableOpacity
+              onPress={backWeapon}
+              style={styles.buttonWeaponsType}
+            >
+              <Text></Text>
             </TouchableOpacity>
             <TextInput
               style={styles.input}
