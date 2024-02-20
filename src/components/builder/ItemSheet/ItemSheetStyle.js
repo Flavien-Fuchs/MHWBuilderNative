@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
     },
     slot: {
         position: "relative",
+        justifyContent: "center",
         borderRadius: 16,
         width: 100,
         height: 100,
@@ -31,5 +32,14 @@ export const styles = StyleSheet.create({
         paddingLeft: 10,
         alignItems: 'flex-end',
     },
+    armorImage: {
+        height: 100,
+        width: 100
+    },
+    ImageBackground: {
+        height: 70,
+        width: 70,
+        alignSelf: 'center',
+    }
 
 });

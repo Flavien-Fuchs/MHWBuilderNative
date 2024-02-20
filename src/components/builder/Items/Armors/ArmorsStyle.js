@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
     },
     input: {
         width: '90%',
-        marginVertical: 0.5 * 16,
+        marginVertical: 8,
     },
     filters: {
       // Style pour les filtres
@@ -44,7 +44,6 @@ export const styles = StyleSheet.create({
         justifyContent: "center"
     },
     item: {
-        minWidth: 350,
         backgroundColor: colors.backgroundItem,
         padding: 16, // Ajoutez la valeur que vous souhaitez
         color: colors.neutralWhiteColor, // Ajoutez votre couleur de texte
@@ -52,8 +51,8 @@ export const styles = StyleSheet.create({
         // Ajoutez l'ombre de la boîte si nécessaire
         shadowColor: colors.neutralBlackColor,
         shadowOffset: {
-        width: 0,
-        height: 2,
+        width: 50,
+        height: 50,
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
@@ -69,9 +68,15 @@ export const styles = StyleSheet.create({
       // Style pour la rareté
     },
     detailsInfos: {
-      // Style pour les informations détaillées
+      marginTop: 16, // Équivalent à 1em
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      justifyContent: 'space-evenly',
     },
     armorImage: {
+      width:100,
+      height: 100
       // Style pour l'image d'armure
     },
     stats: {

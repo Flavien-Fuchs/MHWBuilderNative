@@ -2,6 +2,8 @@ import { Text, View, TouchableOpacity, TextInput } from "react-native";
 import { styles } from "../Armors/ArmorsStyle";
 import { Picker } from "@react-native-picker/picker";
 import { FlashList } from "@shopify/flash-list";
+import { useState } from "react";
+import WeaponsCategory from "./WeaponsCategory";
 
 const Weapons = ({ weapons, handleWeapon, closePage }) => {
   const [typeChosen, setTypeChosen] = useState(false);
@@ -53,7 +55,7 @@ const Weapons = ({ weapons, handleWeapon, closePage }) => {
       <View style={styles.detailsInfos}>
         {!weapon.assets ? (
           <Image
-            source={require("../../../images/nullArmor.png")}
+            source={require("../../../../assets/images/nullArmor.png")}
             style={styles.weaponImage}
           />
         ) : weapon.assets.image ? (
@@ -144,72 +146,72 @@ const Weapons = ({ weapons, handleWeapon, closePage }) => {
           <View style={styles.typeContainer}>
             <WeaponsCategory
               handleChoiseType={() => handleChoiseType("great-sword")}
-              image={require("../../../../images/ArmorsIcons/great-sword.png")}
+              image={require("../../../../assets/images/ArmorsIcons/great-sword.png")}
               name={"Great Sword"}
             />
             <WeaponsCategory
               handleChoiseType={() => handleChoiseType("sword-and-shield")}
-              image={require("../../../../images/ArmorsIcons/sword-and-shield.png")}
+              image={require("../../../../assets/images/ArmorsIcons/sword-and-shield.png")}
               name={"Sword & Shield"}
             />
             <WeaponsCategory
               handleChoiseType={() => handleChoiseType("long-sword")}
-              image={require("../../../../images/ArmorsIcons/long-sword.png")}
+              image={require("../../../../assets/images/ArmorsIcons/long-sword.png")}
               name={"Long Sword"}
             />
             <WeaponsCategory
               handleChoiseType={() => handleChoiseType("hammer")}
-              image={require("../../../../images/ArmorsIcons/hammer.png")}
+              image={require("../../../../assets/images/ArmorsIcons/hammer.png")}
               name={"Hammer"}
             />
             <WeaponsCategory
               handleChoiseType={() => handleChoiseType("hunting-horn")}
-              image={require("../../../../images/ArmorsIcons/hunting-horn.png")}
+              image={require("../../../../assets/images/ArmorsIcons/hunting-horn.png")}
               name={"Hunting Horn"}
             />
             <WeaponsCategory
               handleChoiseType={() => handleChoiseType("gunlance")}
-              image={require("../../../../images/ArmorsIcons/gunlance.png")}
+              image={require("../../../../assets/images/ArmorsIcons/gunlance.png")}
               name={"Gunlance"}
             />
             <WeaponsCategory
               handleChoiseType={() => handleChoiseType("switch-axe")}
-              image={require("../../../../images/ArmorsIcons/switch-axe.png")}
+              image={require("../../../../assets/images/ArmorsIcons/switch-axe.png")}
               name={"Switch Axe"}
             />
             <WeaponsCategory
               handleChoiseType={() => handleChoiseType("charge-blade")}
-              image={require("../../../../images/ArmorsIcons/charge-blade.png")}
+              image={require("../../../../assets/images/ArmorsIcons/charge-blade.png")}
               name={"Charge Blade"}
             />
             <WeaponsCategory
               handleChoiseType={() => handleChoiseType("insect-glaive")}
-              image={require("../../../../images/ArmorsIcons/insect-glaive.png")}
+              image={require("../../../../assets/images/ArmorsIcons/insect-glaive.png")}
               name={"Insect Glaive"}
             />
             <WeaponsCategory
               handleChoiseType={() => handleChoiseType("bow")}
-              image={require("../../../../images/ArmorsIcons/bow.png")}
+              image={require("../../../../assets/images/ArmorsIcons/bow.png")}
               name={"Bow"}
             />
             <WeaponsCategory
               handleChoiseType={() => handleChoiseType("light-bowgun")}
-              image={require("../../../../images/ArmorsIcons/light-bowgun.png")}
+              image={require("../../../../assets/images/ArmorsIcons/light-bowgun.png")}
               name={"Light Bowgun"}
             />
             <WeaponsCategory
               handleChoiseType={() => handleChoiseType("heavy-bowgun")}
-              image={require("../../../../images/ArmorsIcons/heavy-bowgun.png")}
+              image={require("../../../../assets/images/ArmorsIcons/heavy-bowgun.png")}
               name={"Heavy Bowgun"}
             />
             <WeaponsCategory
               handleChoiseType={() => handleChoiseType("dual-blades")}
-              image={require("../../../../images/ArmorsIcons/dual-blade.png")}
+              image={require("../../../../assets/images/ArmorsIcons/dual-blades.png")}
               name={"Dual Blades"}
             />
             <WeaponsCategory
               handleChoiseType={() => handleChoiseType("lance")}
-              image={require("../../../../images/ArmorsIcons/lance.png")}
+              image={require("../../../../assets/images/ArmorsIcons/lance.png")}
               name={"Lance"}
             />
           </View>
