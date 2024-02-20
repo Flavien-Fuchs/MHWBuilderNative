@@ -412,6 +412,7 @@ const BuilderScreen = ({ route }) => {
             weapons={weapons}
             handleWeapon={handleWeapon}
             closePage={closePage}
+            weaponPage={weaponPage}
           />
         )}
       </ImageBackground>
