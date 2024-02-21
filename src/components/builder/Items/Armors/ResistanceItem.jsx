@@ -7,7 +7,7 @@ function ResistanceItem({ iconSrc, label, value }) {
   return (
     <View>
       <Text style={styles.text}>
-        <Image source={{ uri: `../../../../assets/images/${iconSrc}-icon.png` }} style={styles.icon} />
+        <Image source={iconSrc} style={styles.icon} />
         {label} : {value}
       </Text>
     </View>

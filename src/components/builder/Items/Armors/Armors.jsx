@@ -89,60 +89,52 @@ const Armors = ({ armors, handleArmor, type, closePage }) => {
         )}
 
         <View style={styles.stats}>
-          <View>
-            <Image
-              source={require('../../../../assets/images/icons/defense-icon.png')}
-              style={styles.defenseIcon}
-            />
-            <Text style={styles.text}>
-              Defense : {item.defense.base} | {item.defense.max} |{' '}
-              {item.defense.augmented}
-            </Text>
-          </View>
           
           <ResistanceItem
-            iconSrc="fire"
-            label="Fire Resist"
+            iconSrc={require("../../../../assets/images/icons/defense-icon.png")}
+            label={"Defense"}
+            value={`${item.defense.base} | ${item.defense.max} | ${item.defense.augmented}`}
+          />
+          
+          <ResistanceItem
+            iconSrc={require("../../../../assets/images/icons/fire-icon.png")}
+            label={"Fire Resist"}
             value={item.resistances.fire}
           />
           <ResistanceItem
-            iconSrc="water"
-            label="Water Resist"
+            iconSrc={require("../../../../assets/images/icons/water-icon.png")}
+            label={"Water Resist"}
             value={item.resistances.water}
           />
           <ResistanceItem
-            iconSrc="ice"
-            label="Ice Resist"
+            iconSrc={require("../../../../assets/images/icons/ice-icon.png")}
+            label={"Ice Resist"}
             value={item.resistances.ice}
           />
           <ResistanceItem
-            iconSrc="thunder"
-            label="Thunder Resist"
+            iconSrc={require("../../../../assets/images/icons/thunder-icon.png")}
+            label={"Thunder Resist"}
             value={item.resistances.thunder}
           />
           <ResistanceItem
-            iconSrc="dragon"
-            label="Dragon Resist"
+            iconSrc={require(`../../../../assets/images/icons/dragon-icon.png`)}
+            label={"Dragon Resist"}
             value={item.resistances.dragon}
           />
         </View>
-        {item.skills && item.skills.length > 0 && (
+      </View>
+      {item.skills && item.skills.length > 0 && (
           <View>
             <Text style={styles.skillsList}>Skills list</Text>
             <View style={styles.hideSkills}>
-              <FlatList
-              data={item.skills}
-              key={(key)=>key}
-              renderItem={(skill, key) => (
-                <Text key={key}  style={styles.text}>
-                  {skill.skillName} - {skill.level}
+              {item.skills.map((skill, index) => (
+                <Text key={index}  style={styles.text}>
+                  {skill.skillName} - Level : {skill.level}
                 </Text>
-              )}
-              />
+              ))}
             </View>
           </View>
         )}
-      </View>
     </TouchableOpacity>
   );
 
@@ -154,7 +146,7 @@ const Armors = ({ armors, handleArmor, type, closePage }) => {
       <ImageBackground
           source={require("../../../../assets/images/background.jpg")}
           resizeMode="cover"
-          style={styles.globalItemContainerType}>
+          style={styles.globalItemContainer}>
 
       <View style={styles.itemNavBar}>
         <TouchableOpacity onPress={closePage} >

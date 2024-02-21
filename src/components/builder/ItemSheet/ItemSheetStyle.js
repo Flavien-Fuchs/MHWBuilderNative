@@ -51,7 +51,7 @@ export const styles = StyleSheet.create({
         height: 50,
         width: 50,
         alignSelf: 'center',
-        tintColor: 'white'
+        tintColor: colors.neutralWhiteColor
     }
 
 });

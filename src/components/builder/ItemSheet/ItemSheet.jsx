@@ -60,9 +60,10 @@ const ItemSheet = ({
           setArmorPage={setArmorPage}
           setBuilder={setBuilder}
           icon={require("../../../assets/images/backgroundItems/teteArmor.png")}
+          type={"head"}
 
         />
-        <ItemParts
+        <ItemCharm
           part={charm}
           toggleDisplayItem={toggleDisplayItem}
           setCharmsPage={setCharmsPage}
@@ -73,7 +74,7 @@ const ItemSheet = ({
       </View>
 
       <View style={styles.part}>
-        <ItemParts
+        <ItemWeapon
           part={weapon}
           toggleDisplayItem={toggleDisplayItem}
           setWeaponPage={setWeaponPage}
@@ -87,6 +88,8 @@ const ItemSheet = ({
           setArmorPage={setArmorPage}
           setBuilder={setBuilder}
           icon={require("../../../assets/images/backgroundItems/torseArmor.png")}
+          type={"chest"}
+
         />
         <ItemParts
           part={gloves}
@@ -94,6 +97,8 @@ const ItemSheet = ({
           setArmorPage={setArmorPage}
           setBuilder={setBuilder}
           icon={require("../../../assets/images/backgroundItems/mainArmor.png")}
+          type={"gloves"}
+
         />
       </View>
 
@@ -104,6 +109,8 @@ const ItemSheet = ({
           setArmorPage={setArmorPage}
           setBuilder={setBuilder}
           icon={require("../../../assets/images/backgroundItems/tailleArmor.png")}
+          type={"waist"}
+
         />
       </View>
 
@@ -114,6 +121,7 @@ const ItemSheet = ({
           setArmorPage={setArmorPage}
           setBuilder={setBuilder}
           icon={require("../../../assets/images/backgroundItems/jambeArmor.png")}
+          type={"legs"}
 
         />
       </View>

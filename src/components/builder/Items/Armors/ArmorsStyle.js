@@ -16,23 +16,9 @@ export const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "center"
     },
-    item: {
-        backgroundColor: colors.backgroundItem,
-        padding: 16, 
-        color: colors.neutralWhiteColor, 
-        cursor: 'pointer', 
-        shadowColor: colors.neutralBlackColor,
-        shadowOffset: {
-        width: 50,
-        height: 50,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5,
-    },
     armorImage: {
-      width:120,
-      height: 120
+      width:150,
+      height: 150
     },
     icon: {
       height: 20,
@@ -60,7 +46,7 @@ export const styles = StyleSheet.create({
    skillsList: {
     color: colors.sharpnessPurpleClaire,
     textAlign: "center",
-    marginVertical: "8",
+    marginVertical: 8,
    },
    detailsInfos: {
       width: "100%",

@@ -142,12 +142,12 @@ function ItemSheetSingle ({
             )}
             <View style={styles.ISSStats}>
               <View style={styles.resistance}>
-                <ResistanceInfo icon={require('../../../assets/images/icons/defense-icon.png')} label="Defense" value={`(${actualItem.defense.base}) (${actualItem.defense.max}) (${actualItem.defense.augmented})`} />
-                <ResistanceInfo icon={require('../../../assets/images/icons/fire-icon.png')} label="Fire Resist" value={actualItem.resistances.fire} />
-                <ResistanceInfo icon={require('../../../assets/images/icons/water-icon.png')} label="Water Resist" value={actualItem.resistances.water} />
-                <ResistanceInfo icon={require('../../../assets/images/icons/ice-icon.png')} label="Ice Resist" value={actualItem.resistances.ice} />
-                <ResistanceInfo icon={require('../../../assets/images/icons/thunder-icon.png')} label="Thunder Resist" value={actualItem.resistances.thunder} />
-                <ResistanceInfo icon={require('../../../assets/images/icons/dragon-icon.png')} label="Dragon Resist" value={actualItem.resistances.dragon} />
+                <ResistanceInfo iconSrc={require('../../../assets/images/icons/defense-icon.png')} label="Defense" value={`(${actualItem.defense.base}) (${actualItem.defense.max}) (${actualItem.defense.augmented})`} />
+                <ResistanceInfo iconSrc={require('../../../assets/images/icons/fire-icon.png')} label="Fire Resist" value={actualItem.resistances.fire} />
+                <ResistanceInfo iconSrc={require('../../../assets/images/icons/water-icon.png')} label="Water Resist" value={actualItem.resistances.water} />
+                <ResistanceInfo iconSrc={require('../../../assets/images/icons/ice-icon.png')} label="Ice Resist" value={actualItem.resistances.ice} />
+                <ResistanceInfo iconSrc={require('../../../assets/images/icons/thunder-icon.png')} label="Thunder Resist" value={actualItem.resistances.thunder} />
+                <ResistanceInfo iconSrc={require('../../../assets/images/icons/dragon-icon.png')} label="Dragon Resist" value={actualItem.resistances.dragon} />
               </View>
             
               {actualItem.skills.length > 0 && (

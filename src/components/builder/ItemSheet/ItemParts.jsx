@@ -1,10 +1,10 @@
 import React from "react";
 import { TouchableOpacity, Image, ImageBackground } from "react-native";
-import { styles } from "../ItemSheet/ItemSheetStyle"
+import { styles } from "./ItemSheetStyle"
 
-function ItemParts({ part, toggleDisplayItem, setArmorPage, icon }) {
+function ItemParts({ part, toggleDisplayItem, setArmorPage, icon, type }) {
   return part ? (
-    <TouchableOpacity style={styles.slot} onPress={() => toggleDisplayItem(`${part}`)}>
+    <TouchableOpacity style={styles.slot} onPress={() => toggleDisplayItem(type)}>
       {!part.assets ? (
         <Image source={require("../../../assets/images/nullArmor.png")} style={styles.armorImage} />
       ) : part.assets.imageMale ? (
@@ -14,7 +14,7 @@ function ItemParts({ part, toggleDisplayItem, setArmorPage, icon }) {
       )}
     </TouchableOpacity>
   ) : (
-    <TouchableOpacity style={styles.slot} onPress={() => setArmorPage(`${part}`)}>
+    <TouchableOpacity style={styles.slot} onPress={() => setArmorPage(type)}>
       <ImageBackground
       source={icon}
       style={styles.imageBackground}
