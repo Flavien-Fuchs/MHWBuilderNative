@@ -4,11 +4,6 @@ import { styles } from "./ItemSheetStyle";
 import ItemSheetSingle from '../ItemSheetSingle/ItemSheetSingle'
 import PropTypes from "prop-types";
 import ItemCharm from "../Parts/ItemCharm";
-import ItemChest from "../Parts/ItemChest";
-import ItemGloves from "../Parts/ItemGloves";
-import ItemHead from "../Parts/ItemHead";
-import ItemLegs from "../Parts/ItemLegs";
-import ItemWaist from "../Parts/ItemWaist";
 import ItemWeapon from "../Parts/ItemWeapon";
 import ItemParts from "./ItemParts";
 
