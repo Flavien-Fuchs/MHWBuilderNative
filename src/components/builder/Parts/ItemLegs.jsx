@@ -18,8 +18,7 @@ function ItemLegs({ legs, toggleDisplayItem, setArmorPage }) {
     <ImageBackground
     source={require("../../../assets/images/backgroundItems/jambeArmor.png")}
     style={styles.imageBackground}
-    > 
-    </ImageBackground>
+    /> 
     </TouchableOpacity>
   );
   

@@ -17,8 +17,7 @@ function ItemGloves({ gloves, toggleDisplayItem, setArmorPage }) {
       <ImageBackground
       source={require("../../../assets/images/backgroundItems/mainArmor.png")}
       style={styles.imageBackground}
-      >
-      </ImageBackground>
+      />
     </TouchableOpacity>
   );
 }

@@ -18,8 +18,7 @@ function ItemHead({ head, toggleDisplayItem, setArmorPage }) {
       <ImageBackground
       source={require("../../../assets/images/backgroundItems/teteArmor.png")}
       style={styles.imageBackground}
-      >
-      </ImageBackground>
+      />
     </TouchableOpacity>
   );
 }

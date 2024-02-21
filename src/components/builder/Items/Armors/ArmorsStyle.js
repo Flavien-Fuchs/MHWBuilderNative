@@ -3,32 +3,14 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     globalItemContainer: {
-      position: 'relative',
-      zIndex: 100,
-      width: '100%',
-      height: '100%',
-      top: 0,
-      left: 0,
+      flex: 1,
+      justifyContent: 'start',
+      alignItems: 'center',
     },
     itemNavBar: {
-      justifyContent: "start"
-    },
-    closeButton: {
-      position: 'absolute',
-      top: 10, 
-      right: 10, 
-      color: colors.neutralBlackColor,
-      transition: '0.2s', 
-      padding: 8,
-    },
-    searchBar: {
-        width: '100%',
-        alignItems: 'flex-start',
-        justifyContent: 'flex-start',
-    },
-    input: {
-        width: '90%',
-        marginVertical: 8,
+      backgroundColor: colors.rankPopup,
+      width: "100%",
+      padding: 10
     },
     itemContainer: {
         flexDirection: "row",
@@ -48,21 +30,87 @@ export const styles = StyleSheet.create({
         shadowRadius: 3.84,
         elevation: 5,
     },
-    detailsInfos: {
-      marginTop: 16, 
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      alignItems: 'center',
-      justifyContent: 'space-evenly',
-    },
     armorImage: {
-      width:100,
-      height: 100
+      width:120,
+      height: 120
     },
-    resistanceItem: {
+    icon: {
       height: 20,
       width: 20,
-    }
+    },
+    flashList: {
+      width: "95%"
+   },
+   item: {
+      backgroundColor: colors.backgroundItem,
+      marginVertical: 4,
+      borderRadius: 10,
+      padding: 10,
+      alignItems: "center"
+   },
+   paragraphList: {
+      color: colors.neutralWhiteColor,
+      fontWeight: "800",
+      textAlign: "center",
+   },
+   rarity: {
+      color: colors.neutralYellowColor,
+      textAlign: "center",
+   },
+   skillsList: {
+    color: colors.sharpnessPurpleClaire,
+    textAlign: "center",
+    marginVertical: "8",
+   },
+   detailsInfos: {
+      width: "100%",
+      flexDirection: "row",
+      justifyContent: "space-around",
+      alignItems: "center"
+   },
+   text: {
+      color: colors.neutralWhiteColor,
+   },
+   sharpnessContainer: {
+      flexDirection: "row",
+      alignItems: "center",
+   },
+   itemNavBar: {
+      backgroundColor: colors.rankPopup,
+      width: "100%",
+      padding: 10
+   },
+   input: {
+      backgroundColor: colors.neutralWhiteColor,
+      color: colors.neutralBlackColor,
+      padding: 8,
+      borderRadius: 4,
+      marginVertical: 10
+   },
+   filterDropdowns: {
+      flexDirection: "row",
+      justifyContent: "space-around"
+   },
+   picker: {
+      backgroundColor: colors.neutralWhiteColor,
+      color: colors.neutralBlackColor,
+      borderRadius: 4,
+      marginVertical: 10,
+      width: "40%"
+   },
+   buttonContainer: {
+      flexDirection: "row",
+      justifyContent: "space-between"
+   },
+   button: {
+      backgroundColor: colors.colorButtonWeapon,
+      padding: 10,
+      borderRadius: 5,
+      borderColor: colors.neutralWhiteColor,
+      borderStyle: "solid",
+      borderWidth: 1,
+      color: colors.neutralWhiteColor,
+   },
     
   });
   

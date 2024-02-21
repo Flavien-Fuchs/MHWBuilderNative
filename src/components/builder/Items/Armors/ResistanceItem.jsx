@@ -6,8 +6,8 @@ import { styles } from './ArmorsStyle';
 function ResistanceItem({ iconSrc, label, value }) {
   return (
     <View>
-      <Text>
-        <Image source={{ uri: `../../../../assets/images/${iconSrc}-icon.png` }} style={styles.resistanceItem} />
+      <Text style={styles.text}>
+        <Image source={{ uri: `../../../../assets/images/${iconSrc}-icon.png` }} style={styles.icon} />
         {label} : {value}
       </Text>
     </View>

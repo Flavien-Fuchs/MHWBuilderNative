@@ -18,8 +18,7 @@ function ItemWeapon({ weapon, toggleDisplayItem, setWeaponPage }) {
       <ImageBackground
       source={require("../../../assets/images/backgroundItems/epee.png")}
       style={styles.imageBackground}
-      > 
-      </ImageBackground>
+      /> 
     </TouchableOpacity>
     
   );

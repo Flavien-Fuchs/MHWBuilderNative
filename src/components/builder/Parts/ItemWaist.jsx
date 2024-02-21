@@ -18,8 +18,7 @@ function ItemWaist({ waist, toggleDisplayItem, setArmorPage }) {
       <ImageBackground
       source={require("../../../assets/images/backgroundItems/tailleArmor.png")}
       style={styles.imageBackground}
-      >
-      </ImageBackground>
+      />
     </TouchableOpacity>
   );
 }

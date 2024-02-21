@@ -6,7 +6,8 @@ import {
   TouchableOpacity,
   Image,
   FlatList,
-  StyleSheet,
+  Modal,
+  ImageBackground
 } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import ResistanceItem from './ResistanceItem';
@@ -79,49 +80,48 @@ const Armors = ({ armors, handleArmor, type, closePage }) => {
           <Image
             source={require('../../../../assets/images/nullArmor.png')}
             style={styles.armorImage}
+            resizeMethod="resize"
           />
         ) : item.assets.imageMale ? (
-          <Image source={{ uri: item.assets.imageMale }} style={styles.armorImage} />
+          <Image source={{ uri: item.assets.imageMale }} style={styles.armorImage} resizeMethod="resize" />
         ) : (
-          <Image source={{ uri: item.assets.imageFemale }} style={styles.armorImage} />
+          <Image source={{ uri: item.assets.imageFemale }} style={styles.armorImage} resizeMethod="resize" />
         )}
 
         <View style={styles.stats}>
-          <Text style={styles.defense}>
+          <View>
             <Image
               source={require('../../../../assets/images/icons/defense-icon.png')}
               style={styles.defenseIcon}
             />
-            Defense : {item.defense.base} | {item.defense.max} |{' '}
-            {item.defense.augmented}
-          </Text>
+            <Text style={styles.text}>
+              Defense : {item.defense.base} | {item.defense.max} |{' '}
+              {item.defense.augmented}
+            </Text>
+          </View>
+          
           <ResistanceItem
             iconSrc="fire"
-            altText="fire"
             label="Fire Resist"
             value={item.resistances.fire}
           />
           <ResistanceItem
             iconSrc="water"
-            altText="water"
             label="Water Resist"
             value={item.resistances.water}
           />
           <ResistanceItem
             iconSrc="ice"
-            altText="ice"
             label="Ice Resist"
             value={item.resistances.ice}
           />
           <ResistanceItem
             iconSrc="thunder"
-            altText="thunder"
             label="Thunder Resist"
             value={item.resistances.thunder}
           />
           <ResistanceItem
             iconSrc="dragon"
-            altText="dragon"
             label="Dragon Resist"
             value={item.resistances.dragon}
           />
@@ -134,7 +134,7 @@ const Armors = ({ armors, handleArmor, type, closePage }) => {
               data={item.skills}
               key={(key)=>key}
               renderItem={(skill, key) => (
-                <Text key={key}>
+                <Text key={key}  style={styles.text}>
                   {skill.skillName} - {skill.level}
                 </Text>
               )}
@@ -147,13 +147,21 @@ const Armors = ({ armors, handleArmor, type, closePage }) => {
   );
 
   return (
-    <View style={styles.globalItemContainer}>
-      <View style={styles.itemNavBar}>
-        <TouchableOpacity onPress={closePage} style={styles.closeButton}>
-          {/* Utilisez une icône React Native ici */}
-        </TouchableOpacity>
+    <Modal animationType="slide"
+    transparent={true}
+    style={styles.globalItemContainer}
+    >
+      <ImageBackground
+          source={require("../../../../assets/images/background.jpg")}
+          resizeMode="cover"
+          style={styles.globalItemContainerType}>
 
-        <View style={styles.searchBar}>
+      <View style={styles.itemNavBar}>
+        <TouchableOpacity onPress={closePage} >
+                <Text style={styles.button}>close</Text>
+              </TouchableOpacity>
+
+        
           <TextInput
             style={styles.input}
             value={searchTerm}
@@ -161,10 +169,10 @@ const Armors = ({ armors, handleArmor, type, closePage }) => {
             placeholder="Search item by name or skill"
           />
           <View style={styles.filters}>
-            <Text>Filter by :</Text>
+            <Text style={styles.text}>Filter by :</Text>
             <View style={styles.filterDropdowns}>
               <Picker
-                style={styles.filterDropdown}
+                style={styles.picker}
                 selectedValue={filterByDefense}
                 onValueChange={handleFilterByDefense}
               >
@@ -175,7 +183,7 @@ const Armors = ({ armors, handleArmor, type, closePage }) => {
               </Picker>
 
               <Picker
-                style={styles.filterDropdown}
+                style={styles.picker}
                 selectedValue={filterByResistance}
                 onValueChange={handleFilterByResistance}
               >
@@ -188,14 +196,15 @@ const Armors = ({ armors, handleArmor, type, closePage }) => {
               </Picker>
             </View>
           </View>
-        </View>
+        
       </View>
       <FlatList
         data={newArmors}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
-    </View>
+      </ImageBackground>
+    </Modal>
   );
 };
 
