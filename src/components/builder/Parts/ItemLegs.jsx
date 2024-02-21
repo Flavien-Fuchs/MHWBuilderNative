@@ -17,7 +17,7 @@ function ItemLegs({ legs, toggleDisplayItem, setArmorPage }) {
     <TouchableOpacity style={styles.slot} onPress={() => setArmorPage("legs")}>
     <ImageBackground
     source={require("../../../assets/images/backgroundItems/jambeArmor.png")}
-    style={styles.ImageBackground}
+    style={styles.imageBackground}
     > 
     </ImageBackground>
     </TouchableOpacity>

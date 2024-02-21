@@ -13,12 +13,12 @@ function ItemChest({ chest, toggleDisplayItem, setArmorPage }) {
         <Image source={{ uri: chest.assets.imageFemale }} style={styles.armorImage} />
       )}
     </TouchableOpacity>
-  ) : (<TouchableOpacity style={styles.slot} onPress={() => setArmorPage("chest")}>
-    <ImageBackground
-    source={require("../../../assets/images/backgroundItems/torseArmor.png")}
-    style={styles.ImageBackground}
-    >
-    </ImageBackground>
+  ) : (
+    <TouchableOpacity style={styles.slot} onPress={() => setArmorPage("chest")}>
+      <ImageBackground
+      source={require("../../../assets/images/backgroundItems/torseArmor.png")}
+      style={styles.imageBackground}
+      />
     </TouchableOpacity>
   );
 }

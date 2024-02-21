@@ -15,10 +15,10 @@ export const styles = StyleSheet.create({
     },
     closeButton: {
       position: 'absolute',
-      top: 10, // Ajoutez la valeur que vous souhaitez
-      right: 10, // Ajoutez la valeur que vous souhaitez
-      color: colors.neutralBlackColor, // Remplacez par votre couleur
-      transition: '0.2s', // Cela peut ne pas être nécessaire en React Native
+      top: 10, 
+      right: 10, 
+      color: colors.neutralBlackColor,
+      transition: '0.2s', 
       padding: 8,
     },
     searchBar: {
@@ -30,25 +30,15 @@ export const styles = StyleSheet.create({
         width: '90%',
         marginVertical: 8,
     },
-    filters: {
-      // Style pour les filtres
-    },
-    filterDropdowns: {
-      // Style pour les dropdowns de filtre
-    },
-    filterDropdown: {
-      // Style pour un dropdown de filtre individuel
-    },
     itemContainer: {
         flexDirection: "row",
         justifyContent: "center"
     },
     item: {
         backgroundColor: colors.backgroundItem,
-        padding: 16, // Ajoutez la valeur que vous souhaitez
-        color: colors.neutralWhiteColor, // Ajoutez votre couleur de texte
-        cursor: 'pointer', // Pas nécessaire en React Native
-        // Ajoutez l'ombre de la boîte si nécessaire
+        padding: 16, 
+        color: colors.neutralWhiteColor, 
+        cursor: 'pointer', 
         shadowColor: colors.neutralBlackColor,
         shadowOffset: {
         width: 50,
@@ -58,17 +48,8 @@ export const styles = StyleSheet.create({
         shadowRadius: 3.84,
         elevation: 5,
     },
-    globalInfos: {
-      // Style pour les informations globales
-    },
-    paragraphList: {
-      // Style pour le texte de la liste de paragraphes
-    },
-    rarity: {
-      // Style pour la rareté
-    },
     detailsInfos: {
-      marginTop: 16, // Équivalent à 1em
+      marginTop: 16, 
       flexDirection: 'row',
       flexWrap: 'wrap',
       alignItems: 'center',
@@ -77,22 +58,11 @@ export const styles = StyleSheet.create({
     armorImage: {
       width:100,
       height: 100
-      // Style pour l'image d'armure
     },
-    stats: {
-      fontSize: 16,
-    },
-    defense: {
-      // Style pour la défense
-    },
-    defenseIcon: {
-      // Style pour l'icône de défense
-    },
-    skillsList: {
-      // Style pour la liste des compétences
-    },
-    hideSkills: {
-      // Style pour cacher les compétences
-    },
+    resistanceItem: {
+      height: 20,
+      width: 20,
+    }
+    
   });
   

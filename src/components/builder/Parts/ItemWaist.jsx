@@ -17,7 +17,7 @@ function ItemWaist({ waist, toggleDisplayItem, setArmorPage }) {
     <TouchableOpacity style={styles.slot} onPress={() => setArmorPage("waist")}>
       <ImageBackground
       source={require("../../../assets/images/backgroundItems/tailleArmor.png")}
-      style={styles.ImageBackground}
+      style={styles.imageBackground}
       >
       </ImageBackground>
     </TouchableOpacity>

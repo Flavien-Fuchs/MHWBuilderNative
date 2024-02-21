@@ -23,6 +23,11 @@ export const styles = StyleSheet.create({
         backgroundColor: colors.backgroundSlot,
         transitionDuration: 0.2,
     },
+    slot1: {
+        width: 50,
+        height: 50,
+        
+    },
     part: {
         flexDirection: "row",
         justifyContent: "center",
@@ -30,16 +35,23 @@ export const styles = StyleSheet.create({
     },
     part1: {
         paddingLeft: 10,
+        marginLeft: 50,
         alignItems: 'flex-end',
     },
     armorImage: {
         height: 100,
         width: 100
     },
-    ImageBackground: {
+    imageBackground: {
         height: 70,
         width: 70,
         alignSelf: 'center',
+    },
+    imageBackgroundCharm: {
+        height: 50,
+        width: 50,
+        alignSelf: 'center',
+        tintColor: 'white'
     }
 
 });

@@ -17,7 +17,7 @@ function ItemHead({ head, toggleDisplayItem, setArmorPage }) {
     <TouchableOpacity style={styles.slot} onPress={() => setArmorPage("head")}>
       <ImageBackground
       source={require("../../../assets/images/backgroundItems/teteArmor.png")}
-      style={styles.ImageBackground}
+      style={styles.imageBackground}
       >
       </ImageBackground>
     </TouchableOpacity>
