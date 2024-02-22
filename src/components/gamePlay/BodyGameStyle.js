@@ -1,0 +1,62 @@
+import { StyleSheet } from "react-native";
+import { colors } from "../../utils/colors";
+
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    padding: 10,
+  },
+  image: {
+    width: 25,
+    height: 25,
+    tintColor: colors.neutralWhiteColor,
+  },
+  body: {
+    flex: 1,
+    gap: 10,
+  },
+  part: {
+    flex: 1,
+  },
+  profileImage: {
+    height: "80%",
+    width: "auto",
+    resizeMode: "contain",
+  },
+  textWhite: {
+    color: colors.neutralWhiteColor,
+    textTransform: "uppercase",
+  },
+  alignCenter: { alignItems: "center" },
+  myPart: {
+    width: "100%",
+    flexDirection: "row",
+    padding: 10,
+    gap: 10,
+  },
+  containerMyPartLeft: {
+    flex: 1,
+    gap: 10,
+  },
+  containerMyImg: {
+    flex: 1,
+  },
+  myImg: {
+    height: "100%",
+    width: "auto",
+    flex: 1,
+    resizeMode: "contain",
+    overflow: "visible",
+  },
+  containerBtnAction: {
+    flex: 1,
+    padding: 10,
+    flexDirection: "row",
+    alignItems: "flex-end",
+    gap: 10,
+  },
+});
