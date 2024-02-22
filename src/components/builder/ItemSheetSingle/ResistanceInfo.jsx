@@ -1,12 +1,12 @@
 import React from 'react';
 import { Text, Image, View, StyleSheet } from 'react-native';
-import { styles } from '../ItemSheet/ItemSheetStyle';
+import { styles } from './ItemSheetSingleStyle';
 
 export const ResistanceInfo = ({ iconSrc, label, value }) => {
   return (
-    <View style={styles.container}>
+    <View style={styles.resistContainer}>
       <Image source={iconSrc} style={styles.icon} />
-      <Text>
+      <Text style={styles.text}>
         {label} : {value}
       </Text>
     </View>

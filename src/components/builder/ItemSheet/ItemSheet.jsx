@@ -3,8 +3,8 @@ import { View } from "react-native";
 import { styles } from "./ItemSheetStyle";
 import ItemSheetSingle from "../ItemSheetSingle/ItemSheetSingle";
 import PropTypes from "prop-types";
-import ItemCharm from "../Parts/ItemCharm";
-import ItemWeapon from "../Parts/ItemWeapon";
+import ItemCharm from "./ItemCharm";
+import ItemWeapon from "./ItemWeapon";
 import ItemParts from "./ItemParts";
 
 const ItemSheet = ({
@@ -29,7 +29,7 @@ const ItemSheet = ({
 
   return (
     <View style={styles.globalContainer}>
-      {displayItem && (
+      {displayItem ? (
         <ItemSheetSingle
           type={displayItem}
           head={head}
@@ -46,72 +46,75 @@ const ItemSheet = ({
           toggleDisplayItem={toggleDisplayItem}
           deleteItem={deleteItem}
         />
+      ) : (
+        <View>
+          <View style={[styles.part, styles.part1]}>
+            <ItemParts
+              part={head}
+              toggleDisplayItem={toggleDisplayItem}
+              setArmorPage={setArmorPage}
+              setBuilder={setBuilder}
+              icon={require("../../../assets/images/backgroundItems/teteArmor.png")}
+              type={"head"}
+            />
+            <ItemCharm
+              part={charm}
+              toggleDisplayItem={toggleDisplayItem}
+              setCharmsPage={setCharmsPage}
+              setBuilder={setBuilder}
+              icon={require("../../../assets/images/charm-icon.png")}
+            />
+          </View>
+
+          <View style={styles.part}>
+            <ItemWeapon
+              weapon={weapon}
+              toggleDisplayItem={toggleDisplayItem}
+              setWeaponPage={setWeaponPage}
+              setBuilder={setBuilder}
+              icon={require("../../../assets/images/backgroundItems/epee.png")}
+            />
+            <ItemParts
+              part={chest}
+              toggleDisplayItem={toggleDisplayItem}
+              setArmorPage={setArmorPage}
+              setBuilder={setBuilder}
+              icon={require("../../../assets/images/backgroundItems/torseArmor.png")}
+              type={"chest"}
+            />
+            <ItemParts
+              part={gloves}
+              toggleDisplayItem={toggleDisplayItem}
+              setArmorPage={setArmorPage}
+              setBuilder={setBuilder}
+              icon={require("../../../assets/images/backgroundItems/mainArmor.png")}
+              type={"gloves"}
+            />
+          </View>
+
+          <View style={styles.part}>
+            <ItemParts
+              part={waist}
+              toggleDisplayItem={toggleDisplayItem}
+              setArmorPage={setArmorPage}
+              setBuilder={setBuilder}
+              icon={require("../../../assets/images/backgroundItems/tailleArmor.png")}
+              type={"waist"}
+            />
+          </View>
+
+          <View style={styles.part}>
+            <ItemParts
+              part={legs}
+              toggleDisplayItem={toggleDisplayItem}
+              setArmorPage={setArmorPage}
+              setBuilder={setBuilder}
+              icon={require("../../../assets/images/backgroundItems/jambeArmor.png")}
+              type={"legs"}
+            />
+          </View>
+        </View>
       )}
-      <View style={[styles.part, styles.part1]}>
-        <ItemParts
-          part={head}
-          toggleDisplayItem={toggleDisplayItem}
-          setArmorPage={setArmorPage}
-          setBuilder={setBuilder}
-          icon={require("../../../assets/images/backgroundItems/teteArmor.png")}
-          type={"head"}
-        />
-        <ItemCharm
-          part={charm}
-          toggleDisplayItem={toggleDisplayItem}
-          setCharmsPage={setCharmsPage}
-          setBuilder={setBuilder}
-          icon={require("../../../assets/images/charm-icon.png")}
-        />
-      </View>
-
-      <View style={styles.part}>
-        <ItemWeapon
-          part={weapon}
-          toggleDisplayItem={toggleDisplayItem}
-          setWeaponPage={setWeaponPage}
-          setBuilder={setBuilder}
-          icon={require("../../../assets/images/backgroundItems/epee.png")}
-        />
-        <ItemParts
-          part={chest}
-          toggleDisplayItem={toggleDisplayItem}
-          setArmorPage={setArmorPage}
-          setBuilder={setBuilder}
-          icon={require("../../../assets/images/backgroundItems/torseArmor.png")}
-          type={"chest"}
-        />
-        <ItemParts
-          part={gloves}
-          toggleDisplayItem={toggleDisplayItem}
-          setArmorPage={setArmorPage}
-          setBuilder={setBuilder}
-          icon={require("../../../assets/images/backgroundItems/mainArmor.png")}
-          type={"gloves"}
-        />
-      </View>
-
-      <View style={styles.part}>
-        <ItemParts
-          part={waist}
-          toggleDisplayItem={toggleDisplayItem}
-          setArmorPage={setArmorPage}
-          setBuilder={setBuilder}
-          icon={require("../../../assets/images/backgroundItems/tailleArmor.png")}
-          type={"waist"}
-        />
-      </View>
-
-      <View style={styles.part}>
-        <ItemParts
-          part={legs}
-          toggleDisplayItem={toggleDisplayItem}
-          setArmorPage={setArmorPage}
-          setBuilder={setBuilder}
-          icon={require("../../../assets/images/backgroundItems/jambeArmor.png")}
-          type={"legs"}
-        />
-      </View>
     </View>
   );
 };

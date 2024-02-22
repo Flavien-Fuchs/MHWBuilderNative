@@ -1,5 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
+import { styles } from "./ItemSheetSingleStyle"
 
 export const ChangeItemButton = ({ type, toggleDisplayItem, setPage }) => {
   const onPressHandler = () => {
@@ -9,7 +10,7 @@ export const ChangeItemButton = ({ type, toggleDisplayItem, setPage }) => {
 
   return (
     <TouchableOpacity onPress={onPressHandler}>
-      <Text>Change item</Text>
+      <Text style={styles.button}>Change item</Text>
     </TouchableOpacity>
   );
 };
