@@ -107,7 +107,7 @@ function ItemSheetSingle({
         ) : type === 'charm' ? (
           <View style={styles.ISSDescription}>
             <View style={styles.ISSSkillsList}>
-              <Image source={require('../../../assets/images/charm-icon.png')} style={styles.itemImage} />
+              <Image source={require('../../../assets/images/amulet3.png')} style={styles.itemImage} />
               <Text style={styles.skillsList}>Skills list</Text>
               <View>
                 <FlatList
