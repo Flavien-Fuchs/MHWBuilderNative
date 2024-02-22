@@ -10,13 +10,13 @@ export const styles = StyleSheet.create({
    },
    safeArea: {
       flex: 1,
-      backgroundColor: colors.bgBlackOpacity, 
-       },
+      backgroundColor: colors.bgBlackOpacity,
+   },
    globalItemContainerType: {
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor:colors.neutralWhiteColor,
+      backgroundColor: colors.neutralWhiteColor,
    },
    typeContainer: {
       flexDirection: "row",
@@ -113,7 +113,6 @@ export const styles = StyleSheet.create({
       borderStyle: "solid",
       borderWidth: 1,
       color: colors.neutralWhiteColor,
-      
    },
    closeButton: {
       marginBottom: 50

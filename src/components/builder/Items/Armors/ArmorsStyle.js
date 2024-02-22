@@ -2,33 +2,33 @@ import { colors } from "../../../../utils/colors";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    globalItemContainer: {
+   globalItemContainer: {
       flex: 1,
       justifyContent: 'start',
       alignItems: 'center',
-    },
-    safeArea: {
+   },
+   safeArea: {
       flex: 1,
-      backgroundColor: colors.bgBlackOpacity, 
-       },
-    itemNavBar: {
+      backgroundColor: colors.bgBlackOpacity,
+   },
+   itemNavBar: {
       backgroundColor: colors.rankPopup,
       width: "100%",
       padding: 10
-    },
-    itemContainer: {
-        flexDirection: "row",
-        justifyContent: "center"
-    },
-    armorImage: {
-      width:150,
+   },
+   itemContainer: {
+      flexDirection: "row",
+      justifyContent: "center"
+   },
+   armorImage: {
+      width: 150,
       height: 150
-    },
-    icon: {
+   },
+   icon: {
       height: 20,
       width: 20,
-    },
-    flatlist: {
+   },
+   flatlist: {
       width: "95%"
    },
    item: {
@@ -48,9 +48,9 @@ export const styles = StyleSheet.create({
       textAlign: "center",
    },
    skillsList: {
-    color: colors.sharpnessPurpleClaire,
-    textAlign: "center",
-    marginVertical: 8,
+      color: colors.colorDarkText,
+      textAlign: "center",
+      marginVertical: 8,
    },
    detailsInfos: {
       width: "100%",
@@ -101,6 +101,10 @@ export const styles = StyleSheet.create({
       borderWidth: 1,
       color: colors.neutralWhiteColor,
    },
-    
-  });
-  
+   ionicon: {
+      fontSize: 28,
+      color: colors.neutralWhiteColor,
+      paddingBottom: 5,
+      textAlign: "right"
+   },
+});
