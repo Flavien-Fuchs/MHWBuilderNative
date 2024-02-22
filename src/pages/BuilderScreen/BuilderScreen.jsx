@@ -417,12 +417,12 @@ const BuilderScreen = ({ route }) => {
           />
         )}
         {charmsPage && (
-              <Charms
-                charms={charms}
-                handleCharms={handleCharms}
-                closePage={closePage}
-              />
-            )}
+          <Charms
+            charms={charms}
+            handleCharms={handleCharms}
+            closePage={closePage}
+          />
+        )}
       </SafeAreaView>
     </ImageBackground>
   );
