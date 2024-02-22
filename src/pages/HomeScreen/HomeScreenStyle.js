@@ -47,6 +47,9 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: colors.rankPopup,
+        color: colors.neutralWhiteColor,
       },
-
+    center: {
+        textAlign: "center"
+      },
 });

@@ -111,7 +111,7 @@ const HomeScreen = () => {
         )}
         <View style={styles.footer}>
           <Text>©WCSWebDevMob All rights reserved, 2024</Text>
-          <Text>
+          <Text style={styles.center}>
             All Datas and images are Monster Hunter: World and Capcom propriety.
           </Text>
         </View>
