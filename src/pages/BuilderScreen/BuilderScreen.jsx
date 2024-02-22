@@ -348,12 +348,12 @@ const BuilderScreen = ({ route }) => {
   };
 
   return (
-    <SafeAreaView style={styles.globalContainer}>
-      <ImageBackground
-        source={require("../../assets/images/background.jpg")}
-        resizeMode="cover"
-        style={styles.container}
-      >
+    <ImageBackground
+      source={require("../../assets/images/background.jpg")}
+      resizeMode="cover"
+      style={styles.container}
+    >
+      <SafeAreaView style={styles.globalContainer}>
         <ItemSheet
           head={head}
           chest={chest}
@@ -415,8 +415,8 @@ const BuilderScreen = ({ route }) => {
             weaponPage={weaponPage}
           />
         )}
-      </ImageBackground>
-    </SafeAreaView>
+      </SafeAreaView>
+    </ImageBackground>
   );
 };
 

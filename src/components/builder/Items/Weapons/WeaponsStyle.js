@@ -1,13 +1,18 @@
 import { StyleSheet } from 'react-native'
 import { colors } from "../../../../utils/colors"
 
+
 export const styles = StyleSheet.create({
    globalItemContainer: {
       flex: 1,
       justifyContent: 'start',
       alignItems: 'center',
-      backgroundColor: "white",
+      backgroundColor: colors.neutralWhiteColor,
    },
+   safeArea: {
+      flex: 1,
+      backgroundColor: colors.bgBlackOpacity, 
+       },
    globalItemContainerType: {
       flex: 1,
       justifyContent: 'center',
@@ -27,7 +32,8 @@ export const styles = StyleSheet.create({
       backgroundColor: colors.backgroundItem,
       padding: 8,
       alignItems: "center",
-      justifyContent: 'space-evenly'
+      justifyContent: 'space-evenly',
+      borderRadius: 10,
    },
    weaponTypeImage: {
       width: 40,
@@ -79,7 +85,7 @@ export const styles = StyleSheet.create({
       padding: 10
    },
    input: {
-      backgroundColor: colors.neutralWhiteColor,
+      backgroundColor: "black",
       color: colors.neutralBlackColor,
       padding: 8,
       borderRadius: 4,
@@ -108,8 +114,10 @@ export const styles = StyleSheet.create({
       borderStyle: "solid",
       borderWidth: 1,
       color: colors.neutralWhiteColor,
+      
    },
    closeButton: {
       marginBottom: 50
-   }
+   },
 })
+
