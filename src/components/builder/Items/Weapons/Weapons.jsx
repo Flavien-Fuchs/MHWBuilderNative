@@ -12,8 +12,10 @@ import { styles } from "./WeaponsStyle";
 import { Picker } from "@react-native-picker/picker";
 import { useState } from "react";
 import WeaponsCategory from "./WeaponsCategory";
+import WeaponsSharpness from "./WeaponsSharpness";
 import { colors } from "../../../../utils/colors";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 const Weapons = ({ weapons, handleWeapon, closePage, weaponPage }) => {
   const [typeChosen, setTypeChosen] = useState(false);
@@ -99,55 +101,34 @@ const Weapons = ({ weapons, handleWeapon, closePage, weaponPage }) => {
           {item.durability && (
             <View style={styles.sharpnessContainer}>
               <Text style={styles.text}>Sharpness : </Text>
-              <View
-                style={{
-                  width: item.durability[0].red / 3,
-                  backgroundColor: colors.sharpnessRed,
-                  height: 14,
-                }}
-              ></View>
-              <View
-                style={{
-                  width: item.durability[0].orange / 3,
-                  backgroundColor: colors.sharpnessOrange,
-                  height: 14,
-                }}
-              ></View>
-              <View
-                style={{
-                  width: item.durability[0].yellow / 3,
-                  backgroundColor: colors.sharpnessYellow,
-                  height: 14,
-                }}
-              ></View>
-              <View
-                style={{
-                  width: item.durability[0].green / 3,
-                  backgroundColor: colors.sharpnessGreen,
-                  height: 14,
-                }}
-              ></View>
-              <View
-                style={{
-                  width: item.durability[0].blue / 3,
-                  backgroundColor: colors.sharpnessBlue,
-                  height: 14,
-                }}
-              ></View>
-              <View
-                style={{
-                  width: item.durability[0].white / 3,
-                  backgroundColor: colors.sharpnessWhite,
-                  height: 14,
-                }}
-              ></View>
-              <View
-                style={{
-                  width: item.durability[0].purple / 3,
-                  backgroundColor: colors.sharpnessPurple,
-                  height: 14,
-                }}
-              ></View>
+              <WeaponsSharpness
+                itemWidth={item.durability[0].red / 3}
+                itemColor={colors.sharpnessRed}
+              />
+              <WeaponsSharpness
+                itemWidth={item.durability[0].orange / 3}
+                itemColor={colors.sharpnessOrange}
+              />
+              <WeaponsSharpness
+                itemWidth={item.durability[0].yellow / 3}
+                itemColor={colors.sharpnessYellow}
+              />
+              <WeaponsSharpness
+                itemWidth={item.durability[0].green / 3}
+                itemColor={colors.sharpnessGreen}
+              />
+              <WeaponsSharpness
+                itemWidth={item.durability[0].blue / 3}
+                itemColor={colors.sharpnessBlue}
+              />
+              <WeaponsSharpness
+                itemWidth={item.durability[0].white / 3}
+                itemColor={colors.sharpnessWhite}
+              />
+              <WeaponsSharpness
+                itemWidth={item.durability[0].purple / 3}
+                itemColor={colors.sharpnessPurple}
+              />
             </View>
           )}
         </View>
@@ -255,11 +236,11 @@ const Weapons = ({ weapons, handleWeapon, closePage, weaponPage }) => {
               <View style={styles.itemNavBar}>
                 <View style={styles.buttonContainer}>
                   <TouchableOpacity onPress={backWeapon}>
-                    <Text style={styles.button}>Back to Weapon's Type</Text>
+                    <Ionicons style={styles.ionicon} name="arrow-back" />
                   </TouchableOpacity>
 
                   <TouchableOpacity onPress={closePage}>
-                    <Text style={styles.button}>close</Text>
+                    <Ionicons style={styles.ionicon} name="close" />
                   </TouchableOpacity>
                 </View>
 

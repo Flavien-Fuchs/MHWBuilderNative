@@ -7,7 +7,6 @@ export const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'start',
       alignItems: 'center',
-      backgroundColor: colors.neutralWhiteColor,
    },
    safeArea: {
       flex: 1,
@@ -17,7 +16,7 @@ export const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: "white",
+      backgroundColor:colors.neutralWhiteColor,
    },
    typeContainer: {
       flexDirection: "row",
@@ -118,6 +117,11 @@ export const styles = StyleSheet.create({
    },
    closeButton: {
       marginBottom: 50
+   },
+   ionicon: {
+      fontSize: 28,
+      color: colors.neutralWhiteColor,
+      paddingBottom: 5,
    },
 })
 
