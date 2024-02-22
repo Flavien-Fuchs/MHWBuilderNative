@@ -14,11 +14,13 @@ export const styles = StyleSheet.create({
         width: 250,
         height: 100,
         margin: 20,
+        marginTop: "auto",
     },
     imageLoading: {
         width: 50,
         height: 50,
         margin: 20,
+        marginBottom: "auto",
     },
     loginContainer: {
         padding: 10,
@@ -39,10 +41,8 @@ export const styles = StyleSheet.create({
         fontWeight: "bold",
     },
     footer: {
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        right: 0,
+        marginTop: "auto",
+        width: "100%",
         height: 60,
         justifyContent: 'center',
         alignItems: 'center',
