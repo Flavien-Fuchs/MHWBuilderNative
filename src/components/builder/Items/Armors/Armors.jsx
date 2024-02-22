@@ -88,7 +88,7 @@ const Armors = ({ armors, handleArmor, type, closePage }) => {
           <Image source={{ uri: item.assets.imageFemale }} style={styles.armorImage} resizeMethod="resize" />
         )}
 
-        <View style={styles.stats}>
+        <View>
           
           <ResistanceItem
             iconSrc={require("../../../../assets/images/icons/defense-icon.png")}
@@ -126,7 +126,7 @@ const Armors = ({ armors, handleArmor, type, closePage }) => {
       {item.skills && item.skills.length > 0 && (
           <View>
             <Text style={styles.skillsList}>Skills list</Text>
-            <View style={styles.hideSkills}>
+            <View>
               {item.skills.map((skill, index) => (
                 <Text key={index}  style={styles.text}>
                   {skill.skillName} - Level : {skill.level}
@@ -150,8 +150,8 @@ const Armors = ({ armors, handleArmor, type, closePage }) => {
 
       <View style={styles.itemNavBar}>
         <TouchableOpacity onPress={closePage} >
-                <Text style={styles.button}>close</Text>
-              </TouchableOpacity>
+          <Text style={styles.button}>close</Text>
+        </TouchableOpacity>
 
         
           <TextInput

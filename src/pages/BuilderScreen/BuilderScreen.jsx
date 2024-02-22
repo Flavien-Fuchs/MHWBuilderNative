@@ -7,6 +7,7 @@ import Stats from "../../components/builder/Stats/Stats";
 import GameButton from "../../components/builder/GameButton/GameButton";
 import SkillModal from "../../components/builder/SkillModal/SkillModal";
 import Armors from "../../components/builder/Items/Armors/Armors";
+import Charms from "../../components/builder/Items/Charm/Charm";
 
 const BuilderScreen = ({ route }) => {
   const { armors, weapons, charms, skills } = route.params
@@ -402,6 +403,13 @@ const BuilderScreen = ({ route }) => {
                 armors={armors}
                 handleArmor={handleArmor}
                 type={armorPage}
+                closePage={closePage}
+              />
+            )}
+        {charmsPage && (
+              <Charms
+                charms={charms}
+                handleCharms={handleCharms}
                 closePage={closePage}
               />
             )}

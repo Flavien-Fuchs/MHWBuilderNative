@@ -97,6 +97,11 @@ export const styles = StyleSheet.create({
       borderWidth: 1,
       color: colors.neutralWhiteColor,
    },
+   stats: {
+      height: 50,
+      width: 50
+   }
+   
     
   });
   

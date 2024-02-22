@@ -7,7 +7,6 @@ export const styles = StyleSheet.create({
         width: '50%',
         height: '50%',
         top: 0,
-
         left: 0,
         zIndex: 1000,
         backgroundColor: colors.rankPopup,
@@ -21,7 +20,12 @@ export const styles = StyleSheet.create({
 
     resistance: {
         color: colors.neutralWhiteColor,
-    }
+    },
+    armorImage: {
+        width:100,
+        height: 100,
+        marginLeft: 50
+      },
 });
 
 

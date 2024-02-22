@@ -120,7 +120,9 @@ function ItemSheetSingle ({
         ) : type === 'charm' ? (
           <View style={styles.ISSDescription}>
             <View style={styles.ISSSkillsList}>
-              <Image source={require('../../../assets/images/charm-icon.png')} />
+              <Image source={require('../../../assets/images/amulet3.png')}
+              style={styles.armorImage}
+              />
               <Text>Skills list</Text>
               <View>
                 <FlatList
@@ -136,9 +138,13 @@ function ItemSheetSingle ({
             {!actualItem.assets ? (
               <Image source={require('../../../assets/images/nullArmor.png')} />
             ) : actualItem.assets.imageMale ? (
-              <Image source={{ uri: actualItem.assets.imageMale }} />
+              <Image source={{ uri: actualItem.assets.imageMale }} 
+              style={styles.armorImage}
+              />
             ) : (
-              <Image source={{ uri: actualItem.assets.imageFemale }} />
+              <Image source={{ uri: actualItem.assets.imageFemale }} 
+              style={styles.armorImage}
+              />
             )}
             <View style={styles.ISSStats}>
               <View style={styles.resistance}>
