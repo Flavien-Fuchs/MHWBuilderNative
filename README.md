@@ -28,3 +28,4 @@ Launch the application, you will land in the choice of equipment and weapons, wh
 Licence 
 
 This project is under Monster Hunter Api license.
+![IMG_8698](https://github.com/Flavien-Fuchs/MHWBuilderNative/assets/152877516/f6a04100-3f2d-4973-be9f-be0b5d8e881c)
