@@ -37,5 +37,16 @@ export const styles = StyleSheet.create({
     playText: {
         textTransform: "uppercase",
         fontWeight: "bold",
-    }
+    },
+    footer: {
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: 60,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: colors.rankPopup,
+      },
+
 });
