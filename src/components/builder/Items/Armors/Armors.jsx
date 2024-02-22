@@ -13,6 +13,8 @@ import { Picker } from "@react-native-picker/picker";
 import ResistanceItem from "./ResistanceItem";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./ArmorsStyle";
+import Ionicons from "@expo/vector-icons/Ionicons";
+
 
 const Armors = ({ armors, handleArmor, type, closePage }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -161,7 +163,7 @@ const Armors = ({ armors, handleArmor, type, closePage }) => {
           >
             <View style={styles.itemNavBar}>
               <TouchableOpacity onPress={closePage}>
-                <Text style={styles.button}>close</Text>
+                <Ionicons style={styles.ionicon} name="close" />
               </TouchableOpacity>
 
               <TextInput
