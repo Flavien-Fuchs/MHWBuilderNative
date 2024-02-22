@@ -47,7 +47,7 @@ export const styles = StyleSheet.create({
       width: 120,
       height: 120,
    },
-   flashList: {
+   flatList: {
       width: "95%"
    },
    item: {
@@ -85,7 +85,7 @@ export const styles = StyleSheet.create({
       padding: 10
    },
    input: {
-      backgroundColor: "black",
+      backgroundColor: colors.neutralWhiteColor,
       color: colors.neutralBlackColor,
       padding: 8,
       borderRadius: 4,

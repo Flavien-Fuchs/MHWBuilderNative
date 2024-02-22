@@ -17,9 +17,8 @@ function ItemWeapon({ weapon, toggleDisplayItem, setWeaponPage }) {
     <TouchableOpacity style={styles.slot} onPress={setWeaponPage}>
       <ImageBackground
       source={require("../../../assets/images/backgroundItems/epee.png")}
-      style={styles.ImageBackground}
-      > 
-      </ImageBackground>
+      style={styles.imageBackground}
+      /> 
     </TouchableOpacity>
     
   );

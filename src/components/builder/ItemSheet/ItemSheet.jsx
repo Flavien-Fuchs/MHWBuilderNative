@@ -4,12 +4,8 @@ import { styles } from "./ItemSheetStyle";
 import ItemSheetSingle from "../ItemSheetSingle/ItemSheetSingle";
 import PropTypes from "prop-types";
 import ItemCharm from "../Parts/ItemCharm";
-import ItemChest from "../Parts/ItemChest";
-import ItemGloves from "../Parts/ItemGloves";
-import ItemHead from "../Parts/ItemHead";
-import ItemLegs from "../Parts/ItemLegs";
-import ItemWaist from "../Parts/ItemWaist";
 import ItemWeapon from "../Parts/ItemWeapon";
+import ItemParts from "./ItemParts";
 
 const ItemSheet = ({
   head,
@@ -52,56 +48,68 @@ const ItemSheet = ({
         />
       )}
       <View style={[styles.part, styles.part1]}>
-        <ItemHead
-          head={head}
+        <ItemParts
+          part={head}
           toggleDisplayItem={toggleDisplayItem}
           setArmorPage={setArmorPage}
           setBuilder={setBuilder}
+          icon={require("../../../assets/images/backgroundItems/teteArmor.png")}
+          type={"head"}
         />
         <ItemCharm
-          charm={charm}
+          part={charm}
           toggleDisplayItem={toggleDisplayItem}
           setCharmsPage={setCharmsPage}
           setBuilder={setBuilder}
+          icon={require("../../../assets/images/charm-icon.png")}
         />
       </View>
 
       <View style={styles.part}>
         <ItemWeapon
-          weapon={weapon}
+          part={weapon}
           toggleDisplayItem={toggleDisplayItem}
           setWeaponPage={setWeaponPage}
           setBuilder={setBuilder}
+          icon={require("../../../assets/images/backgroundItems/epee.png")}
         />
-        <ItemChest
-          chest={chest}
+        <ItemParts
+          part={chest}
           toggleDisplayItem={toggleDisplayItem}
           setArmorPage={setArmorPage}
           setBuilder={setBuilder}
+          icon={require("../../../assets/images/backgroundItems/torseArmor.png")}
+          type={"chest"}
         />
-        <ItemGloves
-          gloves={gloves}
+        <ItemParts
+          part={gloves}
           toggleDisplayItem={toggleDisplayItem}
           setArmorPage={setArmorPage}
           setBuilder={setBuilder}
-        />
-      </View>
-
-      <View style={styles.part}>
-        <ItemWaist
-          waist={waist}
-          toggleDisplayItem={toggleDisplayItem}
-          setArmorPage={setArmorPage}
-          setBuilder={setBuilder}
+          icon={require("../../../assets/images/backgroundItems/mainArmor.png")}
+          type={"gloves"}
         />
       </View>
 
       <View style={styles.part}>
-        <ItemLegs
-          legs={legs}
+        <ItemParts
+          part={waist}
           toggleDisplayItem={toggleDisplayItem}
           setArmorPage={setArmorPage}
           setBuilder={setBuilder}
+          icon={require("../../../assets/images/backgroundItems/tailleArmor.png")}
+          type={"waist"}
+        />
+      </View>
+
+      <View style={styles.part}>
+        <ItemParts
+          part={legs}
+          toggleDisplayItem={toggleDisplayItem}
+          setArmorPage={setArmorPage}
+          setBuilder={setBuilder}
+          icon={require("../../../assets/images/backgroundItems/jambeArmor.png")}
+          type={"legs"}
         />
       </View>
     </View>

@@ -3,96 +3,104 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     globalItemContainer: {
-      position: 'relative',
-      zIndex: 100,
-      width: '100%',
-      height: '100%',
-      top: 0,
-      left: 0,
+      flex: 1,
+      justifyContent: 'start',
+      alignItems: 'center',
     },
+    safeArea: {
+      flex: 1,
+      backgroundColor: colors.bgBlackOpacity, 
+       },
     itemNavBar: {
-      justifyContent: "start"
-    },
-    closeButton: {
-      position: 'absolute',
-      top: 10, // Ajoutez la valeur que vous souhaitez
-      right: 10, // Ajoutez la valeur que vous souhaitez
-      color: colors.neutralBlackColor, // Remplacez par votre couleur
-      transition: '0.2s', // Cela peut ne pas être nécessaire en React Native
-      padding: 8,
-    },
-    searchBar: {
-        width: '100%',
-        alignItems: 'flex-start',
-        justifyContent: 'flex-start',
-    },
-    input: {
-        width: '90%',
-        marginVertical: 8,
-    },
-    filters: {
-      // Style pour les filtres
-    },
-    filterDropdowns: {
-      // Style pour les dropdowns de filtre
-    },
-    filterDropdown: {
-      // Style pour un dropdown de filtre individuel
+      backgroundColor: colors.rankPopup,
+      width: "100%",
+      padding: 10
     },
     itemContainer: {
         flexDirection: "row",
         justifyContent: "center"
     },
-    item: {
-        backgroundColor: colors.backgroundItem,
-        padding: 16, // Ajoutez la valeur que vous souhaitez
-        color: colors.neutralWhiteColor, // Ajoutez votre couleur de texte
-        cursor: 'pointer', // Pas nécessaire en React Native
-        // Ajoutez l'ombre de la boîte si nécessaire
-        shadowColor: colors.neutralBlackColor,
-        shadowOffset: {
-        width: 50,
-        height: 50,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5,
-    },
-    globalInfos: {
-      // Style pour les informations globales
-    },
-    paragraphList: {
-      // Style pour le texte de la liste de paragraphes
-    },
-    rarity: {
-      // Style pour la rareté
-    },
-    detailsInfos: {
-      marginTop: 16, // Équivalent à 1em
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      alignItems: 'center',
-      justifyContent: 'space-evenly',
-    },
     armorImage: {
-      width:100,
-      height: 100
-      // Style pour l'image d'armure
+      width:150,
+      height: 150
     },
-    stats: {
-      fontSize: 16,
+    icon: {
+      height: 20,
+      width: 20,
     },
-    defense: {
-      // Style pour la défense
-    },
-    defenseIcon: {
-      // Style pour l'icône de défense
-    },
-    skillsList: {
-      // Style pour la liste des compétences
-    },
-    hideSkills: {
-      // Style pour cacher les compétences
-    },
+    flatList: {
+      width: "95%"
+   },
+   item: {
+      backgroundColor: colors.backgroundItem,
+      marginVertical: 4,
+      borderRadius: 10,
+      padding: 10,
+      alignItems: "center"
+   },
+   paragraphList: {
+      color: colors.neutralWhiteColor,
+      fontWeight: "800",
+      textAlign: "center",
+   },
+   rarity: {
+      color: colors.neutralYellowColor,
+      textAlign: "center",
+   },
+   skillsList: {
+    color: colors.sharpnessPurpleClaire,
+    textAlign: "center",
+    marginVertical: 8,
+   },
+   detailsInfos: {
+      width: "100%",
+      flexDirection: "row",
+      justifyContent: "space-around",
+      alignItems: "center"
+   },
+   text: {
+      color: colors.neutralWhiteColor,
+   },
+   sharpnessContainer: {
+      flexDirection: "row",
+      alignItems: "center",
+   },
+   itemNavBar: {
+      backgroundColor: colors.rankPopup,
+      width: "100%",
+      padding: 10
+   },
+   input: {
+      backgroundColor: colors.neutralWhiteColor,
+      color: colors.neutralBlackColor,
+      padding: 8,
+      borderRadius: 4,
+      marginVertical: 10
+   },
+   filterDropdowns: {
+      flexDirection: "row",
+      justifyContent: "space-around"
+   },
+   picker: {
+      backgroundColor: colors.neutralWhiteColor,
+      color: colors.neutralBlackColor,
+      borderRadius: 4,
+      marginVertical: 10,
+      width: "40%"
+   },
+   buttonContainer: {
+      flexDirection: "row",
+      justifyContent: "space-between"
+   },
+   button: {
+      backgroundColor: colors.colorButtonWeapon,
+      padding: 10,
+      borderRadius: 5,
+      borderColor: colors.neutralWhiteColor,
+      borderStyle: "solid",
+      borderWidth: 1,
+      color: colors.neutralWhiteColor,
+   },
+    
   });
   

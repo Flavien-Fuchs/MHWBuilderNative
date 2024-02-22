@@ -304,7 +304,7 @@ const Weapons = ({ weapons, handleWeapon, closePage, weaponPage }) => {
               <FlatList
                 data={newWeapons}
                 renderItem={renderItem}
-                style={styles.flashList}
+                style={styles.flatList}
               />
             </ImageBackground>
           )}

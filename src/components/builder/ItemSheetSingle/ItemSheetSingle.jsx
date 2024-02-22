@@ -1,7 +1,9 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet, FlatList } from 'react-native';
-import { styles} from '../../../components/builder/ItemSheetSingle/ItemSheetSingleStyle'
+import { styles } from '../../../components/builder/ItemSheetSingle/ItemSheetSingleStyle'
 import { ChangeItemButton } from './ChangeItemButton';
+import { ResistanceInfo } from './ResistanceInfo';
+import { colors } from '../../../utils/colors';
 
 function ItemSheetSingle ({ 
   type,
@@ -103,13 +105,13 @@ function ItemSheetSingle ({
                 <View>
                   <Text>Sharpness :</Text>
                   <View style={styles.sharpnessContainer}>
-                    <View style={{ height: 10, backgroundColor: 'red', width: actualItem.durability[0].red / 3 }}></View>
-                    <View style={{ height: 10, backgroundColor: 'orange', width: actualItem.durability[0].orange / 3 }}></View>
-                    <View style={{ height: 10, backgroundColor: 'yellow', width: actualItem.durability[0].yellow / 3 }}></View>
-                    <View style={{ height: 10, backgroundColor: 'green', width: actualItem.durability[0].green / 3 }}></View>
-                    <View style={{ height: 10, backgroundColor: 'blue', width: actualItem.durability[0].blue / 3 }}></View>
-                    <View style={{ height: 10, backgroundColor: 'white', width: actualItem.durability[0].white / 3 }}></View>
-                    <View style={{ height: 10, backgroundColor: 'purple', width: actualItem.durability[0].purple / 3 }}></View>
+                    <View style={{ height: 10, backgroundColor: colors.sharpnessRed , width: actualItem.durability[0].red / 3 }}></View>
+                    <View style={{ height: 10, backgroundColor: colors.sharpnessOrange , width: actualItem.durability[0].orange / 3 }}></View>
+                    <View style={{ height: 10, backgroundColor: colors.sharpnessYellow , width: actualItem.durability[0].yellow / 3 }}></View>
+                    <View style={{ height: 10, backgroundColor: colors.sharpnessGreen , width: actualItem.durability[0].green / 3 }}></View>
+                    <View style={{ height: 10, backgroundColor: colors.sharpnessBlue , width: actualItem.durability[0].blue / 3 }}></View>
+                    <View style={{ height: 10, backgroundColor: colors.sharpnessWhite , width: actualItem.durability[0].white / 3 }}></View>
+                    <View style={{ height: 10, backgroundColor: colors.sharpnessPurple , width: actualItem.durability[0].purple / 3 }}></View>
                   </View>     
                 </View>
               )}
@@ -140,12 +142,12 @@ function ItemSheetSingle ({
             )}
             <View style={styles.ISSStats}>
               <View style={styles.resistance}>
-                <ResistanceInfo icon={require('../../../assets/images/icons/defense-icon.png')} label="Defense" value={`(${actualItem.defense.base}) (${actualItem.defense.max}) (${actualItem.defense.augmented})`} />
-                <ResistanceInfo icon={require('../../../assets/images/icons/fire-icon.png')} label="Fire Resist" value={actualItem.resistances.fire} />
-                <ResistanceInfo icon={require('../../../assets/images/icons/water-icon.png')} label="Water Resist" value={actualItem.resistances.water} />
-                <ResistanceInfo icon={require('../../../assets/images/icons/ice-icon.png')} label="Ice Resist" value={actualItem.resistances.ice} />
-                <ResistanceInfo icon={require('../../../assets/images/icons/thunder-icon.png')} label="Thunder Resist" value={actualItem.resistances.thunder} />
-                <ResistanceInfo icon={require('../../../assets/images/icons/dragon-icon.png')} label="Dragon Resist" value={actualItem.resistances.dragon} />
+                <ResistanceInfo iconSrc={require('../../../assets/images/icons/defense-icon.png')} label="Defense" value={`(${actualItem.defense.base}) (${actualItem.defense.max}) (${actualItem.defense.augmented})`} />
+                <ResistanceInfo iconSrc={require('../../../assets/images/icons/fire-icon.png')} label="Fire Resist" value={actualItem.resistances.fire} />
+                <ResistanceInfo iconSrc={require('../../../assets/images/icons/water-icon.png')} label="Water Resist" value={actualItem.resistances.water} />
+                <ResistanceInfo iconSrc={require('../../../assets/images/icons/ice-icon.png')} label="Ice Resist" value={actualItem.resistances.ice} />
+                <ResistanceInfo iconSrc={require('../../../assets/images/icons/thunder-icon.png')} label="Thunder Resist" value={actualItem.resistances.thunder} />
+                <ResistanceInfo iconSrc={require('../../../assets/images/icons/dragon-icon.png')} label="Dragon Resist" value={actualItem.resistances.dragon} />
               </View>
             
               {actualItem.skills.length > 0 && (
