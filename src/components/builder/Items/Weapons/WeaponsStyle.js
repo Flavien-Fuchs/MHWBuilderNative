@@ -1,34 +1,52 @@
-import { colors } from "../../../../utils/colors";
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native'
+import { colors } from "../../../../utils/colors"
+
 
 export const styles = StyleSheet.create({
-    globalItemContainer: {
+   globalItemContainer: {
       flex: 1,
       justifyContent: 'start',
       alignItems: 'center',
-    },
-    safeArea: {
+   },
+   safeArea: {
       flex: 1,
       backgroundColor: colors.bgBlackOpacity, 
        },
-    itemNavBar: {
-      backgroundColor: colors.rankPopup,
-      width: "100%",
-      padding: 10
-    },
-    itemContainer: {
-        flexDirection: "row",
-        justifyContent: "center"
-    },
-    armorImage: {
-      width:150,
-      height: 150
-    },
-    icon: {
-      height: 20,
-      width: 20,
-    },
-    flatlist: {
+   globalItemContainerType: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor:colors.neutralWhiteColor,
+   },
+   typeContainer: {
+      flexDirection: "row",
+      justifyContent: "center",
+      alignItems: "start",
+      gap: 5,
+      flexWrap: 'wrap',
+   },
+   weaponType: {
+      width: 80,
+      height: 100,
+      backgroundColor: colors.backgroundItem,
+      padding: 8,
+      alignItems: "center",
+      justifyContent: 'space-evenly',
+      borderRadius: 10,
+   },
+   weaponTypeImage: {
+      width: 40,
+      height: 40,
+   },
+   weaponTypeText: {
+      color: colors.neutralWhiteColor,
+      textAlign: "center",
+   },
+   weaponImage: {
+      width: 120,
+      height: 120,
+   },
+   flatList: {
       width: "95%"
    },
    item: {
@@ -46,11 +64,6 @@ export const styles = StyleSheet.create({
    rarity: {
       color: colors.neutralYellowColor,
       textAlign: "center",
-   },
-   skillsList: {
-    color: colors.sharpnessPurpleClaire,
-    textAlign: "center",
-    marginVertical: 8,
    },
    detailsInfos: {
       width: "100%",
@@ -100,12 +113,15 @@ export const styles = StyleSheet.create({
       borderStyle: "solid",
       borderWidth: 1,
       color: colors.neutralWhiteColor,
+      
    },
-   stats: {
-      height: 50,
-      width: 50
-   }
-   
-    
-  });
-  
+   closeButton: {
+      marginBottom: 50
+   },
+   ionicon: {
+      fontSize: 28,
+      color: colors.neutralWhiteColor,
+      paddingBottom: 5,
+   },
+})
+

@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import { styles } from "./ItemSheetStyle";
-import ItemSheetSingle from '../ItemSheetSingle/ItemSheetSingle'
+import ItemSheetSingle from "../ItemSheetSingle/ItemSheetSingle";
 import PropTypes from "prop-types";
 import ItemCharm from "../Parts/ItemCharm";
 import ItemWeapon from "../Parts/ItemWeapon";
@@ -21,14 +21,13 @@ const ItemSheet = ({
   setBuilder,
   displayItem,
   setDisplayItem,
-  deleteItem
+  deleteItem,
 }) => {
   const toggleDisplayItem = (type) => {
     setDisplayItem(type);
   };
 
   return (
-
     <View style={styles.globalContainer}>
       {displayItem && (
         <ItemSheetSingle
@@ -48,7 +47,7 @@ const ItemSheet = ({
           deleteItem={deleteItem}
         />
       )}
-      <View style={[styles.part , styles.part1]}>
+      <View style={[styles.part, styles.part1]}>
         <ItemParts
           part={head}
           toggleDisplayItem={toggleDisplayItem}
@@ -56,7 +55,6 @@ const ItemSheet = ({
           setBuilder={setBuilder}
           icon={require("../../../assets/images/backgroundItems/teteArmor.png")}
           type={"head"}
-
         />
         <ItemCharm
           part={charm}
@@ -64,7 +62,6 @@ const ItemSheet = ({
           setCharmsPage={setCharmsPage}
           setBuilder={setBuilder}
           icon={require("../../../assets/images/charm-icon.png")}
-
         />
       </View>
 
@@ -75,7 +72,6 @@ const ItemSheet = ({
           setWeaponPage={setWeaponPage}
           setBuilder={setBuilder}
           icon={require("../../../assets/images/backgroundItems/epee.png")}
-          
         />
         <ItemParts
           part={chest}
@@ -84,7 +80,6 @@ const ItemSheet = ({
           setBuilder={setBuilder}
           icon={require("../../../assets/images/backgroundItems/torseArmor.png")}
           type={"chest"}
-
         />
         <ItemParts
           part={gloves}
@@ -93,7 +88,6 @@ const ItemSheet = ({
           setBuilder={setBuilder}
           icon={require("../../../assets/images/backgroundItems/mainArmor.png")}
           type={"gloves"}
-
         />
       </View>
 
@@ -105,7 +99,6 @@ const ItemSheet = ({
           setBuilder={setBuilder}
           icon={require("../../../assets/images/backgroundItems/tailleArmor.png")}
           type={"waist"}
-
         />
       </View>
 
@@ -117,7 +110,6 @@ const ItemSheet = ({
           setBuilder={setBuilder}
           icon={require("../../../assets/images/backgroundItems/jambeArmor.png")}
           type={"legs"}
-
         />
       </View>
     </View>
@@ -235,7 +227,7 @@ ItemSheet.propTypes = {
     type: PropTypes.string,
     rank: PropTypes.string,
     rarity: PropTypes.number,
-    attack: PropTypes.array,
+    attack: PropTypes.object,
     name: PropTypes.string,
     durability: PropTypes.arrayOf(
       PropTypes.shape({
@@ -265,6 +257,6 @@ ItemSheet.propTypes = {
   setBuilder: PropTypes.func.isRequired,
   displayItem: PropTypes.string,
   setDisplayItem: PropTypes.func.isRequired,
-}; 
+};
 
 export default ItemSheet;
