@@ -43,7 +43,7 @@ const GamePlay = ({ myCharacter, adversaire }) => {
           setImDead={setImDead}
           myCharacter={myCharacter}
           adversaire={adversaire}
-          pathImg={getImageCharacter("body", myCharacter.id)}
+          pathImg={getImageCharacter("body", myCharacter.infos.id)}
           pathImgAd={getImageOrVideoMonster("img", adversaire.id)}
           setIsPlaying={setIsPlaying}
           setGameIsEnd={setGameIsEnd}

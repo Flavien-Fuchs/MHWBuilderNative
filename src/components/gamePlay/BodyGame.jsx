@@ -39,17 +39,25 @@ const BodyGame = ({
   pathImg,
   pathImgAd,
 }) => {
+  console.log(myCharacter);
+
   const [tour, setTour] = useState(1);
   const [timeRemaining, setTimeRemaining] = useState(SECONDS);
 
   //MES STAT
 
   const [progress, setProgress] = useState(1);
+  const [maxLifePoint, setMaxLifePoint] = useState(myCharacter.state.health);
+  const [currentLifePoint, setCurrentLifePoint] = useState(maxLifePoint);
 
   //STAT DE l'ADVERSAIRE
 
   const [maxLifePointAd, setMaxLifePointAd] = useState(adversaire.state.health);
   const [currentLifePointAd, setCurrentLifePointAd] = useState(maxLifePointAd);
+
+
+
+  
 
   return (
     <SafeAreaView style={styles.container}>
@@ -88,14 +96,14 @@ const BodyGame = ({
             </View>
             <View>
               <ProgressBar
-                progress={(currentLifePointAd / maxLifePointAd) * 100}
+                progress={(currentLifePoint / maxLifePoint) * 100}
                 width={100}
                 color={getProgressBarColor(
-                  (currentLifePointAd / maxLifePointAd) * 100
+                  (currentLifePoint / maxLifePoint) * 100
                 )}
               />
             </View>
-            <Text style={styles.textWhite}>{myCharacter.name}</Text>
+            <Text style={styles.textWhite}>{myCharacter.infos.name}</Text>
           </View>
           <View style={styles.containerBtnAction}>
             <TouchableOpacity>

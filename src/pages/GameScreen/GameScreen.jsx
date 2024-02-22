@@ -23,6 +23,7 @@ const GameScreen = ({ route }) => {
   const [videoEnded, setVideoEnded] = useState(false);
   const { myCharacter } = route.params;
   const [monster, setMonster] = useState(null);
+  const [key, setKey] = useState(0);
 
   StatusBar.setBarStyle("light-content");
 
@@ -57,4 +58,3 @@ const GameScreen = ({ route }) => {
 };
 
 export default GameScreen;
-

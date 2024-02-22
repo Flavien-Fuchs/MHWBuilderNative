@@ -8,8 +8,12 @@ import GameButton from "../../components/builder/GameButton/GameButton";
 import SkillModal from "../../components/builder/SkillModal/SkillModal";
 import Armors from "../../components/builder/Items/Armors/Armors";
 import Weapons from "../../components/builder/Items/Weapons/Weapons";
+import { useNavigation } from "@react-navigation/native";
+import { findMultiplie } from "../../utils/armasUtils";
 
 const BuilderScreen = ({ route }) => {
+  const navigation = useNavigation();
+
   const { armors, weapons, charms, skills } = route.params;
 
   //states for pages
@@ -50,8 +54,20 @@ const BuilderScreen = ({ route }) => {
   const [playerSkills, setPlayerSkills] = useState([]);
 
   const play = () => {
-    setBuilder(false);
-    setPlaying(true);
+    let myCharacter = {};
+    myCharacter.state = {
+      multipli: findMultiplie(weapon.type),
+      health: health,
+      augDefense: augDefense,
+      resFire: resFire,
+      resWater: resWater,
+      resThunder: resThunder,
+      resDragon: resDragon,
+      attack: attack,
+      elementalAttack: elementalAttack,
+      weapon: weapon,
+    };
+    navigation.navigate("SelecterCharacter", { myCharacter });
   };
 
   function addDefStats(armor, pastArmor, action) {
