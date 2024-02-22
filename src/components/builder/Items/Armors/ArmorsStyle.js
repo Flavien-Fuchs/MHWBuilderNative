@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
       height: 20,
       width: 20,
     },
-    flatList: {
+    flatlist: {
       width: "95%"
    },
    item: {
