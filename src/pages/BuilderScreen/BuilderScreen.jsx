@@ -95,7 +95,7 @@ const BuilderScreen = ({ route }) => {
         armor.resistances.dragon
       );
 
-      addSkills(action, pastArmor.skills, armor.skills);
+      addSkills(action, pastArmor?.skills, armor?.skills);
     } else {
       addDefense(
         action,
@@ -119,7 +119,7 @@ const BuilderScreen = ({ route }) => {
         armor.resistances.thunder,
         armor.resistances.dragon
       );
-      addSkills(action, null, armor.skills);
+      addSkills(action, null, armor?.skills);
     }
   }
 
@@ -190,7 +190,7 @@ const BuilderScreen = ({ route }) => {
     let newPlayerSkills = [...playerSkills];
 
     if (action === "less" || action === "delete") {
-      if (pastSkills.length > 0) {
+      if (pastSkills?.length > 0) {
         pastSkills.map((pastSkill) => {
           newPlayerSkills = newPlayerSkills.map((newPlayerSkill) => {
             if (newPlayerSkill.skillName === pastSkill.skillName) {
@@ -219,7 +219,7 @@ const BuilderScreen = ({ route }) => {
     }
     newPlayerSkills.filter(removeValue);
 
-    if (selectSkills.length > 0 && action !== "delete") {
+    if (selectSkills?.length > 0 && action !== "delete") {
       selectSkills.map((selectSkill) => {
         if (
           newPlayerSkills.some(
@@ -280,8 +280,8 @@ const BuilderScreen = ({ route }) => {
       case "charm":
         addSkills(
           "delete",
-          selectedStuff.ranks[selectedStuff.ranks.length - 1].skills,
-          selectedStuff.ranks[selectedStuff.ranks.length - 1].skills
+          selectedStuff.ranks[selectedStuff.ranks?.length - 1]?.skills,
+          selectedStuff.ranks[selectedStuff.ranks?.length - 1]?.skills
         );
         setCharm(null);
         break;
@@ -346,13 +346,13 @@ const BuilderScreen = ({ route }) => {
     charm
       ? addSkills(
         "less",
-        charm.ranks[charm.ranks.length - 1].skills,
-        selectCharm.ranks[charm.ranks.length - 1].skills
+        charm.ranks[charm.ranks?.length - 1]?.skills,
+        selectCharm.ranks[charm.ranks?.length - 1]?.skills
       )
       : addSkills(
         "add",
         null,
-        selectCharm.ranks[selectCharm.ranks.length - 1].skills
+        selectCharm.ranks[selectCharm.ranks?.length - 1]?.skills
       );
     setCharmsPage(null);
   };
