@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { View } from "react-native";
 import { Audio } from "expo-av";
 
-const VOLUME = 0.05;
+const VOLUME = 0.3;
 
 const AudioPlayer = ({ source }) => {
   const sound = useRef(new Audio.Sound());
