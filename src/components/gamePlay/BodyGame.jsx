@@ -311,7 +311,7 @@ const BodyGame = ({
       : (setCurrentImage = setImageAttackActuelAd);
     for (let i = 0; i < images.length; i++) {
       setCurrentImage(images[i]);
-      await new Promise((resolve) => setTimeout(resolve, 50));
+      await new Promise((resolve) => setTimeout(resolve, 10));
       if (i <= images.length - 1) {
         setCurrentImage(null);
       }
@@ -338,7 +338,7 @@ const BodyGame = ({
       <View style={styles.body}>
         <View style={styles.part}>
           <Animated.View style={[styles.containerAdImg, animatedShakeStyleAd]}>
-            <Image source={pathImgAd} style={[styles.profileImage]} />
+            <Image source={pathImgAd} style={styles.profileImage} />
             <View style={styles.imageContainerAttack}>
               {imageAttackActuelAd && (
                 <View style={styles.imageAttack}>
@@ -373,7 +373,7 @@ const BodyGame = ({
         <View style={[styles.part, styles.myPart]}>
           <View style={styles.containerMyPartLeft}>
             <Animated.View style={[styles.containerMyImg, animatedShakeStyle]}>
-              <Image source={pathImg} style={[styles.myImg]} />
+              <Image source={pathImg} style={styles.myImg} />
               <View style={styles.imageContainerAttack}>
                 {imageAttackActuel && (
                   <View style={styles.imageAttack}>
