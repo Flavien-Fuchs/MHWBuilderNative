@@ -39,7 +39,11 @@ export const styles = StyleSheet.create({
     textAlignVertical: "bottom",
     padding: 0,
   },
-  textWhite: { color: colors.neutralWhiteColor, textTransform: "uppercase" },
+  textWhite: {
+    color: colors.neutralWhiteColor,
+    textTransform: "uppercase",
+    fontWeight: "800",
+  },
   containerBut: {
     position: "absolute",
     left: 0,
@@ -49,5 +53,11 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-evenly",
   },
-  btn: {},
+  btn: { paddingHorizontal: 20, paddingVertical: 5, borderRadius: 5 },
+  btnOther: {
+    backgroundColor: colors.neutralGreyColor,
+  },
+  btnQuit: {
+    backgroundColor: colors.neutralRedColor,
+  },
 });
