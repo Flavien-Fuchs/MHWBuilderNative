@@ -75,11 +75,9 @@ export const styles = StyleSheet.create({
   },
   containerBtnAction: {
     flex: 1,
-    paddingRight: 10,
-    flexDirection: "row",
-    alignItems: "flex-end",
-    justifyContent: "flex-end",
-    gap: 10,
+    paddingLeft: 20,
+    justifyContent: "center",
+    gap: 20,
   },
 
   imageContainerAttack: {
