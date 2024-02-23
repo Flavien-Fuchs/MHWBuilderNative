@@ -47,9 +47,16 @@ export const styles = StyleSheet.create({
         alignSelf: 'center',
     },
     imageBackgroundCharm: {
-        height: 50,
-        width: 50,
+        height: 40,
+        width: 40,
         alignSelf: 'center',
         tintColor: colors.neutralWhiteColor
     },
+    charmImage: {
+        height: 45,
+        width: 45,
+        marginLeft: 5
+    }
+
+
 });
