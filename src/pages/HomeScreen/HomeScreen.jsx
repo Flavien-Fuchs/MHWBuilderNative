@@ -11,6 +11,7 @@ import { useNavigation } from "@react-navigation/native";
 import ItemsLoader from "../../components/home/ItemsLoader";
 import axios from "axios";
 import { styles } from "./HomeScreenStyle";
+import AudioPlayerBack from "../../components/AudioPlayer/AudioPlayerBack";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -84,6 +85,7 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <AudioPlayerBack source="Home" />
       <ImageBackground
         source={require("../../assets/images/homeBg.png")}
         resizeMode="cover"
