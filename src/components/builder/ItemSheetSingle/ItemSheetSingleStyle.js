@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         width: "100%",
-        borderColor: "#AAAAAAAA",
+        borderColor: colors.iSSBorder,
         borderWidth: 4,
         borderStyle: "solid",
         borderRadius: 20,
