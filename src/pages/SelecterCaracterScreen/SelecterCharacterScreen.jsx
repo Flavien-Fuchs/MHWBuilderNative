@@ -16,7 +16,9 @@ import { getImageCharacter } from "../../utils/ImportCharacter";
 
 import ModalInfoCharacter from "../../components/SelecterCaracter/ModalInfoCharacter";
 
-const SelecterCharacterScreen = ({ navigation }) => {
+const SelecterCharacterScreen = ({ navigation, route }) => {
+  const { myCharacter } = route.params;
+
   StatusBar.setBarStyle("light-content");
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [isShowInfo, setIsShowInfo] = useState(false);
@@ -28,7 +30,8 @@ const SelecterCharacterScreen = ({ navigation }) => {
   };
 
   const handlePlay = () => {
-    navigation.navigate("Game", { myCharacter: selectedCharacter });
+    myCharacter.infos = selectedCharacter;
+    navigation.navigate("Game", { myCharacter });
   };
 
   return (

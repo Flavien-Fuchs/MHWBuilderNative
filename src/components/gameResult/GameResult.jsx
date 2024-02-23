@@ -13,7 +13,7 @@ import { colors } from "../../utils/colors";
 
 import { styles } from "./GameResultStyle";
 
-const GameResult = ({ pathImg, imDead, navigation }) => {
+const GameResult = ({ pathImg, imDead, navigation, handlePressContinue }) => {
   const windowDimensions = useWindowDimensions();
   return (
     <ImageBackground
@@ -27,7 +27,9 @@ const GameResult = ({ pathImg, imDead, navigation }) => {
             style={{
               width: windowDimensions.height,
               height: windowDimensions.width,
-              color: imDead ? colors.neutralWhiteColor : colors.neutralYellowColor,
+              color: imDead
+                ? colors.neutralWhiteColor
+                : colors.neutralYellowColor,
               opacity: 0.5,
               ...styles.textBack,
             }}
@@ -46,11 +48,11 @@ const GameResult = ({ pathImg, imDead, navigation }) => {
           }}
         />
         <View style={styles.containerBut}>
-          <TouchableOpacity style={styles.btn} onPress={() => {}}>
+          <TouchableOpacity style={[styles.btn, styles.btnOther]} onPress={handlePressContinue}>
             <Text style={styles.textWhite}>Continue</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.btn}
+            style={[styles.btn, styles.btnQuit]}
             onPress={() => {
               navigation.goBack();
             }}
