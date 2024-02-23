@@ -9,11 +9,13 @@ import SkillModal from "../../components/builder/SkillModal/SkillModal";
 import Armors from "../../components/builder/Items/Armors/Armors";
 import Weapons from "../../components/builder/Items/Weapons/Weapons";
 import Charms from "../../components/builder/Items/Charm/Charm";
+import { useNavigation } from "@react-navigation/native";
 
 const BuilderScreen = ({ route }) => {
   const { armors, weapons, charms, skills } = route.params;
 
   //states for pages
+  const navigation = useNavigation();
   const [index, setIndex] = useState(true);
   const [builder, setBuilder] = useState(false);
   const [playing, setPlaying] = useState(false);
@@ -51,8 +53,7 @@ const BuilderScreen = ({ route }) => {
   const [playerSkills, setPlayerSkills] = useState([]);
 
   const play = () => {
-    setBuilder(false);
-    setPlaying(true);
+    navigation.navigate("SelecterCharacter")
   };
 
   function addDefStats(armor, pastArmor, action) {
@@ -330,15 +331,15 @@ const BuilderScreen = ({ route }) => {
     setCharm(selectCharm);
     charm
       ? addSkills(
-          "less",
-          charm.ranks[charm.ranks.length - 1].skills,
-          selectCharm.ranks[charm.ranks.length - 1].skills
-        )
+        "less",
+        charm.ranks[charm.ranks.length - 1].skills,
+        selectCharm.ranks[charm.ranks.length - 1].skills
+      )
       : addSkills(
-          "add",
-          null,
-          selectCharm.ranks[selectCharm.ranks.length - 1].skills
-        );
+        "add",
+        null,
+        selectCharm.ranks[selectCharm.ranks.length - 1].skills
+      );
     setCharmsPage(null);
   };
 
