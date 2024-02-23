@@ -44,10 +44,6 @@ const GameScreen = ({ route }) => {
     setNumberGame((prevKey) => prevKey + 1);
   };
 
-  // const handlePressContinue = () => {
-
-  // };
-
   return (
     <View style={styles.container}>
       {isReady ? (

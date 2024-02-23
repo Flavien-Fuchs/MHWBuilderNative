@@ -9,7 +9,7 @@ import SkillModal from "../../components/builder/SkillModal/SkillModal";
 import Armors from "../../components/builder/Items/Armors/Armors";
 import Weapons from "../../components/builder/Items/Weapons/Weapons";
 import { useNavigation } from "@react-navigation/native";
-import { findMultiplie } from "../../utils/armasUtils";
+import { findMultiple } from "../../utils/armasUtils";
 import Charms from "../../components/builder/Items/Charm/Charm";
 
 const BuilderScreen = ({ route }) => {
@@ -57,7 +57,7 @@ const BuilderScreen = ({ route }) => {
   const play = () => {
     let myCharacter = {};
     myCharacter.states = {
-      multipli: findMultiplie(weapon.type),
+      multipli: findMultiple(weapon.type),
       health: health,
       augDefense: augDefense,
       resFire: resFire,
