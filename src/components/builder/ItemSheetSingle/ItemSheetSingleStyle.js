@@ -5,8 +5,13 @@ export const styles = StyleSheet.create({
     ItemSheetSingleContainer: {
         flex: 1,
         justifyContent: "center",
-        backgroundColor: colors.rankPopup,
         width: "100%",
+        borderColor: colors.iSSBorder,
+        borderWidth: 4,
+        borderStyle: "solid",
+        borderRadius: 20,
+        width: "96%",
+        marginTop: 10
     },
     resistance: {
         color: colors.neutralWhiteColor,

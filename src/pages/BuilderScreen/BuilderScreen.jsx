@@ -8,13 +8,12 @@ import GameButton from "../../components/builder/GameButton/GameButton";
 import SkillModal from "../../components/builder/SkillModal/SkillModal";
 import Armors from "../../components/builder/Items/Armors/Armors";
 import Weapons from "../../components/builder/Items/Weapons/Weapons";
-import { useNavigation } from "@react-navigation/native";
 import { findMultiple } from "../../utils/armasUtils";
 import Charms from "../../components/builder/Items/Charm/Charm";
+import { useNavigation } from "@react-navigation/native";
 
 const BuilderScreen = ({ route }) => {
   const navigation = useNavigation();
-
   const { armors, weapons, charms, skills } = route.params;
 
   //states for pages
@@ -346,15 +345,15 @@ const BuilderScreen = ({ route }) => {
     setCharm(selectCharm);
     charm
       ? addSkills(
-          "less",
-          charm.ranks[charm.ranks.length - 1].skills,
-          selectCharm.ranks[charm.ranks.length - 1].skills
-        )
+        "less",
+        charm.ranks[charm.ranks.length - 1].skills,
+        selectCharm.ranks[charm.ranks.length - 1].skills
+      )
       : addSkills(
-          "add",
-          null,
-          selectCharm.ranks[selectCharm.ranks.length - 1].skills
-        );
+        "add",
+        null,
+        selectCharm.ranks[selectCharm.ranks.length - 1].skills
+      );
     setCharmsPage(null);
   };
 

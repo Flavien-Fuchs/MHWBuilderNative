@@ -113,7 +113,7 @@ function ItemSheetSingle({
                 <FlatList
                   data={actualItem.ranks[actualItem.ranks.length - 1].skills}
                   keyExtractor={(skill, key) => key.toString()}
-                  renderItem={(skill, key) => <Text key={key} style={styles.text}>{skill.skillName} - Level : {skill.level}</Text>}
+                  renderItem={({ item, index }) => <Text key={index} style={styles.text}>{item.skillName} - Level : {item.level}</Text>}
                   style={styles.flatList}
                 />
               </View>
