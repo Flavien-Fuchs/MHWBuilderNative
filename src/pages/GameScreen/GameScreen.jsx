@@ -23,7 +23,7 @@ const GameScreen = ({ route }) => {
   const [videoEnded, setVideoEnded] = useState(false);
   const { myCharacter } = route.params;
   const [monster, setMonster] = useState(null);
-  const [key, setKey] = useState(0);
+  const [numberGame, setNumberGame] = useState(0);
 
   StatusBar.setBarStyle("light-content");
 
@@ -35,22 +35,35 @@ const GameScreen = ({ route }) => {
     const value = monsters[Math.floor(Math.random() * monsters.length)];
     setMonster(value);
     setIsReady(true);
-  }, []);
+    if (numberGame > 0) {
+      setVideoEnded(false);
+    }
+  }, [numberGame]);
 
-  const refreshComponent = () => {
-    setKey((prevKey) => prevKey + 1);
+  const handlePressContinue = () => {
+    setNumberGame((prevKey) => prevKey + 1);
   };
+
+  // const handlePressContinue = () => {
+
+  // };
 
   return (
     <View style={styles.container}>
       {isReady ? (
         !videoEnded ? (
           <GameIntro
+            key={numberGame}
             handleVideoEnd={handleVideoEnd}
             pathVideo={getImageOrVideoMonster("video", monster.id)}
           />
         ) : (
-          <GamePlay myCharacter={myCharacter} adversaire={monster} />
+          <GamePlay
+            key={numberGame}
+            myCharacter={myCharacter}
+            adversaire={monster}
+            handlePressContinue={handlePressContinue}
+          />
         )
       ) : null}
     </View>

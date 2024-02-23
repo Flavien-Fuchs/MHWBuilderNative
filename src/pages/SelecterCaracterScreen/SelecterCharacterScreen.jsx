@@ -19,8 +19,6 @@ import ModalInfoCharacter from "../../components/SelecterCaracter/ModalInfoChara
 const SelecterCharacterScreen = ({ navigation, route }) => {
   const { myCharacter } = route.params;
 
-  console.log(myCharacter);
-
   StatusBar.setBarStyle("light-content");
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [isShowInfo, setIsShowInfo] = useState(false);

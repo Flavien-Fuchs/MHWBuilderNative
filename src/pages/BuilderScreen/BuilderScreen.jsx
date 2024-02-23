@@ -55,7 +55,7 @@ const BuilderScreen = ({ route }) => {
 
   const play = () => {
     let myCharacter = {};
-    myCharacter.state = {
+    myCharacter.states = {
       multipli: findMultiplie(weapon.type),
       health: health,
       augDefense: augDefense,
