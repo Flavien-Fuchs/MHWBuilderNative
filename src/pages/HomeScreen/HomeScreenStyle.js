@@ -32,9 +32,11 @@ export const styles = StyleSheet.create({
     },
     playButton: {
         backgroundColor: colors.neutralWhiteColor,
-        backgroundColor: colors.neutralWhiteColor,
         padding: 10,
         borderRadius: 10,
+        width: 100,
+        alignItems: "center",
+        justifyContent: "center",
     },
     playText: {
         textTransform: "uppercase",

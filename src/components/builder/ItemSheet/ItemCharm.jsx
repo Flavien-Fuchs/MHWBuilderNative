@@ -10,7 +10,7 @@ function ItemCharm({ part, toggleDisplayItem, setCharmsPage }) {
   ) : (
     <TouchableOpacity style={[styles.slot, styles.slot1]} onPress={() => setCharmsPage("charm")}>
       <ImageBackground
-        source={require("../../../assets/images/charm-icon.png")}
+        source={require("../../../assets/images/amulette.png")}
         style={styles.imageBackgroundCharm}
       />
     </TouchableOpacity>
