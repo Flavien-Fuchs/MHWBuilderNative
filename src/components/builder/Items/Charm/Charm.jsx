@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, FlatList, ImageBackground, Modal } from 'react-native';
 import { styles } from '../Armors/ArmorsStyle';
 import CharmItem from './CharmItem';
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 function Charms({ charms, handleCharms, closePage }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -20,36 +22,41 @@ function Charms({ charms, handleCharms, closePage }) {
 
   return (
     <Modal animationType="slide"
-    transparent={true}
-    style={styles.globalItemContainer}
+      transparent={true}
+      style={styles.globalItemContainer}
     >
+      <SafeAreaProvider>
+        <SafeAreaView style={styles.safeArea}>
 
-    <ImageBackground
-          source={require("../../../../assets/images/background.jpg")}
-          resizeMode="cover"
-          style={styles.globalItemContainer}>
+          <ImageBackground
+            source={require("../../../../assets/images/background.jpg")}
+            resizeMode="cover"
+            style={styles.globalItemContainer}>
 
-      <View style={styles.itemNavBar}>
-        <TouchableOpacity onPress={closePage}>
-          <Text style={styles.button}>close</Text>
-        </TouchableOpacity>
+            <View style={styles.itemNavBar}>
+              <TouchableOpacity onPress={closePage}>
+                <Ionicons style={styles.ionicon} name="close" />
+              </TouchableOpacity>
 
-          <TextInput
-            style={styles.input}
-            value={searchTerm}
-            onChangeText={handleSearchTerm}
-            placeholder="Search item by name or skill"
-          />
-        </View>
+              <TextInput
+                style={styles.input}
+                value={searchTerm}
+                onChangeText={handleSearchTerm}
+                placeholder="Search item by name or skill"
+              />
+            </View>
 
-      <FlatList
-        data={newCharms}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item }) => (
-          <CharmItem item={item} handleCharms={handleCharms} />
-        )}
-      />
-    </ImageBackground>
+            <FlatList
+              data={newCharms}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item }) => (
+                <CharmItem item={item} handleCharms={handleCharms} />
+              )}
+              style={styles.flatlist}
+            />
+          </ImageBackground>
+        </SafeAreaView>
+      </SafeAreaProvider>
     </Modal>
   );
 }

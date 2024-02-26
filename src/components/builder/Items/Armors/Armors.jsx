@@ -70,7 +70,7 @@ const Armors = ({ armors, handleArmor, type, closePage }) => {
       break;
   }
 
-  
+
   return (
     <Modal
       animationType="slide"
@@ -98,29 +98,30 @@ const Armors = ({ armors, handleArmor, type, closePage }) => {
               <View style={styles.filters}>
                 <Text style={styles.text}>Filter by :</Text>
                 <View style={styles.filterDropdowns}>
-                  <Picker
-                    style={styles.picker}
-                    selectedValue={filterByDefense}
-                    onValueChange={handleFilterByDefense}
-                  >
-                    <Picker.Item label="Defense" value="" />
-                    <Picker.Item label="Base" value="base" />
-                    <Picker.Item label="Max" value="max" />
-                    <Picker.Item label="Augmented" value="augmented" />
-                  </Picker>
-
-                  <Picker
-                    style={styles.picker}
-                    selectedValue={filterByResistance}
-                    onValueChange={handleFilterByResistance}
-                  >
-                    <Picker.Item label="Resistance" value="" />
-                    <Picker.Item label="Fire" value="fire" />
-                    <Picker.Item label="Water" value="water" />
-                    <Picker.Item label="Ice" value="ice" />
-                    <Picker.Item label="Thunder" value="thunder" />
-                    <Picker.Item label="Dragon" value="dragon" />
-                  </Picker>
+                  <View style={styles.picker}>
+                    <Picker
+                      selectedValue={filterByDefense}
+                      onValueChange={handleFilterByDefense}
+                    >
+                      <Picker.Item label="Defense" value="" />
+                      <Picker.Item label="Base" value="base" />
+                      <Picker.Item label="Max" value="max" />
+                      <Picker.Item label="Augmented" value="augmented" />
+                    </Picker>
+                  </View>
+                  <View style={styles.picker}>
+                    <Picker
+                      selectedValue={filterByResistance}
+                      onValueChange={handleFilterByResistance}
+                    >
+                      <Picker.Item label="Resistance" value="" />
+                      <Picker.Item label="Fire" value="fire" />
+                      <Picker.Item label="Water" value="water" />
+                      <Picker.Item label="Ice" value="ice" />
+                      <Picker.Item label="Thunder" value="thunder" />
+                      <Picker.Item label="Dragon" value="dragon" />
+                    </Picker>
+                  </View>
                 </View>
               </View>
             </View>

@@ -75,7 +75,7 @@ const HomeScreen = () => {
   }, []);
 
   const play = () => {
-    navigation.push("Builder", {
+    navigation.navigate("Builder", {
       armors: armors,
       weapons: weapons,
       charms: charms,
@@ -112,8 +112,8 @@ const HomeScreen = () => {
           </View>
         )}
         <View style={styles.footer}>
-          <Text>©WCSWebDevMob All rights reserved, 2024</Text>
-          <Text style={styles.center}>
+          <Text style={styles.textCenter}>©WCSWebDevMob All rights reserved, 2024</Text>
+          <Text style={styles.textCenter}>
             All Datas and images are Monster Hunter: World and Capcom propriety.
           </Text>
         </View>

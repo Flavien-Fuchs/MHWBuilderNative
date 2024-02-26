@@ -19,7 +19,7 @@ const CharmItem = ({ item, handleCharms }) => {
         <View>
           {actualCharm.skills.map((skill, skillKey) => (
             <Text key={skillKey} style={styles.text}>
-              {skill.skillName} - {skill.level}
+              {skill.skillName} - Level : {skill.level}
             </Text>
           ))}
         </View>

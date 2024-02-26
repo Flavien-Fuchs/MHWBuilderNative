@@ -32,9 +32,11 @@ export const styles = StyleSheet.create({
     },
     playButton: {
         backgroundColor: colors.neutralWhiteColor,
-        backgroundColor: colors.neutralWhiteColor,
         padding: 10,
         borderRadius: 10,
+        width: 100,
+        alignItems: "center",
+        justifyContent: "center",
     },
     playText: {
         textTransform: "uppercase",
@@ -43,13 +45,13 @@ export const styles = StyleSheet.create({
     footer: {
         marginTop: "auto",
         width: "100%",
-        height: 60,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: colors.rankPopup,
+        padding: 10,
+    },
+    textCenter: {
         color: colors.neutralWhiteColor,
-      },
-    center: {
-        textAlign: "center"
-      },
+        textAlign: "center",
+    },
 });
