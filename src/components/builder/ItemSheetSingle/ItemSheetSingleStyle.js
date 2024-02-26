@@ -4,13 +4,7 @@ import { colors } from '../../../utils/colors'
 export const styles = StyleSheet.create({
     ItemSheetSingleContainer: {
         flex: 1,
-        justifyContent: "center",
         width: "100%",
-        borderColor: colors.iSSBorder,
-        borderWidth: 4,
-        borderStyle: "solid",
-        borderRadius: 20,
-        width: "96%",
         marginTop: 10
     },
     resistance: {
@@ -31,16 +25,20 @@ export const styles = StyleSheet.create({
     paragraphList: {
         color: colors.neutralWhiteColor,
         fontWeight: "800",
+        fontSize: 24,
         textAlign: "center",
     },
     rarity: {
         color: colors.neutralYellowColor,
         textAlign: "center",
+        fontSize: 18,
+        fontWeight: "500",
     },
     skillsList: {
         color: colors.colorDarkText,
         textAlign: "center",
         marginVertical: 8,
+        fontSize: 18,
     },
     itemImage: {
         width: 180,

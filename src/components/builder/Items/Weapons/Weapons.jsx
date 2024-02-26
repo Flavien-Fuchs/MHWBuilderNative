@@ -177,32 +177,33 @@ const Weapons = ({ weapons, handleWeapon, closePage, weaponPage }) => {
                 <View style={styles.filters}>
                   <Text style={styles.text}>Filter by :</Text>
                   <View style={styles.filterDropdowns}>
-                    <Picker
-                      style={styles.picker}
-                      selectedValue={selectedOption}
-                      onValueChange={handleSelectOption}
-                    >
-                      <Picker.Item label="Elements" value="" />
-                      <Picker.Item label="Fire" value="fire" />
-                      <Picker.Item label="Poison" value="poison" />
-                      <Picker.Item label="Dragon" value="dragon" />
-                      <Picker.Item label="Ice" value="ice" />
-                      <Picker.Item label="Thunder" value="thunder" />
-                      <Picker.Item label="Sleep" value="sleep" />
-                      <Picker.Item label="Paralysis" value="paralysis" />
-                      <Picker.Item label="Blast" value="max" />
-                      <Picker.Item label="None" value="0" />
-                    </Picker>
-
-                    <Picker
-                      style={styles.picker}
-                      selectedValue={filterByType}
-                      onValueChange={handleFilterByType}
-                    >
-                      <Picker.Item label="Damages" value="" />
-                      <Picker.Item label="Attack" value="Attack" />
-                      <Picker.Item label="Element" value="Element" />
-                    </Picker>
+                    <View style={styles.picker}>
+                      <Picker
+                        selectedValue={selectedOption}
+                        onValueChange={handleSelectOption}
+                      >
+                        <Picker.Item label="Elements" value="" />
+                        <Picker.Item label="Fire" value="fire" />
+                        <Picker.Item label="Poison" value="poison" />
+                        <Picker.Item label="Dragon" value="dragon" />
+                        <Picker.Item label="Ice" value="ice" />
+                        <Picker.Item label="Thunder" value="thunder" />
+                        <Picker.Item label="Sleep" value="sleep" />
+                        <Picker.Item label="Paralysis" value="paralysis" />
+                        <Picker.Item label="Blast" value="max" />
+                        <Picker.Item label="None" value="0" />
+                      </Picker>
+                    </View>
+                    <View style={styles.picker}>
+                      <Picker
+                        selectedValue={filterByType}
+                        onValueChange={handleFilterByType}
+                      >
+                        <Picker.Item label="Damages" value="" />
+                        <Picker.Item label="Attack" value="Attack" />
+                        <Picker.Item label="Element" value="Element" />
+                      </Picker>
+                    </View>
                   </View>
                 </View>
               </View>

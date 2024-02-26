@@ -25,7 +25,7 @@ export const colors = {
   sharpnessWhite: "white",
   sharpnessPurple: "purple",
   sharpnessPurpleClaire: "rgb(122, 41, 122)",
-  rankOn: "rgb(58, 179, 215)",
+  rankOn: "rgb(58, 210, 240)",
   rankOff: "rgb(150, 150, 150)",
   rankPopup: "rgb(66, 35, 13)",
   gameMainBgColor: "#333",

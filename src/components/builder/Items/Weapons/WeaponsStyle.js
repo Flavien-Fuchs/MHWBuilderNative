@@ -86,20 +86,20 @@ export const styles = StyleSheet.create({
    input: {
       backgroundColor: colors.neutralWhiteColor,
       color: colors.neutralBlackColor,
-      padding: 8,
+      padding: 10,
       borderRadius: 4,
       marginVertical: 10
    },
    filterDropdowns: {
       flexDirection: "row",
-      justifyContent: "space-around"
+      justifyContent: "space-between"
    },
    picker: {
       backgroundColor: colors.neutralWhiteColor,
       color: colors.neutralBlackColor,
       borderRadius: 4,
       marginVertical: 10,
-      width: "40%"
+      width: "47%"
    },
    buttonContainer: {
       flexDirection: "row",

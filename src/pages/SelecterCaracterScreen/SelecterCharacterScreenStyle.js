@@ -53,10 +53,12 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   btnPlay: {
-    paddingHorizontal: 10,
-    paddingVertical: 5,
-    borderRadius: 5,
-    backgroundColor: colors.bgBrownOpacity,
+    backgroundColor: colors.neutralWhiteColor,
+    padding: 10,
+    borderRadius: 10,
+    width: 100,
+    alignItems: "center",
+    justifyContent: "center",
   },
   shadow: {
     shadowColor: colors.black,
@@ -68,5 +70,5 @@ export const styles = StyleSheet.create({
     shadowRadius: 3.5,
     elevation: 5,
   },
-  textBtn: { color: colors.neutralWhiteColor },
+  textBtn: { color: colors.neutralBlackColor },
 });
