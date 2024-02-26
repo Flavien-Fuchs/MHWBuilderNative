@@ -11,6 +11,13 @@ import React, { useState, useEffect, useRef } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import ProgressBar from "react-native-progress/Bar";
 import { styles } from "./BodyGameStyle";
+import { colors } from "../../utils/colors";
+
+//
+
+import imgAtk from "../../assets/images/icons/atk.png";
+import imgDef from "../../assets/images/icons/def.png";
+import imgCrit from "../../assets/images/icons/crit.png";
 
 // FUNCTIONS
 
@@ -72,7 +79,7 @@ const BodyGame = ({
   const [tour, setTour] = useState(1);
   const [timeRemaining, setTimeRemaining] = useState(SECONDS);
 
-  //MES STAT
+  // MES STATS
 
   const [maxLifePoint, setMaxLifePoint] = useState(myCharacter.states.health);
   const [currentLifePoint, setCurrentLifePoint] = useState(maxLifePoint);
@@ -80,7 +87,12 @@ const BodyGame = ({
   const viewAnimationMe = useRef(new Animated.Value(0)).current;
   const [imageAttackActuel, setImageAttackActuel] = useState(null);
 
-  //STAT DE l'ADVERSAIRE
+  // ATOUT
+
+  const [atoutTourLeft, setAtoutTourLeft] = useState(3);
+  const [isAtoutActiv, setIsAtoutActiv] = useState(false);
+
+  //STATS DE l'ADVERSAIRE
 
   const [maxLifePointAd, setMaxLifePointAd] = useState(adversaire.state.health);
   const [currentLifePointAd, setCurrentLifePointAd] = useState(maxLifePointAd);
@@ -112,7 +124,24 @@ const BodyGame = ({
 
   useEffect(() => {
     isDead();
+    if (isAtoutActiv) {
+      if (atoutTourLeft === 1) {
+        setAtoutTourLeft(myCharacter.infos.atout.numberTurnOff);
+        setIsAtoutActiv(false);
+      } else {
+        setAtoutTourLeft((prevValue) => parseInt(prevValue) - 1);
+      }
+    } else if (atoutTourLeft !== 0) {
+      setAtoutTourLeft((prevValue) => parseInt(prevValue) - 1);
+    }
   }, [tour]);
+
+  const handleAtout = () => {
+    if (!isAtoutActiv && atoutTourLeft === 0) {
+      setIsAtoutActiv(true);
+      setAtoutTourLeft(myCharacter.infos.atout.numberTurnDuration);
+    }
+  };
 
   const isDead = () => {
     if (currentLifePoint <= 0 && currentLifePointAd <= 0) {
@@ -325,7 +354,19 @@ const BodyGame = ({
           <Text style={styles.textWhite}>Turn : {tour}</Text>
         </TouchableOpacity>
         <View>
-          <Text style={styles.textWhite}>{timeRemaining}</Text>
+          <Text
+            style={{
+              color:
+                timeRemaining >= 6
+                  ? colors.neutralWhiteColor
+                  : timeRemaining < 6 && timeRemaining >= 4
+                  ? colors.neutralYellowColor
+                  : colors.neutralRedColor,
+              ...styles.timeRemainingText,
+            }}
+          >
+            {timeRemaining}
+          </Text>
         </View>
         <TouchableOpacity onPress={() => setIsPlaying(false)}>
           <Image
@@ -350,7 +391,9 @@ const BodyGame = ({
               )}
             </View>
             <View style={styles.containerDetail}>
-              {damageAd && <Text style={styles.damage}>-{damageAd}</Text>}
+              {damageAd && (
+                <Text style={styles.damage}>{`-${parseInt(damageAd)}`}</Text>
+              )}
             </View>
           </Animated.View>
 
@@ -385,7 +428,47 @@ const BodyGame = ({
                 )}
               </View>
               <View style={styles.containerDetail}>
-                {myDamage && <Text style={styles.damage}>-{myDamage}</Text>}
+                {myDamage && (
+                  <Text style={styles.damage}>{`-${parseInt(myDamage)}`}</Text>
+                )}
+              </View>
+              <View style={styles.containerAtout}>
+                <TouchableOpacity
+                  style={{
+                    backgroundColor:
+                      !isAtoutActiv && atoutTourLeft === 0
+                        ? colors.neutralWhiteColor
+                        : isAtoutActiv
+                        ? colors.neutralYellowColor
+                        : "transparent",
+                    ...styles.btnAtout,
+                  }}
+                  onPress={() => handleAtout()}
+                  disabled={!(!isAtoutActiv && atoutTourLeft === 0)}
+                >
+                  <Image
+                    source={myCharacter.infos.atout.image}
+                    style={{
+                      opacity:
+                        !isAtoutActiv && atoutTourLeft === 0
+                          ? 1
+                          : isAtoutActiv
+                          ? 0.7
+                          : 0.2,
+                      ...styles.imageAtout,
+                    }}
+                  />
+                </TouchableOpacity>
+                <Text
+                  style={{
+                    color: colors.neutralWhiteColor,
+                    textAlign: "center",
+                  }}
+                >
+                  {!isAtoutActiv && atoutTourLeft === 0
+                    ? "PRESS"
+                    : atoutTourLeft}
+                </Text>
               </View>
             </Animated.View>
             <View>
@@ -409,7 +492,18 @@ const BodyGame = ({
                 onPress={() => {
                   handleClickAction(choice);
                 }}
+                style={styles.btnAction}
               >
+                <Image
+                  source={
+                    choice === "attack"
+                      ? imgAtk
+                      : choice === "defense"
+                      ? imgDef
+                      : imgCrit
+                  }
+                  style={styles.imageAction}
+                />
                 <Text style={styles.textWhite}>{choice}</Text>
               </TouchableOpacity>
             ))}
