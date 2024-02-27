@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
     padding: 10,
   },
+  timeRemainingText: { fontWeight: "800", fontSize: 20 },
   image: {
     width: 25,
     height: 25,
@@ -90,9 +91,33 @@ export const styles = StyleSheet.create({
     aspectRatio: 1,
   },
   imageAttack: {
-    width: 100, // Ajustez la largeur en fonction de vos besoins
-    height: 100, // Ajustez la hauteur en fonction de vos besoins
+    width: 100,
+    height: 100,
     resizeMode: "contain",
-    marginHorizontal: 5, // Espacement entre les images
+  },
+  containerAtout: { position: "absolute", bottom: 0, right: 0 },
+  btnAtout: { padding: 0, borderRadius: 5 },
+  imageAtout: {
+    width: 50,
+    height: "auto",
+    aspectRatio: 1,
+    resizeMode: "contain",
+  },
+
+  btnAction: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+  },
+  imageAction: {
+    width: 50,
+    height: "auto",
+    aspectRatio: 1,
+    resizeMode: "contain",
+  },
+  health: {
+    fontSize: 20,
+    fontWeight: "700",
+    color: colors.neutralGreenColor,
   },
 });

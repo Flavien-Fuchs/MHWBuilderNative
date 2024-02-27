@@ -97,8 +97,13 @@ const SelecterCharacterScreen = ({ navigation, route }) => {
           </View>
           <View style={styles.containerBtnPlay}>
             <TouchableOpacity
+              disabled={!selectedCharacter}
               onPress={() => handlePlay()}
-              style={{ ...styles.shadow, ...styles.btnPlay }}
+              style={{
+                opacity: !selectedCharacter ? 0.5 : 1,
+                ...styles.shadow,
+                ...styles.btnPlay,
+              }}
             >
               <Text style={styles.textBtn}>PLAY</Text>
             </TouchableOpacity>

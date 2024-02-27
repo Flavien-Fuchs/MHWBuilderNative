@@ -1,16 +1,15 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  ImageBackground,
-  Image,
-  TouchableOpacity,
-  Animated,
-} from "react-native";
+import { Text, View, Image, TouchableOpacity, Animated } from "react-native";
 import React, { useState, useEffect, useRef } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import ProgressBar from "react-native-progress/Bar";
 import { styles } from "./BodyGameStyle";
+import { colors } from "../../utils/colors";
+
+//
+
+import imgAtk from "../../assets/images/icons/atk.png";
+import imgDef from "../../assets/images/icons/def.png";
+import imgCrit from "../../assets/images/icons/crit.png";
 
 // FUNCTIONS
 
@@ -72,15 +71,21 @@ const BodyGame = ({
   const [tour, setTour] = useState(1);
   const [timeRemaining, setTimeRemaining] = useState(SECONDS);
 
-  //MES STAT
+  // MES STATS
 
   const [maxLifePoint, setMaxLifePoint] = useState(myCharacter.states.health);
   const [currentLifePoint, setCurrentLifePoint] = useState(maxLifePoint);
   const [myDamage, setMyDamage] = useState("");
   const viewAnimationMe = useRef(new Animated.Value(0)).current;
   const [imageAttackActuel, setImageAttackActuel] = useState(null);
+  const [healthPoint, setHealthPoint] = useState("");
 
-  //STAT DE l'ADVERSAIRE
+  // ATOUT
+
+  const [atoutTourLeft, setAtoutTourLeft] = useState(3);
+  const [isAtoutActiv, setIsAtoutActiv] = useState(false);
+
+  //STATS DE l'ADVERSAIRE
 
   const [maxLifePointAd, setMaxLifePointAd] = useState(adversaire.state.health);
   const [currentLifePointAd, setCurrentLifePointAd] = useState(maxLifePointAd);
@@ -112,7 +117,34 @@ const BodyGame = ({
 
   useEffect(() => {
     isDead();
+    if (isAtoutActiv) {
+      if (atoutTourLeft === 1) {
+        setAtoutTourLeft(myCharacter.infos.atout.numberTurnOff);
+        setIsAtoutActiv(false);
+      } else {
+        setAtoutTourLeft((prevValue) => parseInt(prevValue) - 1);
+      }
+    } else if (atoutTourLeft !== 0) {
+      setAtoutTourLeft((prevValue) => parseInt(prevValue) - 1);
+    }
   }, [tour]);
+
+  const handleAtout = () => {
+    if (!isAtoutActiv && atoutTourLeft === 0) {
+      if (myCharacter.infos.atout.name === "support") {
+        let addHealth = maxLifePoint * (myCharacter.infos.atout.value / 100);
+        setCurrentLifePoint((prevlife) => prevlife + addHealth);
+        setHealthPoint(addHealth);
+        setTimeout(() => {
+          setHealthPoint("");
+        }, 1000);
+        setAtoutTourLeft(myCharacter.infos.atout.numberTurnOff);
+      } else {
+        setIsAtoutActiv(true);
+        setAtoutTourLeft(myCharacter.infos.atout.numberTurnDuration);
+      }
+    }
+  };
 
   const isDead = () => {
     if (currentLifePoint <= 0 && currentLifePointAd <= 0) {
@@ -167,7 +199,7 @@ const BodyGame = ({
       },
     },
     defense: {
-      defense: () => { },
+      defense: () => {},
       attack: () => {
         degat("low", true);
       },
@@ -195,7 +227,7 @@ const BodyGame = ({
   };
 
   const degat = (attack, isMe) => {
-    let dommmage = 0;
+    let damage = 0;
     const types = ["fire", "water", "ice", "thunder", "dragon"];
     if (isMe === true) {
       let elementDamageAd = 0;
@@ -210,9 +242,15 @@ const BodyGame = ({
           myResistanceElementale = myCharacter.states[resitanteName];
         }
       }
-      dommmage =
+
+      damage =
         ((adversaire.state.attack / MULTIPLICATIONAD) *
-          (100 / (100 + myCharacter.states.augDefense)) +
+          (100 /
+            (100 +
+              (isAtoutActiv && myCharacter.infos.atout.name === "tanks"
+                ? myCharacter.states.augDefense *
+                  (myCharacter.infos.atout.value / 100)
+                : myCharacter.states.augDefense))) +
           (elementDamageAd -
             (elementDamageAd * myResistanceElementale * 10) / 100)) /
         MULTIPLICATEURFINALEAD;
@@ -229,29 +267,29 @@ const BodyGame = ({
           resistanceElementaleAd = adversaire.state[resitanteName];
         }
       }
-      dommmage =
-        ((myCharacter.states.attack / myCharacter.states.multipli) *
+      damage =
+        (((isAtoutActiv && myCharacter.infos.atout.name === "fighter"
+          ? myCharacter.states.attack * (myCharacter.infos.atout.value / 100)
+          : myCharacter.states.attack) /
+          myCharacter.states.multipli) *
           (100 / (100 + adversaire.state.augDefense)) +
           (myElementDamage -
             (myElementDamage * resistanceElementaleAd * 10) / 100)) *
         MULTIPLICATEURFINALE;
     }
 
-    dommmage =
-      attack === "low"
-        ? dommmage / 2
-        : attack === "normal"
-          ? dommmage
-          : dommmage * 2;
-    dommmage = Math.round(dommmage * (0.8 + Math.random() * 0.5));
-    const life = isMe
-      ? currentLifePoint - dommmage
-      : currentLifePointAd - dommmage;
+    damage =
+      attack === "low" ? damage / 2 : attack === "normal" ? damage : damage * 2;
+    damage = Math.round(damage * (0.8 + Math.random() * 0.5));
+
+    const life = isMe ? currentLifePoint - damage : currentLifePointAd - damage;
 
     isMe
       ? (startAnimation(attack, isMe), shake(viewAnimationMe))
-      : shake(viewAnimationAd);
-    isMe ? setMyDamage(dommmage) : setDamageAd(dommmage);
+      : (startAnimation(attack, isMe), shake(viewAnimationAd));
+    damage !== undefined && isMe && !isNaN(damage)
+      ? setMyDamage(damage.toString())
+      : setDamageAd(damage.toString());
     setTimeout(() => {
       isMe ? setMyDamage("") : setDamageAd("");
     }, 1000);
@@ -304,8 +342,8 @@ const BodyGame = ({
     attack === "low"
       ? (images = imagesLow)
       : attack === "normal"
-        ? (images = imagesMedium)
-        : (images = imagesHight);
+      ? (images = imagesMedium)
+      : (images = imagesHight);
     isMe
       ? (setCurrentImage = setImageAttackActuel)
       : (setCurrentImage = setImageAttackActuelAd);
@@ -325,7 +363,19 @@ const BodyGame = ({
           <Text style={styles.textWhite}>Turn : {tour}</Text>
         </TouchableOpacity>
         <View>
-          <Text style={styles.textWhite}>{timeRemaining}</Text>
+          <Text
+            style={{
+              color:
+                timeRemaining >= 6
+                  ? colors.neutralWhiteColor
+                  : timeRemaining < 6 && timeRemaining >= 4
+                  ? colors.neutralYellowColor
+                  : colors.neutralRedColor,
+              ...styles.timeRemainingText,
+            }}
+          >
+            {timeRemaining}
+          </Text>
         </View>
         <TouchableOpacity onPress={() => setIsPlaying(false)}>
           <Image
@@ -350,7 +400,9 @@ const BodyGame = ({
               )}
             </View>
             <View style={styles.containerDetail}>
-              {damageAd && <Text style={styles.damage}>-{damageAd}</Text>}
+              {damageAd && (
+                <Text style={styles.damage}>{`-${damageAd.toString()}`}</Text>
+              )}
             </View>
           </Animated.View>
 
@@ -385,7 +437,52 @@ const BodyGame = ({
                 )}
               </View>
               <View style={styles.containerDetail}>
-                {myDamage && <Text style={styles.damage}>-{myDamage}</Text>}
+                {healthPoint && (
+                  <Text
+                    style={styles.health}
+                  >{`+${healthPoint.toString()}`}</Text>
+                )}
+                {myDamage && !isNaN(myDamage) && (
+                  <Text style={styles.damage}>{`-${myDamage.toString()}`}</Text>
+                )}
+              </View>
+              <View style={styles.containerAtout}>
+                <TouchableOpacity
+                  style={{
+                    backgroundColor:
+                      !isAtoutActiv && atoutTourLeft === 0
+                        ? colors.neutralWhiteColor
+                        : isAtoutActiv
+                        ? colors.neutralYellowColor
+                        : "transparent",
+                    ...styles.btnAtout,
+                  }}
+                  onPress={() => handleAtout()}
+                  disabled={!(!isAtoutActiv && atoutTourLeft === 0)}
+                >
+                  <Image
+                    source={myCharacter.infos.atout.image}
+                    style={{
+                      opacity:
+                        !isAtoutActiv && atoutTourLeft === 0
+                          ? 1
+                          : isAtoutActiv
+                          ? 0.7
+                          : 0.2,
+                      ...styles.imageAtout,
+                    }}
+                  />
+                </TouchableOpacity>
+                <Text
+                  style={{
+                    color: colors.neutralWhiteColor,
+                    textAlign: "center",
+                  }}
+                >
+                  {!isAtoutActiv && atoutTourLeft === 0
+                    ? "PRESS"
+                    : atoutTourLeft}
+                </Text>
               </View>
             </Animated.View>
             <View>
@@ -409,7 +506,18 @@ const BodyGame = ({
                 onPress={() => {
                   handleClickAction(choice);
                 }}
+                style={styles.btnAction}
               >
+                <Image
+                  source={
+                    choice === "attack"
+                      ? imgAtk
+                      : choice === "defense"
+                      ? imgDef
+                      : imgCrit
+                  }
+                  style={styles.imageAction}
+                />
                 <Text style={styles.textWhite}>{choice}</Text>
               </TouchableOpacity>
             ))}
