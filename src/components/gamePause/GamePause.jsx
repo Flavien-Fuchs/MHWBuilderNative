@@ -21,7 +21,7 @@ const GamePause = ({ isPlaying, setIsPlaying, gameIsEnd, navigation }) => {
       <View style={styles.container}>
         <SafeAreaView>
           <View style={styles.containerModal}>
-            <Text style={[styles.title, styles.texteWhite]}>Pause</Text>
+            <Text style={[styles.title, styles.pause]}>Pause</Text>
             <View style={styles.containerBtn}>
               <TouchableOpacity onPress={() => setIsPlaying(!isPlaying)}>
                 <Text style={[styles.btn, styles.title, styles.texteWhite]}>

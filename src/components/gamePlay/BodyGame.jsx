@@ -167,7 +167,7 @@ const BodyGame = ({
       },
     },
     defense: {
-      defense: () => { },
+      defense: () => {},
       attack: () => {
         degat("low", true);
       },
@@ -241,8 +241,8 @@ const BodyGame = ({
       attack === "low"
         ? dommmage / 2
         : attack === "normal"
-          ? dommmage
-          : dommmage * 2;
+        ? dommmage
+        : dommmage * 2;
     dommmage = Math.round(dommmage * (0.8 + Math.random() * 0.5));
     const life = isMe
       ? currentLifePoint - dommmage
@@ -304,8 +304,8 @@ const BodyGame = ({
     attack === "low"
       ? (images = imagesLow)
       : attack === "normal"
-        ? (images = imagesMedium)
-        : (images = imagesHight);
+      ? (images = imagesMedium)
+      : (images = imagesHight);
     isMe
       ? (setCurrentImage = setImageAttackActuel)
       : (setCurrentImage = setImageAttackActuelAd);
