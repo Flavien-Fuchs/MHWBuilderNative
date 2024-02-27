@@ -115,4 +115,9 @@ export const styles = StyleSheet.create({
     aspectRatio: 1,
     resizeMode: "contain",
   },
+  health: {
+    fontSize: 20,
+    fontWeight: "700",
+    color: colors.neutralGreenColor,
+  },
 });

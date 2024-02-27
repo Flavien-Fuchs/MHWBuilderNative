@@ -86,6 +86,7 @@ const BodyGame = ({
   const [myDamage, setMyDamage] = useState("");
   const viewAnimationMe = useRef(new Animated.Value(0)).current;
   const [imageAttackActuel, setImageAttackActuel] = useState(null);
+  const [healthPoint, setHealthPoint] = useState("");
 
   // ATOUT
 
@@ -138,8 +139,18 @@ const BodyGame = ({
 
   const handleAtout = () => {
     if (!isAtoutActiv && atoutTourLeft === 0) {
-      setIsAtoutActiv(true);
-      setAtoutTourLeft(myCharacter.infos.atout.numberTurnDuration);
+      if (myCharacter.infos.atout.name === "support") {
+        let addHealt = maxLifePoint * (myCharacter.infos.atout.value / 100);
+        setCurrentLifePoint((prevlife) => prevlife + addHealt);
+        setHealthPoint(addHealt);
+        setTimeout(() => {
+          setHealthPoint("");
+        }, 1000);
+        setAtoutTourLeft(myCharacter.infos.atout.numberTurnOff);
+      } else {
+        setIsAtoutActiv(true);
+        setAtoutTourLeft(myCharacter.infos.atout.numberTurnDuration);
+      }
     }
   };
 
@@ -196,7 +207,7 @@ const BodyGame = ({
       },
     },
     defense: {
-      defense: () => { },
+      defense: () => {},
       attack: () => {
         degat("low", true);
       },
@@ -241,7 +252,12 @@ const BodyGame = ({
       }
       dommmage =
         ((adversaire.state.attack / MULTIPLICATIONAD) *
-          (100 / (100 + myCharacter.states.augDefense)) +
+          (100 /
+            (100 +
+              (isAtoutActiv && myCharacter.infos.atout.name === "tanks"
+                ? myCharacter.states.augDefense *
+                  (myCharacter.infos.atout.value / 100)
+                : myCharacter.states.augDefense))) +
           (elementDamageAd -
             (elementDamageAd * myResistanceElementale * 10) / 100)) /
         MULTIPLICATEURFINALEAD;
@@ -259,7 +275,10 @@ const BodyGame = ({
         }
       }
       dommmage =
-        ((myCharacter.states.attack / myCharacter.states.multipli) *
+        (((isAtoutActiv && myCharacter.infos.atout.name === "fighter"
+          ? myCharacter.states.attack * (myCharacter.infos.atout.value / 100)
+          : myCharacter.states.attack) /
+          myCharacter.states.multipli) *
           (100 / (100 + adversaire.state.augDefense)) +
           (myElementDamage -
             (myElementDamage * resistanceElementaleAd * 10) / 100)) *
@@ -270,8 +289,8 @@ const BodyGame = ({
       attack === "low"
         ? dommmage / 2
         : attack === "normal"
-          ? dommmage
-          : dommmage * 2;
+        ? dommmage
+        : dommmage * 2;
     dommmage = Math.round(dommmage * (0.8 + Math.random() * 0.5));
     const life = isMe
       ? currentLifePoint - dommmage
@@ -333,8 +352,8 @@ const BodyGame = ({
     attack === "low"
       ? (images = imagesLow)
       : attack === "normal"
-        ? (images = imagesMedium)
-        : (images = imagesHight);
+      ? (images = imagesMedium)
+      : (images = imagesHight);
     isMe
       ? (setCurrentImage = setImageAttackActuel)
       : (setCurrentImage = setImageAttackActuelAd);
@@ -428,6 +447,11 @@ const BodyGame = ({
                 )}
               </View>
               <View style={styles.containerDetail}>
+                {healthPoint && (
+                  <Text style={styles.health}>{`-${parseInt(
+                    healthPoint
+                  )}`}</Text>
+                )}
                 {myDamage && (
                   <Text style={styles.damage}>{`-${parseInt(myDamage)}`}</Text>
                 )}
