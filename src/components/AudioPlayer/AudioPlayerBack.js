@@ -30,13 +30,12 @@ const AudioPlayer = ({ source }) => {
 
     loadSound();
 
-    // Libérez les ressources audio lorsque le composant est démonté
     return () => {
       sound.current.unloadAsync();
     };
   }, [source]);
 
-  return <></>; // Vous pouvez rendre n'importe quel composant ici, ou rien du tout
+  return <></>;
 };
 
 export default AudioPlayer;
