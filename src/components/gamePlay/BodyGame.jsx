@@ -1,8 +1,6 @@
 import {
-  StyleSheet,
   Text,
   View,
-  ImageBackground,
   Image,
   TouchableOpacity,
   Animated,
@@ -207,7 +205,7 @@ const BodyGame = ({
       },
     },
     defense: {
-      defense: () => {},
+      defense: () => { },
       attack: () => {
         degat("low", true);
       },
@@ -256,11 +254,12 @@ const BodyGame = ({
             (100 +
               (isAtoutActiv && myCharacter.infos.atout.name === "tanks"
                 ? myCharacter.states.augDefense *
-                  (myCharacter.infos.atout.value / 100)
+                (myCharacter.infos.atout.value / 100)
                 : myCharacter.states.augDefense))) +
           (elementDamageAd -
             (elementDamageAd * myResistanceElementale * 10) / 100)) /
         MULTIPLICATEURFINALEAD;
+      console.log("1er dommage : ", dommmage)
     } else {
       let myElementDamage = 0;
       let type = "";
@@ -283,15 +282,19 @@ const BodyGame = ({
           (myElementDamage -
             (myElementDamage * resistanceElementaleAd * 10) / 100)) *
         MULTIPLICATEURFINALE;
+      console.log("2eme dommage : ", dommmage)
+
     }
 
     dommmage =
       attack === "low"
         ? dommmage / 2
         : attack === "normal"
-        ? dommmage
-        : dommmage * 2;
+          ? dommmage
+          : dommmage * 2;
     dommmage = Math.round(dommmage * (0.8 + Math.random() * 0.5));
+    console.log("3eme dommage : ", dommmage)
+
     const life = isMe
       ? currentLifePoint - dommmage
       : currentLifePointAd - dommmage;
@@ -299,7 +302,8 @@ const BodyGame = ({
     isMe
       ? (startAnimation(attack, isMe), shake(viewAnimationMe))
       : shake(viewAnimationAd);
-    isMe ? setMyDamage(dommmage) : setDamageAd(dommmage);
+    /* console.log("damage :", dommmage) */
+    (dommmage !== undefined && isMe && !isNaN(dommmage)) ? setMyDamage(dommmage.toString()) : setDamageAd(dommmage.toString());
     setTimeout(() => {
       isMe ? setMyDamage("") : setDamageAd("");
     }, 1000);
@@ -352,8 +356,8 @@ const BodyGame = ({
     attack === "low"
       ? (images = imagesLow)
       : attack === "normal"
-      ? (images = imagesMedium)
-      : (images = imagesHight);
+        ? (images = imagesMedium)
+        : (images = imagesHight);
     isMe
       ? (setCurrentImage = setImageAttackActuel)
       : (setCurrentImage = setImageAttackActuelAd);
@@ -379,8 +383,8 @@ const BodyGame = ({
                 timeRemaining >= 6
                   ? colors.neutralWhiteColor
                   : timeRemaining < 6 && timeRemaining >= 4
-                  ? colors.neutralYellowColor
-                  : colors.neutralRedColor,
+                    ? colors.neutralYellowColor
+                    : colors.neutralRedColor,
               ...styles.timeRemainingText,
             }}
           >
@@ -410,9 +414,9 @@ const BodyGame = ({
               )}
             </View>
             <View style={styles.containerDetail}>
-              {damageAd && (
-                <Text style={styles.damage}>{`-${parseInt(damageAd)}`}</Text>
-              )}
+              {/* {damageAd && (
+                 <Text style={styles.damage}>{`-${parseInt(damageAd)}`}</Text> 
+              )} */}
             </View>
           </Animated.View>
 
@@ -447,13 +451,15 @@ const BodyGame = ({
                 )}
               </View>
               <View style={styles.containerDetail}>
-                {healthPoint && (
-                  <Text style={styles.health}>{`-${parseInt(
+                {/* {healthPoint && (
+                   <Text style={styles.health}>{`-${parseInt(
                     healthPoint
                   )}`}</Text>
-                )}
-                {myDamage && (
-                  <Text style={styles.damage}>{`-${parseInt(myDamage)}`}</Text>
+                )} */}
+                {(myDamage && !isNaN(myDamage)) && (
+                  <Text style={styles.damage}>{`-${myDamage.toString()}`}</Text>
+
+
                 )}
               </View>
               <View style={styles.containerAtout}>
@@ -463,8 +469,8 @@ const BodyGame = ({
                       !isAtoutActiv && atoutTourLeft === 0
                         ? colors.neutralWhiteColor
                         : isAtoutActiv
-                        ? colors.neutralYellowColor
-                        : "transparent",
+                          ? colors.neutralYellowColor
+                          : "transparent",
                     ...styles.btnAtout,
                   }}
                   onPress={() => handleAtout()}
@@ -477,8 +483,8 @@ const BodyGame = ({
                         !isAtoutActiv && atoutTourLeft === 0
                           ? 1
                           : isAtoutActiv
-                          ? 0.7
-                          : 0.2,
+                            ? 0.7
+                            : 0.2,
                       ...styles.imageAtout,
                     }}
                   />
@@ -523,8 +529,8 @@ const BodyGame = ({
                     choice === "attack"
                       ? imgAtk
                       : choice === "defense"
-                      ? imgDef
-                      : imgCrit
+                        ? imgDef
+                        : imgCrit
                   }
                   style={styles.imageAction}
                 />
