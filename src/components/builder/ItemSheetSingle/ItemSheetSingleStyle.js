@@ -44,9 +44,6 @@ export const styles = StyleSheet.create({
         width: 160,
         height: 160,
     },
-    resistance: {
-        /* minWidth: 160, */
-    },
     resistContainer: {
         flexDirection: "row",
         alignItems: "center",
