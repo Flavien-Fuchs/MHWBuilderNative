@@ -1,10 +1,4 @@
-import {
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  Animated,
-} from "react-native";
+import { Text, View, Image, TouchableOpacity, Animated } from "react-native";
 import React, { useState, useEffect, useRef } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import ProgressBar from "react-native-progress/Bar";
@@ -205,7 +199,7 @@ const BodyGame = ({
       },
     },
     defense: {
-      defense: () => { },
+      defense: () => {},
       attack: () => {
         degat("low", true);
       },
@@ -248,18 +242,18 @@ const BodyGame = ({
           myResistanceElementale = myCharacter.states[resitanteName];
         }
       }
+
       dommmage =
         ((adversaire.state.attack / MULTIPLICATIONAD) *
           (100 /
             (100 +
               (isAtoutActiv && myCharacter.infos.atout.name === "tanks"
                 ? myCharacter.states.augDefense *
-                (myCharacter.infos.atout.value / 100)
+                  (myCharacter.infos.atout.value / 100)
                 : myCharacter.states.augDefense))) +
           (elementDamageAd -
             (elementDamageAd * myResistanceElementale * 10) / 100)) /
         MULTIPLICATEURFINALEAD;
-      console.log("1er dommage : ", dommmage)
     } else {
       let myElementDamage = 0;
       let type = "";
@@ -282,18 +276,15 @@ const BodyGame = ({
           (myElementDamage -
             (myElementDamage * resistanceElementaleAd * 10) / 100)) *
         MULTIPLICATEURFINALE;
-      console.log("2eme dommage : ", dommmage)
-
     }
 
     dommmage =
       attack === "low"
         ? dommmage / 2
         : attack === "normal"
-          ? dommmage
-          : dommmage * 2;
+        ? dommmage
+        : dommmage * 2;
     dommmage = Math.round(dommmage * (0.8 + Math.random() * 0.5));
-    console.log("3eme dommage : ", dommmage)
 
     const life = isMe
       ? currentLifePoint - dommmage
@@ -302,8 +293,9 @@ const BodyGame = ({
     isMe
       ? (startAnimation(attack, isMe), shake(viewAnimationMe))
       : shake(viewAnimationAd);
-    /* console.log("damage :", dommmage) */
-    (dommmage !== undefined && isMe && !isNaN(dommmage)) ? setMyDamage(dommmage.toString()) : setDamageAd(dommmage.toString());
+    dommmage !== undefined && isMe && !isNaN(dommmage)
+      ? setMyDamage(dommmage.toString())
+      : setDamageAd(dommmage.toString());
     setTimeout(() => {
       isMe ? setMyDamage("") : setDamageAd("");
     }, 1000);
@@ -356,8 +348,8 @@ const BodyGame = ({
     attack === "low"
       ? (images = imagesLow)
       : attack === "normal"
-        ? (images = imagesMedium)
-        : (images = imagesHight);
+      ? (images = imagesMedium)
+      : (images = imagesHight);
     isMe
       ? (setCurrentImage = setImageAttackActuel)
       : (setCurrentImage = setImageAttackActuelAd);
@@ -383,8 +375,8 @@ const BodyGame = ({
                 timeRemaining >= 6
                   ? colors.neutralWhiteColor
                   : timeRemaining < 6 && timeRemaining >= 4
-                    ? colors.neutralYellowColor
-                    : colors.neutralRedColor,
+                  ? colors.neutralYellowColor
+                  : colors.neutralRedColor,
               ...styles.timeRemainingText,
             }}
           >
@@ -414,9 +406,9 @@ const BodyGame = ({
               )}
             </View>
             <View style={styles.containerDetail}>
-              {/* {damageAd && (
-                 <Text style={styles.damage}>{`-${parseInt(damageAd)}`}</Text> 
-              )} */}
+              {damageAd && (
+                <Text style={styles.damage}>{`-${damageAd.toString()}`}</Text>
+              )}
             </View>
           </Animated.View>
 
@@ -451,15 +443,13 @@ const BodyGame = ({
                 )}
               </View>
               <View style={styles.containerDetail}>
-                {/* {healthPoint && (
-                   <Text style={styles.health}>{`-${parseInt(
-                    healthPoint
-                  )}`}</Text>
-                )} */}
-                {(myDamage && !isNaN(myDamage)) && (
+                {healthPoint && (
+                  <Text
+                    style={styles.health}
+                  >{`+${healthPoint.toString()}`}</Text>
+                )}
+                {myDamage && !isNaN(myDamage) && (
                   <Text style={styles.damage}>{`-${myDamage.toString()}`}</Text>
-
-
                 )}
               </View>
               <View style={styles.containerAtout}>
@@ -469,8 +459,8 @@ const BodyGame = ({
                       !isAtoutActiv && atoutTourLeft === 0
                         ? colors.neutralWhiteColor
                         : isAtoutActiv
-                          ? colors.neutralYellowColor
-                          : "transparent",
+                        ? colors.neutralYellowColor
+                        : "transparent",
                     ...styles.btnAtout,
                   }}
                   onPress={() => handleAtout()}
@@ -483,8 +473,8 @@ const BodyGame = ({
                         !isAtoutActiv && atoutTourLeft === 0
                           ? 1
                           : isAtoutActiv
-                            ? 0.7
-                            : 0.2,
+                          ? 0.7
+                          : 0.2,
                       ...styles.imageAtout,
                     }}
                   />
@@ -529,8 +519,8 @@ const BodyGame = ({
                     choice === "attack"
                       ? imgAtk
                       : choice === "defense"
-                        ? imgDef
-                        : imgCrit
+                      ? imgDef
+                      : imgCrit
                   }
                   style={styles.imageAction}
                 />

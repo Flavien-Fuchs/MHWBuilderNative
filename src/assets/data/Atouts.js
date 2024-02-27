@@ -19,7 +19,7 @@ export const atouts = [
     name: "support",
     image: require("../images/icons/UI_Skill_Icon_Heal.png"),
     descrip: "",
-    value: 35,
+    value: 10,
     numberTurnDuration: 1,
     numberTurnOff: 3,
   },
