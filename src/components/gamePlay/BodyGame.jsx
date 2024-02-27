@@ -292,7 +292,7 @@ const BodyGame = ({
 
     isMe
       ? (startAnimation(attack, isMe), shake(viewAnimationMe))
-      : shake(viewAnimationAd);
+      : (startAnimation(attack, isMe), shake(viewAnimationAd));
     dommmage !== undefined && isMe && !isNaN(dommmage)
       ? setMyDamage(dommmage.toString())
       : setDamageAd(dommmage.toString());
