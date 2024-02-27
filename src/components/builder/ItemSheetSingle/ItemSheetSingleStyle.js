@@ -41,19 +41,20 @@ export const styles = StyleSheet.create({
         fontSize: 18,
     },
     itemImage: {
-        width: 180,
-        height: 180
+        width: 160,
+        height: 160,
     },
     resistContainer: {
         flexDirection: "row",
-        alignItems: "center"
+        alignItems: "center",
     },
     icon: {
         width: 16,
         height: 16
     },
     ISSDescription: {
-        alignItems: "center"
+        alignItems: "center",
+        width: "100%"
     },
     ISSStats: {
         width: "100%",
@@ -63,7 +64,6 @@ export const styles = StyleSheet.create({
         marginVertical: 10,
     },
     ISSSkillsList: {
-
         alignItems: "center",
     },
     textSkill: {

@@ -34,10 +34,12 @@ function Charms({ charms, handleCharms, closePage }) {
             style={styles.globalItemContainer}>
 
             <View style={styles.itemNavBar}>
-              <TouchableOpacity onPress={closePage}>
-                <Ionicons style={styles.ionicon} name="close" />
-              </TouchableOpacity>
-
+              <View style={styles.searchClose}>
+                <Text style={styles.typeText}>Charms</Text>
+                <TouchableOpacity onPress={closePage}>
+                  <Ionicons style={styles.ionicon} name="close" />
+                </TouchableOpacity>
+              </View>
               <TextInput
                 style={styles.input}
                 value={searchTerm}

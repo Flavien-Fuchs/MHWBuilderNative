@@ -59,6 +59,7 @@ const BuilderScreen = ({ route }) => {
       multipli: findMultiple(weapon.type),
       health: health,
       augDefense: augDefense,
+      resIce: resIce,
       resFire: resFire,
       resWater: resWater,
       resThunder: resThunder,
@@ -345,6 +346,7 @@ const BuilderScreen = ({ route }) => {
     setCharm(selectCharm);
     charm
       ? addSkills(
+
         "less",
         charm?.ranks[charm?.ranks?.length - 1]?.skills,
         selectCharm?.ranks[charm?.ranks?.length - 1]?.skills
