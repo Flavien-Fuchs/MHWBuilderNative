@@ -194,11 +194,11 @@ const BuilderScreen = ({ route }) => {
       if (pastSkills?.length > 0) {
         pastSkills.map((pastSkill) => {
           newPlayerSkills = newPlayerSkills.map((newPlayerSkill) => {
-            if (newPlayerSkill.skillName === pastSkill.skillName) {
-              if (newPlayerSkill.level - pastSkill.level > 0) {
+            if (newPlayerSkill?.skillName === pastSkill?.skillName) {
+              if (newPlayerSkill?.level - pastSkill?.level > 0) {
                 return {
                   ...newPlayerSkill,
-                  level: newPlayerSkill.level - pastSkill.level,
+                  level: newPlayerSkill?.level - pastSkill?.level,
                 };
               } else {
                 return null;
@@ -225,14 +225,14 @@ const BuilderScreen = ({ route }) => {
         if (
           newPlayerSkills.some(
             (newPlayerSkill) =>
-              newPlayerSkill.skillName === selectSkill.skillName
+              newPlayerSkill?.skillName === selectSkill?.skillName
           )
         ) {
           newPlayerSkills = newPlayerSkills.map((newPlayerSkill) => {
-            if (newPlayerSkill.skillName === selectSkill.skillName) {
+            if (newPlayerSkill?.skillName === selectSkill?.skillName) {
               return {
                 ...newPlayerSkill,
-                level: newPlayerSkill.level + selectSkill.level,
+                level: newPlayerSkill?.level + selectSkill?.level,
               };
             } else {
               return newPlayerSkill;
@@ -281,8 +281,8 @@ const BuilderScreen = ({ route }) => {
       case "charm":
         addSkills(
           "delete",
-          selectedStuff.ranks[selectedStuff.ranks?.length - 1]?.skills,
-          selectedStuff.ranks[selectedStuff.ranks?.length - 1]?.skills
+          selectedStuff?.ranks[selectedStuff.ranks?.length - 1]?.skills,
+          selectedStuff?.ranks[selectedStuff.ranks?.length - 1]?.skills
         );
         setCharm(null);
         break;
@@ -333,12 +333,12 @@ const BuilderScreen = ({ route }) => {
 
   const handleWeapon = (weapon) => {
     setWeapon(weapon);
-    setAttack(weapon.attack.display);
-    setElementalAttack(weapon.elements);
-    weapon.attributes.affinity
-      ? setAffinity(weapon.attributes.affinity)
+    setAttack(weapon?.attack?.display);
+    setElementalAttack(weapon?.elements);
+    weapon?.attributes?.affinity
+      ? setAffinity(weapon?.attributes?.affinity)
       : setAffinity(0);
-    weapon.durability ? setSharpness(weapon.durability[0]) : setSharpness([]);
+    weapon?.durability ? setSharpness(weapon?.durability[0]) : setSharpness([]);
     setWeaponPage(null);
   };
 
@@ -346,15 +346,15 @@ const BuilderScreen = ({ route }) => {
     setCharm(selectCharm);
     charm
       ? addSkills(
-          "less",
-          charm.ranks[charm.ranks?.length - 1]?.skills,
-          selectCharm.ranks[charm.ranks?.length - 1]?.skills
-        )
+        "less",
+        charm?.ranks[charm?.ranks?.length - 1]?.skills,
+        selectCharm?.ranks[charm?.ranks?.length - 1]?.skills
+      )
       : addSkills(
-          "add",
-          null,
-          selectCharm.ranks[selectCharm.ranks?.length - 1]?.skills
-        );
+        "add",
+        null,
+        selectCharm?.ranks[selectCharm?.ranks?.length - 1]?.skills
+      );
     setCharmsPage(null);
   };
 
