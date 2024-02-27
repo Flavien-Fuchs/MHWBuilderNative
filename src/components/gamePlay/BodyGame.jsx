@@ -132,9 +132,9 @@ const BodyGame = ({
   const handleAtout = () => {
     if (!isAtoutActiv && atoutTourLeft === 0) {
       if (myCharacter.infos.atout.name === "support") {
-        let addHealt = maxLifePoint * (myCharacter.infos.atout.value / 100);
-        setCurrentLifePoint((prevlife) => prevlife + addHealt);
-        setHealthPoint(addHealt);
+        let addHealth = maxLifePoint * (myCharacter.infos.atout.value / 100);
+        setCurrentLifePoint((prevlife) => prevlife + addHealth);
+        setHealthPoint(addHealth);
         setTimeout(() => {
           setHealthPoint("");
         }, 1000);
@@ -227,7 +227,7 @@ const BodyGame = ({
   };
 
   const degat = (attack, isMe) => {
-    let dommmage = 0;
+    let damage = 0;
     const types = ["fire", "water", "ice", "thunder", "dragon"];
     if (isMe === true) {
       let elementDamageAd = 0;
@@ -243,7 +243,7 @@ const BodyGame = ({
         }
       }
 
-      dommmage =
+      damage =
         ((adversaire.state.attack / MULTIPLICATIONAD) *
           (100 /
             (100 +
@@ -267,7 +267,7 @@ const BodyGame = ({
           resistanceElementaleAd = adversaire.state[resitanteName];
         }
       }
-      dommmage =
+      damage =
         (((isAtoutActiv && myCharacter.infos.atout.name === "fighter"
           ? myCharacter.states.attack * (myCharacter.infos.atout.value / 100)
           : myCharacter.states.attack) /
@@ -278,24 +278,18 @@ const BodyGame = ({
         MULTIPLICATEURFINALE;
     }
 
-    dommmage =
-      attack === "low"
-        ? dommmage / 2
-        : attack === "normal"
-        ? dommmage
-        : dommmage * 2;
-    dommmage = Math.round(dommmage * (0.8 + Math.random() * 0.5));
+    damage =
+      attack === "low" ? damage / 2 : attack === "normal" ? damage : damage * 2;
+    damage = Math.round(damage * (0.8 + Math.random() * 0.5));
 
-    const life = isMe
-      ? currentLifePoint - dommmage
-      : currentLifePointAd - dommmage;
+    const life = isMe ? currentLifePoint - damage : currentLifePointAd - damage;
 
     isMe
       ? (startAnimation(attack, isMe), shake(viewAnimationMe))
       : (startAnimation(attack, isMe), shake(viewAnimationAd));
-    dommmage !== undefined && isMe && !isNaN(dommmage)
-      ? setMyDamage(dommmage.toString())
-      : setDamageAd(dommmage.toString());
+    damage !== undefined && isMe && !isNaN(damage)
+      ? setMyDamage(damage.toString())
+      : setDamageAd(damage.toString());
     setTimeout(() => {
       isMe ? setMyDamage("") : setDamageAd("");
     }, 1000);
