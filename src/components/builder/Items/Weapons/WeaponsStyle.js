@@ -47,19 +47,21 @@ export const styles = StyleSheet.create({
       height: 120,
    },
    flatList: {
-      width: "95%"
+      width: "100%"
    },
    item: {
-      backgroundColor: colors.backgroundItem,
-      marginVertical: 4,
+      backgroundColor: colors.bgStatPopup,
+      marginTop: 10,
+      marginHorizontal: 10,
       borderRadius: 10,
       padding: 10,
-      alignItems: "center"
+      alignItems: "center",
    },
    paragraphList: {
       color: colors.neutralWhiteColor,
       fontWeight: "800",
       textAlign: "center",
+      fontSize: 18,
    },
    rarity: {
       color: colors.neutralYellowColor,
@@ -122,5 +124,10 @@ export const styles = StyleSheet.create({
       color: colors.neutralWhiteColor,
       paddingBottom: 5,
    },
+   typeText: {
+      color: colors.neutralWhiteColor,
+      textTransform: "capitalize",
+      fontSize: 20,
+   }
 })
 
