@@ -346,7 +346,6 @@ const BuilderScreen = ({ route }) => {
     setCharm(selectCharm);
     charm
       ? addSkills(
-
         "less",
         charm?.ranks[charm?.ranks?.length - 1]?.skills,
         selectCharm?.ranks[charm?.ranks?.length - 1]?.skills
