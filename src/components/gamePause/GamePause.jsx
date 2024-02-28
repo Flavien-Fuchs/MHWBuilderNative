@@ -43,7 +43,7 @@ const GamePause = ({ isPlaying, setIsPlaying, gameIsEnd, navigation }) => {
               </TouchableOpacity>
               <TouchableOpacity onPress={showRules}>
                 <Text style={[styles.btn, styles.title, styles.texteWhite]}>
-                  command
+                  commands
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -64,26 +64,28 @@ const GamePause = ({ isPlaying, setIsPlaying, gameIsEnd, navigation }) => {
       >
         <View style={styles.commandModal}>
             <View style={styles.modalView}>
-              <Text style={[styles.title, styles.texteWhite]}>command</Text>
+              <Text style={[styles.title, styles.texteWhite]}>commands{'\n'}</Text>
               <Text style={styles.texteWhite}>
-                <Text style={styles.title}>ATTACK :</Text>{'\n'}               
+                <Text style={styles.title}>ATTACK :{'\n'}</Text>               
                 <Text style={styles.text}>
-                  <Text>VS <Text style={styles.title}>DEFENSE</Text> = Deals 50% damages.</Text>{'\n'}
-                  <Text>VS <Text style={styles.title}>ATTACK</Text> = Deals 100% damages to both.</Text>{'\n'}
-                  <Text>VS <Text style={styles.title}>FIERCE ATTACK</Text> = Deals 100% damage and the player takes 200% damage in return.</Text>{'\n'}
-                </Text>{'\n'}
+                  <Text>VS <Text style={styles.title}>DEFENSE</Text> = Deals 50% damages.{'\n'}</Text>
+                  <Text>VS <Text style={styles.title}>ATTACK</Text> = Deals 100% damages to both.{'\n'}</Text>
+                  <Text>VS <Text style={styles.title}>FIERCE ATTACK</Text> = Deals 100% damage and the player takes 200% damage in return.{'\n'}</Text>
+                  {'\n'}
+                </Text>
 
-                <Text style={styles.title}>DEFENSE :</Text>{'\n'}
+                <Text style={styles.title}>DEFENSE :{'\n'}</Text>
                 <Text style={styles.text}>
-                  <Text>VS <Text style={styles.title}>DEFENSE</Text> = Nothing happens.</Text>{'\n'}
-                  <Text>VS <Text style={styles.title}>ATTACK</Text> = Reduces damages by 50%.</Text>{'\n'}
-                  <Text>VS <Text style={styles.title}>FIERCE ATTACK</Text> = Dodge attack and deals 200% damages.</Text>{'\n'}
-                </Text>{'\n'}
+                  <Text>VS <Text style={styles.title}>DEFENSE</Text> = Nothing happens.{'\n'}</Text>
+                  <Text>VS <Text style={styles.title}>ATTACK</Text> = Reduces damages by 50%.{'\n'}</Text>
+                  <Text>VS <Text style={styles.title}>FIERCE ATTACK</Text> = Dodge attack and deals 200% damages.{'\n'}</Text>
+                  {'\n'}
+                </Text>
 
-                <Text style={styles.title}>SUPER ATTACK :</Text>{'\n'}
+                <Text style={styles.title}>SUPER ATTACK :{'\n'}</Text>
                 <Text style={styles.text}>
-                  <Text>VS <Text style={styles.title}>DEFENSE</Text> = The opponent dodges attack and the player takes 200% in return.</Text>{'\n'}
-                  <Text>VS <Text style={styles.title}>ATTACK</Text> = Deals 200% damages and the player takes 100 in return.</Text>{'\n'}
+                  <Text>VS <Text style={styles.title}>DEFENSE</Text> = The opponent dodges attack and the player takes 200% in return.{'\n'}</Text>
+                  <Text>VS <Text style={styles.title}>ATTACK</Text> = Deals 200% damages and the player takes 100 in return.{'\n'}</Text>
                   <Text>VS <Text style={styles.title}>FIERCE ATTACK</Text> = 200% damages to both.</Text>
                 </Text>
               </Text>
