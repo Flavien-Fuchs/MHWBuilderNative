@@ -89,9 +89,6 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     position: "absolute",
     top: 0,
-    // bottom: 0,
-    // left: 0,
-    // right: 0,
     aspectRatio: 1,
   },
   imageAttack: {
