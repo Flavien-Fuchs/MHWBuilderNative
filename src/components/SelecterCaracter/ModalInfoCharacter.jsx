@@ -41,6 +41,12 @@ const ModalInfoCharacter = ({
     >
       <View style={styles.container}>
         <SafeAreaView style={styles.containerModal}>
+          <TouchableOpacity onPress={() => setModalVisible(false)}>
+            <Image
+              source={require("../../assets/images/back.png")}
+              style={styles.image}
+            />
+          </TouchableOpacity>
           <View style={styles.containerBody}>
             <View style={styles.containerImg}>
               <Image
