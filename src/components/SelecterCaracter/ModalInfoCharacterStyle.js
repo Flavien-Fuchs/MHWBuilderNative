@@ -24,7 +24,11 @@ export const styles = StyleSheet.create({
     padding: 20,
     gap: 20,
   },
-  textName: { color: colors.neutralWhiteColor, fontWeight: "800" },
+  textName: {
+    color: colors.neutralWhiteColor,
+    fontWeight: "800",
+    textTransform: "uppercase",
+  },
   textDecrip: { color: colors.neutralWhiteColor, textAlign: "center" },
   footer: {
     justifyContent: "space-between",
@@ -38,5 +42,16 @@ export const styles = StyleSheet.create({
   },
   textWhite: {
     color: colors.neutralWhiteColor,
+  },
+  textUpper: { textTransform: "uppercase" },
+  containerAtout: {
+    flexDirection: "row",
+    gap: 10,
+  },
+  competenceImage: {
+    width: 25,
+    height: "auto",
+    aspectRatio: 1,
+    resizeMode: "contain",
   },
 });

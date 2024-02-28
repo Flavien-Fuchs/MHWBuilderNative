@@ -28,6 +28,11 @@ const ItemCardSelectCharacter = ({
           style={styles.btnCheck}
         />
       )}
+
+      <Image
+        source={character.atout.image}
+        style={styles.competenceImage}
+      ></Image>
     </TouchableOpacity>
   );
 };

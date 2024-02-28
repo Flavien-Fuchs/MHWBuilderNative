@@ -42,6 +42,12 @@ const ModalInfoCharacter = ({
       <SafeAreaProvider>
         <View style={styles.container}>
           <SafeAreaView style={styles.containerModal}>
+            <TouchableOpacity onPress={() => setModalVisible(false)}>
+              <Image
+                source={require("../../assets/images/back.png")}
+                style={styles.image}
+              />
+            </TouchableOpacity>
             <View style={styles.containerBody}>
               <View style={styles.containerImg}>
                 <Image
@@ -52,6 +58,15 @@ const ModalInfoCharacter = ({
               <View style={styles.containerDescrip}>
                 <Text style={styles.textName}>{character.name}</Text>
                 <Text style={styles.textDecrip}>{character.descrip}</Text>
+                <View style={styles.containerAtout}>
+                  <Image
+                    source={character.atout.image}
+                    style={styles.competenceImage}
+                  ></Image>
+                  <Text style={[styles.textUpper, styles.textWhite]}>
+                    {character.atout.name}
+                  </Text>
+                </View>
               </View>
             </View>
             <View style={styles.footer}>
