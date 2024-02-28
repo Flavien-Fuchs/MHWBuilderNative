@@ -30,4 +30,13 @@ export const styles = StyleSheet.create({
     left: -10,
     tintColor: colors.neutralGreenColor,
   },
+  competenceImage: {
+    position: "absolute",
+    bottom: 0,
+    right: 0,
+    width: 25,
+    height: "auto",
+    aspectRatio: 1,
+    resizeMode: "contain",
+  },
 });

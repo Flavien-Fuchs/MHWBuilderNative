@@ -51,6 +51,15 @@ const ModalInfoCharacter = ({
             <View style={styles.containerDescrip}>
               <Text style={styles.textName}>{character.name}</Text>
               <Text style={styles.textDecrip}>{character.descrip}</Text>
+              <View style={styles.containerAtout}>
+                <Image
+                  source={character.atout.image}
+                  style={styles.competenceImage}
+                ></Image>
+                <Text style={[styles.textUpper, styles.textWhite]}>
+                  {character.atout.name}
+                </Text>
+              </View>
             </View>
           </View>
           <View style={styles.footer}>
