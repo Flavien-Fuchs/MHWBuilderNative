@@ -1,7 +1,8 @@
 import { StyleSheet } from "react-native";
 import { colors } from "../../utils/colors";
 
-export const styles = StyleSheet.create({  container: {
+export const styles = StyleSheet.create({  
+  container: {
     flex: 1,
     backgroundColor: colors.bgBrownOpacity,
     justifyContent: "center",
@@ -33,4 +34,34 @@ export const styles = StyleSheet.create({  container: {
   btn: {
     paddingVertical: 10,
     paddingHorizontal: 20,
-  },})
+  },
+  commandModal: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 22,
+    backgroundColor: colors.bgStatPopup,
+ },
+ modalView: {
+  margin: 20,
+  backgroundColor: colors.rankPopup,
+  borderRadius: 20,
+  padding: 35,
+  alignItems: 'center',
+  shadowColor: colors.neutralBlackColor,
+  shadowOffset: {
+      width: 0,
+      height: 2,
+  },
+  
+},
+text: {
+    alignItems: "flex-start"
+  },
+closeBtn: {
+  paddingVertical: 10,
+  paddingHorizontal: 20,
+  fontSize: 30,
+}
+
+})
