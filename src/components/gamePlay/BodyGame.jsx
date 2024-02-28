@@ -391,7 +391,7 @@ const BodyGame = ({
             <Image source={pathImgAd} style={styles.profileImage} />
             <View style={styles.imageContainerAttack}>
               {imageAttackActuelAd && (
-                <View style={styles.imageAttack}>
+                <View style={[styles.imageAttack, styles.imageAttackAd]}>
                   <Image
                     source={imageAttackActuelAd}
                     style={styles.imageAttack}
@@ -428,7 +428,7 @@ const BodyGame = ({
               <Image source={pathImg} style={styles.myImg} />
               <View style={styles.imageContainerAttack}>
                 {imageAttackActuel && (
-                  <View style={styles.imageAttack}>
+                  <View style={[styles.imageAttack, styles.imageAttackReverse]}>
                     <Image
                       source={imageAttackActuel}
                       style={styles.imageAttack}
