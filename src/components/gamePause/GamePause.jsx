@@ -70,7 +70,7 @@ const GamePause = ({ isPlaying, setIsPlaying, gameIsEnd, navigation }) => {
                 <Text style={styles.text}>
                   <Text>VS <Text style={styles.title}>DEFENSE</Text> = Deals 50% damages.{'\n'}</Text>
                   <Text>VS <Text style={styles.title}>ATTACK</Text> = Deals 100% damages to both.{'\n'}</Text>
-                  <Text>VS <Text style={styles.title}>FIERCE ATTACK</Text> = Deals 100% damage and the player takes 200% damage in return.{'\n'}</Text>
+                  <Text>VS <Text style={styles.title}>SUPER ATTACK</Text> = Deals 100% damage and the player takes 200% damage in return.{'\n'}</Text>
                   {'\n'}
                 </Text>
 
@@ -78,7 +78,7 @@ const GamePause = ({ isPlaying, setIsPlaying, gameIsEnd, navigation }) => {
                 <Text style={styles.text}>
                   <Text>VS <Text style={styles.title}>DEFENSE</Text> = Nothing happens.{'\n'}</Text>
                   <Text>VS <Text style={styles.title}>ATTACK</Text> = Reduces damages by 50%.{'\n'}</Text>
-                  <Text>VS <Text style={styles.title}>FIERCE ATTACK</Text> = Dodge attack and deals 200% damages.{'\n'}</Text>
+                  <Text>VS <Text style={styles.title}>SUPER ATTACK</Text> = Dodge attack and deals 200% damages.{'\n'}</Text>
                   {'\n'}
                 </Text>
 
@@ -86,7 +86,7 @@ const GamePause = ({ isPlaying, setIsPlaying, gameIsEnd, navigation }) => {
                 <Text style={styles.text}>
                   <Text>VS <Text style={styles.title}>DEFENSE</Text> = The opponent dodges attack and the player takes 200% in return.{'\n'}</Text>
                   <Text>VS <Text style={styles.title}>ATTACK</Text> = Deals 200% damages and the player takes 100 in return.{'\n'}</Text>
-                  <Text>VS <Text style={styles.title}>FIERCE ATTACK</Text> = 200% damages to both.</Text>
+                  <Text>VS <Text style={styles.title}>SUPER ATTACK</Text> = 200% damages to both.</Text>
                 </Text>
               </Text>
               <TouchableOpacity onPress={hideRules}>
