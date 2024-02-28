@@ -46,7 +46,6 @@ export const styles = StyleSheet.create({
   backgroundColor: colors.rankPopup,
   borderRadius: 20,
   padding: 35,
-  alignItems: 'center',
   shadowColor: colors.neutralBlackColor,
   shadowOffset: {
       width: 0,
@@ -57,10 +56,17 @@ export const styles = StyleSheet.create({
 text: {
     alignItems: "flex-start"
   },
-closeBtn: {
-  paddingVertical: 10,
-  paddingHorizontal: 20,
-  fontSize: 30,
-}
+  ionicon: {
+    fontSize: 28,
+    color: colors.neutralWhiteColor,
+    textAlign: "right"
+
+},
+  commandTitle: {
+    textTransform: "uppercase",
+    fontWeight: "800",
+    textAlign: "center"
+    
+},
 
 })
