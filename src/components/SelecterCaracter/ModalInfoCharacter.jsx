@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 import { styles } from "./ModalInfoCharacterStyle";
 
@@ -39,60 +39,62 @@ const ModalInfoCharacter = ({
         setModalVisible(!modalVisible);
       }}
     >
-      <View style={styles.container}>
-        <SafeAreaView style={styles.containerModal}>
-          <TouchableOpacity onPress={() => setModalVisible(false)}>
-            <Image
-              source={require("../../assets/images/back.png")}
-              style={styles.image}
-            />
-          </TouchableOpacity>
-          <View style={styles.containerBody}>
-            <View style={styles.containerImg}>
+      <SafeAreaProvider>
+        <View style={styles.container}>
+          <SafeAreaView style={styles.containerModal}>
+            <TouchableOpacity onPress={() => setModalVisible(false)}>
               <Image
-                source={getImageCharacter("body", character.id)}
-                style={styles.imageCharacSelect}
+                source={require("../../assets/images/back.png")}
+                style={styles.image}
               />
-            </View>
-            <View style={styles.containerDescrip}>
-              <Text style={styles.textName}>{character.name}</Text>
-              <Text style={styles.textDecrip}>{character.descrip}</Text>
-              <View style={styles.containerAtout}>
+            </TouchableOpacity>
+            <View style={styles.containerBody}>
+              <View style={styles.containerImg}>
                 <Image
-                  source={character.atout.image}
-                  style={styles.competenceImage}
-                ></Image>
-                <Text style={[styles.textUpper, styles.textWhite]}>
-                  {character.atout.name}
-                </Text>
+                  source={getImageCharacter("body", character.id)}
+                  style={styles.imageCharacSelect}
+                />
+              </View>
+              <View style={styles.containerDescrip}>
+                <Text style={styles.textName}>{character.name}</Text>
+                <Text style={styles.textDecrip}>{character.descrip}</Text>
+                <View style={styles.containerAtout}>
+                  <Image
+                    source={character.atout.image}
+                    style={styles.competenceImage}
+                  ></Image>
+                  <Text style={[styles.textUpper, styles.textWhite]}>
+                    {character.atout.name}
+                  </Text>
+                </View>
               </View>
             </View>
-          </View>
-          <View style={styles.footer}>
-            <TouchableOpacity onPress={() => handleChange(-1)}>
-              <Image
-                source={require("../../assets/images/gauche.png")}
-                style={{
-                  opacity: character.id <= 1 ? 0.5 : 1,
-                  ...styles.image,
-                }}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => setModalVisible(false)}>
-              <Text style={styles.textWhite}>Selected</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => handleChange(+1)}>
-              <Image
-                source={require("../../assets/images/droite.png")}
-                style={{
-                  opacity: character.id >= 11 ? 0.5 : 1,
-                  ...styles.image,
-                }}
-              />
-            </TouchableOpacity>
-          </View>
-        </SafeAreaView>
-      </View>
+            <View style={styles.footer}>
+              <TouchableOpacity onPress={() => handleChange(-1)}>
+                <Image
+                  source={require("../../assets/images/gauche.png")}
+                  style={{
+                    opacity: character.id <= 1 ? 0.5 : 1,
+                    ...styles.image,
+                  }}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => setModalVisible(false)}>
+                <Text style={styles.textWhite}>{character.name}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => handleChange(+1)}>
+                <Image
+                  source={require("../../assets/images/droite.png")}
+                  style={{
+                    opacity: character.id >= 11 ? 0.5 : 1,
+                    ...styles.image,
+                  }}
+                />
+              </TouchableOpacity>
+            </View>
+          </SafeAreaView>
+        </View>
+      </SafeAreaProvider>
     </Modal>
   );
 };

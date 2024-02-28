@@ -32,6 +32,10 @@ export const styles = StyleSheet.create({
     color: colors.neutralWhiteColor,
     textTransform: "uppercase",
   },
+  timer: {
+    fontSize: 18,
+    fontWeight: 500,
+  },
   alignCenter: { alignItems: "center" },
   myPart: {
     width: "100%",
