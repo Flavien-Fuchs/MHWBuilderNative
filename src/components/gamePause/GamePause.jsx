@@ -85,7 +85,7 @@ const GamePause = ({ isPlaying, setIsPlaying, gameIsEnd, navigation }) => {
                 <Text style={styles.title}>SUPER ATTACK :{'\n'}</Text>
                 <Text style={styles.text}>
                   <Text>VS <Text style={styles.title}>DEFENSE</Text> = The opponent dodges attack and the player takes 200% in return.{'\n'}</Text>
-                  <Text>VS <Text style={styles.title}>ATTACK</Text> = Deals 200% damages and the player takes 100 in return.{'\n'}</Text>
+                  <Text>VS <Text style={styles.title}>ATTACK</Text> = Deals 200% damages and the player takes 100% in return.{'\n'}</Text>
                   <Text>VS <Text style={styles.title}>SUPER ATTACK</Text> = 200% damages to both.</Text>
                 </Text>
               </Text>
