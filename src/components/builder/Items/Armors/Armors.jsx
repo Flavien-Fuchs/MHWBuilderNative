@@ -85,10 +85,12 @@ const Armors = ({ armors, handleArmor, type, closePage }) => {
             style={styles.globalItemContainer}
           >
             <View style={styles.itemNavBar}>
-              <TouchableOpacity onPress={closePage}>
-                <Ionicons style={styles.ionicon} name="close" />
-              </TouchableOpacity>
-
+              <View style={styles.searchClose}>
+                <Text style={styles.typeText}>{type}</Text>
+                <TouchableOpacity onPress={closePage}>
+                  <Ionicons style={styles.ionicon} name="close" />
+                </TouchableOpacity>
+              </View>
               <TextInput
                 style={styles.input}
                 value={searchTerm}
@@ -98,7 +100,7 @@ const Armors = ({ armors, handleArmor, type, closePage }) => {
               <View style={styles.filters}>
                 <Text style={styles.text}>Filter by :</Text>
                 <View style={styles.filterDropdowns}>
-                  <View style={styles.picker}>
+                  <View style={styles.pickerBox}>
                     <Picker
                       selectedValue={filterByDefense}
                       onValueChange={handleFilterByDefense}
@@ -109,7 +111,7 @@ const Armors = ({ armors, handleArmor, type, closePage }) => {
                       <Picker.Item label="Augmented" value="augmented" />
                     </Picker>
                   </View>
-                  <View style={styles.picker}>
+                  <View style={styles.pickerBox}>
                     <Picker
                       selectedValue={filterByResistance}
                       onValueChange={handleFilterByResistance}
@@ -131,6 +133,7 @@ const Armors = ({ armors, handleArmor, type, closePage }) => {
               renderItem={({ item }) => (
                 <ArmorsItem item={item} handleArmor={handleArmor} type={type} />
               )}
+              style={styles.flatlist}
             />
           </ImageBackground>
         </SafeAreaView>

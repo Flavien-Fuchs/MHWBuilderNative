@@ -29,19 +29,21 @@ export const styles = StyleSheet.create({
       width: 20,
    },
    flatlist: {
-      width: "95%"
+      width: "100%",
    },
    item: {
-      backgroundColor: colors.backgroundItem,
-      marginVertical: 4,
+      backgroundColor: colors.bgStatPopup,
+      marginTop: 10,
+      marginHorizontal: 10,
       borderRadius: 10,
       padding: 10,
-      alignItems: "center"
+      alignItems: "center",
    },
    paragraphList: {
       color: colors.neutralWhiteColor,
       fontWeight: "800",
       textAlign: "center",
+      fontSize: 18,
    },
    rarity: {
       color: colors.neutralYellowColor,
@@ -51,6 +53,7 @@ export const styles = StyleSheet.create({
       color: colors.colorDarkText,
       textAlign: "center",
       marginVertical: 8,
+      fontSize: 16,
    },
    detailsInfos: {
       width: "100%",
@@ -75,18 +78,18 @@ export const styles = StyleSheet.create({
       color: colors.neutralBlackColor,
       padding: 10,
       borderRadius: 4,
-      marginVertical: 10
+      marginVertical: 10,
    },
    filterDropdowns: {
       flexDirection: "row",
       justifyContent: "space-between"
    },
-   picker: {
+   pickerBox: {
       backgroundColor: colors.neutralWhiteColor,
       color: colors.neutralBlackColor,
       borderRadius: 4,
       marginVertical: 10,
-      width: "47%"
+      width: "47%",
    },
    buttonContainer: {
       flexDirection: "row",
@@ -105,6 +108,19 @@ export const styles = StyleSheet.create({
       fontSize: 28,
       color: colors.neutralWhiteColor,
       paddingBottom: 5,
-      textAlign: "right"
+      textAlign: "right",
+      marginHorizontal: 10
    },
+   searchClose: {
+      flexDirection: "row",
+      alignItems: "center"
+   },
+   typeText: {
+      color: colors.neutralWhiteColor,
+      textTransform: "capitalize",
+      fontSize: 20,
+      flex: 1,
+      textAlign: "center",
+      marginLeft: 50
+   }
 });

@@ -162,7 +162,7 @@ const Weapons = ({ weapons, handleWeapon, closePage, weaponPage }) => {
                   <TouchableOpacity onPress={backWeapon}>
                     <Ionicons style={styles.ionicon} name="arrow-back" />
                   </TouchableOpacity>
-
+                  <Text style={styles.typeText}>{weaponType}</Text>
                   <TouchableOpacity onPress={closePage}>
                     <Ionicons style={styles.ionicon} name="close" />
                   </TouchableOpacity>
@@ -208,11 +208,11 @@ const Weapons = ({ weapons, handleWeapon, closePage, weaponPage }) => {
                 </View>
               </View>
               <FlatList
-                style={styles.flatList}
                 data={newWeapons}
                 renderItem={({ item }) => (
                   <WeaponsItem item={item} handleWeapon={handleWeapon} />
                 )}
+                style={styles.flatList}
               />
             </ImageBackground>
           )}
