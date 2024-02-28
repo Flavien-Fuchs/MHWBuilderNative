@@ -5,7 +5,16 @@ export const styles = StyleSheet.create({
     ItemSheetSingleContainer: {
         flex: 1,
         width: "100%",
-        marginTop: 10
+        marginTop: 10,
+        backgroundColor: colors.bgStat,
+        shadowColor: colors.neutralBlackColor,
+        shadowOffset: {
+            width: 0,
+            height: 4,
+        },
+        shadowOpacity: 0.30,
+        shadowRadius: 4.65,
+        elevation: 8,
     },
     resistance: {
         color: colors.neutralWhiteColor,
