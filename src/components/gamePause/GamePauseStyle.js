@@ -40,7 +40,6 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 22,
-    backgroundColor: colors.bgStatPopup,
  },
  modalView: {
   margin: 20,
