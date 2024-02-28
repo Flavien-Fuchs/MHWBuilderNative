@@ -3,6 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { colors } from "../../utils/colors";
 import { styles } from "./GamePauseStyle";
 import { useState } from "react";
+import { Ionicons } from "@expo/vector-icons";
 
 
 const GamePause = ({ isPlaying, setIsPlaying, gameIsEnd, navigation }) => {
@@ -64,7 +65,10 @@ const GamePause = ({ isPlaying, setIsPlaying, gameIsEnd, navigation }) => {
       >
         <View style={styles.commandModal}>
             <View style={styles.modalView}>
-              <Text style={[styles.title, styles.texteWhite]}>commands{'\n'}</Text>
+              <TouchableOpacity onPress={hideRules}>
+                  <Ionicons style={styles.ionicon} name="close" />
+              </TouchableOpacity>
+              <Text style={[styles.commandTitle, styles.texteWhite]}>commands{'\n'}</Text>
               <Text style={styles.texteWhite}>
                 <Text style={styles.title}>ATTACK :{'\n'}</Text>               
                 <Text style={styles.text}>
@@ -89,11 +93,6 @@ const GamePause = ({ isPlaying, setIsPlaying, gameIsEnd, navigation }) => {
                   <Text>VS <Text style={styles.title}>SUPER ATTACK</Text> = 200% damages to both.</Text>
                 </Text>
               </Text>
-              <TouchableOpacity onPress={hideRules}>
-                <Text style={[styles.closeBtn, styles.title, styles.texteWhite]}>
-                  x
-                </Text>
-              </TouchableOpacity>
             </View>
         </View>
       </Modal>
