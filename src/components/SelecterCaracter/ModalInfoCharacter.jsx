@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 import { styles } from "./ModalInfoCharacterStyle";
 
@@ -39,45 +39,47 @@ const ModalInfoCharacter = ({
         setModalVisible(!modalVisible);
       }}
     >
-      <View style={styles.container}>
-        <SafeAreaView style={styles.containerModal}>
-          <View style={styles.containerBody}>
-            <View style={styles.containerImg}>
-              <Image
-                source={getImageCharacter("body", character.id)}
-                style={styles.imageCharacSelect}
-              />
+      <SafeAreaProvider>
+        <View style={styles.container}>
+          <SafeAreaView style={styles.containerModal}>
+            <View style={styles.containerBody}>
+              <View style={styles.containerImg}>
+                <Image
+                  source={getImageCharacter("body", character.id)}
+                  style={styles.imageCharacSelect}
+                />
+              </View>
+              <View style={styles.containerDescrip}>
+                <Text style={styles.textName}>{character.name}</Text>
+                <Text style={styles.textDecrip}>{character.descrip}</Text>
+              </View>
             </View>
-            <View style={styles.containerDescrip}>
-              <Text style={styles.textName}>{character.name}</Text>
-              <Text style={styles.textDecrip}>{character.descrip}</Text>
+            <View style={styles.footer}>
+              <TouchableOpacity onPress={() => handleChange(-1)}>
+                <Image
+                  source={require("../../assets/images/gauche.png")}
+                  style={{
+                    opacity: character.id <= 1 ? 0.5 : 1,
+                    ...styles.image,
+                  }}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => setModalVisible(false)}>
+                <Text style={styles.textWhite}>{character.name}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => handleChange(+1)}>
+                <Image
+                  source={require("../../assets/images/droite.png")}
+                  style={{
+                    opacity: character.id >= 11 ? 0.5 : 1,
+                    ...styles.image,
+                  }}
+                />
+              </TouchableOpacity>
             </View>
-          </View>
-          <View style={styles.footer}>
-            <TouchableOpacity onPress={() => handleChange(-1)}>
-              <Image
-                source={require("../../assets/images/gauche.png")}
-                style={{
-                  opacity: character.id <= 1 ? 0.5 : 1,
-                  ...styles.image,
-                }}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => setModalVisible(false)}>
-              <Text style={styles.textWhite}>Selected</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => handleChange(+1)}>
-              <Image
-                source={require("../../assets/images/droite.png")}
-                style={{
-                  opacity: character.id >= 11 ? 0.5 : 1,
-                  ...styles.image,
-                }}
-              />
-            </TouchableOpacity>
-          </View>
-        </SafeAreaView>
-      </View>
+          </SafeAreaView>
+        </View>
+      </SafeAreaProvider>
     </Modal>
   );
 };
