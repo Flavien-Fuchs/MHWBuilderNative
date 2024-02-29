@@ -21,7 +21,7 @@ This builder allows Monster Hunter World players to create and customize their o
 * Selection and customization of weapons, equipment and charms.
 * Filtration available with defense and resistance elements with its search bar.
 * Visualization of statistics and skills associated with each piece of equipment.
-* Mini-game to fight against a monster with the selected equipment.
+* Game to fight against a monster with the selected equipment.
 
  ## Installation
  _______
